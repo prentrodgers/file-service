@@ -1,6 +1,6 @@
 {
 	"_comment": "Hand-authored album metadata. The tuning system lives in the DIRECTORY name and nowhere in the filenames, so it cannot be derived — it has to be recorded here. `scripts/build-catalog.mjs` merges this with the track lists scanned from ~/Dropbox/Uploads and writes src/data/catalog.json, which IS committed (Cloudflare's build machine has no Dropbox access).",
-	"_review": "Entries marked \"needsReview\": true are Prent's to confirm — the tuning/blurb was inferred from the directory name, not from anything authoritative.",
+	"_order": "Key order in `tunings` drives section order on /listen. Albums are sorted by date, newest first, within each section.",
 	"albums": [
 		{
 			"id": "c8-08-03-26",
@@ -8,9 +8,8 @@
 			"title": "August 2026",
 			"date": "2026-08-03",
 			"tuning": "just",
-			"blurb": "The current rotation — the album the daily post draws from.",
-			"featured": true,
-			"needsReview": true
+			"blurb": "The current rendering — the one the daily post draws from.",
+			"featured": true
 		},
 		{
 			"id": "c7-07-25-26",
@@ -18,8 +17,7 @@
 			"title": "Late July 2026",
 			"date": "2026-07-25",
 			"tuning": "just",
-			"blurb": "",
-			"needsReview": true
+			"blurb": ""
 		},
 		{
 			"id": "c6-07-02-26",
@@ -27,8 +25,7 @@
 			"title": "Early July 2026",
 			"date": "2026-07-02",
 			"tuning": "just",
-			"blurb": "",
-			"needsReview": true
+			"blurb": ""
 		},
 		{
 			"id": "c5-07-01-26",
@@ -36,8 +33,7 @@
 			"title": "July 2026",
 			"date": "2026-07-01",
 			"tuning": "just",
-			"blurb": "",
-			"needsReview": true
+			"blurb": ""
 		},
 		{
 			"id": "c4-06-29-26",
@@ -45,8 +41,7 @@
 			"title": "Late June 2026",
 			"date": "2026-06-29",
 			"tuning": "just",
-			"blurb": "",
-			"needsReview": true
+			"blurb": ""
 		},
 		{
 			"id": "c3-06-29-26-short-repeats",
@@ -54,8 +49,7 @@
 			"title": "Short Repeats",
 			"date": "2026-06-29",
 			"tuning": "just",
-			"blurb": "A structural variant with the repeats shortened.",
-			"needsReview": true
+			"blurb": "A structural variant of the late-June pass, with the repeats shortened."
 		},
 		{
 			"id": "c0-06-01-26",
@@ -63,8 +57,7 @@
 			"title": "June 2026",
 			"date": "2026-06-01",
 			"tuning": "just",
-			"blurb": "",
-			"needsReview": true
+			"blurb": "The first full pass in just intonation."
 		},
 		{
 			"id": "c2-05-23-26-werckmeister-iii",
@@ -72,8 +65,7 @@
 			"title": "Werckmeister III",
 			"date": "2026-05-23",
 			"tuning": "werckmeister",
-			"blurb": "The same twelve chorales in Werckmeister III, the well temperament of Bach's own era — a reference point between equal temperament and just intonation.",
-			"needsReview": true
+			"blurb": "The same twelve chorales in the well temperament of Bach's own era — a reference point between equal temperament and just intonation."
 		},
 		{
 			"id": "c1-05-23-26-12-tet",
@@ -81,34 +73,37 @@
 			"title": "12-Tone Equal Temperament",
 			"date": "2026-05-23",
 			"tuning": "12tet",
-			"blurb": "The control. The same twelve chorales in the tuning of every modern piano, for direct comparison.",
-			"needsReview": true
+			"blurb": "The control. The same twelve chorales in the tuning of every modern piano, for direct comparison."
 		},
 		{
 			"id": "original-bach",
 			"dir": "original_Bach",
-			"title": "Original Bach",
+			"title": "Early Experiments",
 			"date": "2026-05-01",
-			"tuning": "just",
-			"blurb": "Earlier renders, using the legacy max-shift setting rather than the density control.",
-			"needsReview": true
+			"tuning": "early",
+			"blurb": "The first attempts, at markedly slower tempos."
 		}
 	],
 	"tunings": {
 		"just": {
 			"label": "Just intonation",
 			"short": "JI",
-			"description": "Chords tuned to whole-number frequency ratios drawn from a tonality diamond, found by simulated annealing and then threaded together with Viterbi optimisation."
+			"description": "Chords tuned to whole-number frequency ratios drawn from a tonality diamond, found by simulated annealing and then threaded together with Viterbi optimisation. These are successive passes at the same idea, newest first — each refines the tuning search and the orchestration over the one before it."
+		},
+		"werckmeister": {
+			"label": "Werckmeister III",
+			"short": "Werckmeister III",
+			"description": "A well temperament from 1691, contemporary with Bach. Keys retain distinct character rather than sounding identical."
 		},
 		"12tet": {
 			"label": "12-tone equal temperament",
 			"short": "12-TET",
 			"description": "The modern standard: the octave split into twelve identical steps. Every key is equally usable and no chord is perfectly in tune."
 		},
-		"werckmeister": {
-			"label": "Werckmeister III",
-			"short": "Werckmeister III",
-			"description": "A well temperament from 1691, contemporary with Bach. Keys retain distinct character rather than sounding identical."
+		"early": {
+			"label": "Early experiments",
+			"short": "Early",
+			"description": "The first renders, made before the density control existed — they use the legacy max-shift setting and much slower tempos. Kept for reference; superseded by the just-intonation passes above."
 		}
 	}
 }

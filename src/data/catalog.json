@@ -4,17 +4,22 @@
 		"just": {
 			"label": "Just intonation",
 			"short": "JI",
-			"description": "Chords tuned to whole-number frequency ratios drawn from a tonality diamond, found by simulated annealing and then threaded together with Viterbi optimisation."
+			"description": "Chords tuned to whole-number frequency ratios drawn from a tonality diamond, found by simulated annealing and then threaded together with Viterbi optimisation. These are successive passes at the same idea, newest first — each refines the tuning search and the orchestration over the one before it."
+		},
+		"werckmeister": {
+			"label": "Werckmeister III",
+			"short": "Werckmeister III",
+			"description": "A well temperament from 1691, contemporary with Bach. Keys retain distinct character rather than sounding identical."
 		},
 		"12tet": {
 			"label": "12-tone equal temperament",
 			"short": "12-TET",
 			"description": "The modern standard: the octave split into twelve identical steps. Every key is equally usable and no chord is perfectly in tune."
 		},
-		"werckmeister": {
-			"label": "Werckmeister III",
-			"short": "Werckmeister III",
-			"description": "A well temperament from 1691, contemporary with Bach. Keys retain distinct character rather than sounding identical."
+		"early": {
+			"label": "Early experiments",
+			"short": "Early",
+			"description": "The first renders, made before the density control existed — they use the legacy max-shift setting and much slower tempos. Kept for reference; superseded by the just-intonation passes above."
 		}
 	},
 	"albums": [
@@ -23,7 +28,7 @@
 			"title": "August 2026",
 			"date": "2026-08-03",
 			"tuning": "just",
-			"blurb": "The current rotation — the album the daily post draws from.",
+			"blurb": "The current rendering — the one the daily post draws from.",
 			"featured": true,
 			"trackCount": 12,
 			"tracks": [
@@ -1034,7 +1039,7 @@
 			"title": "Short Repeats",
 			"date": "2026-06-29",
 			"tuning": "just",
-			"blurb": "A structural variant with the repeats shortened.",
+			"blurb": "A structural variant of the late-June pass, with the repeats shortened.",
 			"trackCount": 12,
 			"tracks": [
 				{
@@ -1236,7 +1241,7 @@
 			"title": "June 2026",
 			"date": "2026-06-01",
 			"tuning": "just",
-			"blurb": "",
+			"blurb": "The first full pass in just intonation.",
 			"trackCount": 12,
 			"tracks": [
 				{
@@ -1438,7 +1443,7 @@
 			"title": "Werckmeister III",
 			"date": "2026-05-23",
 			"tuning": "werckmeister",
-			"blurb": "The same twelve chorales in Werckmeister III, the well temperament of Bach's own era — a reference point between equal temperament and just intonation.",
+			"blurb": "The same twelve chorales in the well temperament of Bach's own era — a reference point between equal temperament and just intonation.",
 			"trackCount": 12,
 			"tracks": [
 				{
@@ -1839,10 +1844,10 @@
 		},
 		{
 			"id": "original-bach",
-			"title": "Original Bach",
+			"title": "Early Experiments",
 			"date": "2026-05-01",
-			"tuning": "just",
-			"blurb": "Earlier renders, using the legacy max-shift setting rather than the density control.",
+			"tuning": "early",
+			"blurb": "The first attempts, at markedly slower tempos.",
 			"trackCount": 12,
 			"tracks": [
 				{
