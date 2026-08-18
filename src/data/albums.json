@@ -1,0 +1,114 @@
+{
+	"_comment": "Hand-authored album metadata. The tuning system lives in the DIRECTORY name and nowhere in the filenames, so it cannot be derived — it has to be recorded here. `scripts/build-catalog.mjs` merges this with the track lists scanned from ~/Dropbox/Uploads and writes src/data/catalog.json, which IS committed (Cloudflare's build machine has no Dropbox access).",
+	"_review": "Entries marked \"needsReview\": true are Prent's to confirm — the tuning/blurb was inferred from the directory name, not from anything authoritative.",
+	"albums": [
+		{
+			"id": "c8-08-03-26",
+			"dir": "c8-08-03-26",
+			"title": "August 2026",
+			"date": "2026-08-03",
+			"tuning": "just",
+			"blurb": "The current rotation — the album the daily post draws from.",
+			"featured": true,
+			"needsReview": true
+		},
+		{
+			"id": "c7-07-25-26",
+			"dir": "c7-07-25-26",
+			"title": "Late July 2026",
+			"date": "2026-07-25",
+			"tuning": "just",
+			"blurb": "",
+			"needsReview": true
+		},
+		{
+			"id": "c6-07-02-26",
+			"dir": "c6-07-02-26",
+			"title": "Early July 2026",
+			"date": "2026-07-02",
+			"tuning": "just",
+			"blurb": "",
+			"needsReview": true
+		},
+		{
+			"id": "c5-07-01-26",
+			"dir": "c5-07-01-26",
+			"title": "July 2026",
+			"date": "2026-07-01",
+			"tuning": "just",
+			"blurb": "",
+			"needsReview": true
+		},
+		{
+			"id": "c4-06-29-26",
+			"dir": "c4-06-29-26",
+			"title": "Late June 2026",
+			"date": "2026-06-29",
+			"tuning": "just",
+			"blurb": "",
+			"needsReview": true
+		},
+		{
+			"id": "c3-06-29-26-short-repeats",
+			"dir": "c3-06-29-26-short_repeats",
+			"title": "Short Repeats",
+			"date": "2026-06-29",
+			"tuning": "just",
+			"blurb": "A structural variant with the repeats shortened.",
+			"needsReview": true
+		},
+		{
+			"id": "c0-06-01-26",
+			"dir": "c0-6-1-26",
+			"title": "June 2026",
+			"date": "2026-06-01",
+			"tuning": "just",
+			"blurb": "",
+			"needsReview": true
+		},
+		{
+			"id": "c2-05-23-26-werckmeister-iii",
+			"dir": "c2-05-23-26-Werch-III",
+			"title": "Werckmeister III",
+			"date": "2026-05-23",
+			"tuning": "werckmeister",
+			"blurb": "The same twelve chorales in Werckmeister III, the well temperament of Bach's own era — a reference point between equal temperament and just intonation.",
+			"needsReview": true
+		},
+		{
+			"id": "c1-05-23-26-12-tet",
+			"dir": "c1-05-23-26-12-TET",
+			"title": "12-Tone Equal Temperament",
+			"date": "2026-05-23",
+			"tuning": "12tet",
+			"blurb": "The control. The same twelve chorales in the tuning of every modern piano, for direct comparison.",
+			"needsReview": true
+		},
+		{
+			"id": "original-bach",
+			"dir": "original_Bach",
+			"title": "Original Bach",
+			"date": "2026-05-01",
+			"tuning": "just",
+			"blurb": "Earlier renders, using the legacy max-shift setting rather than the density control.",
+			"needsReview": true
+		}
+	],
+	"tunings": {
+		"just": {
+			"label": "Just intonation",
+			"short": "JI",
+			"description": "Chords tuned to whole-number frequency ratios drawn from a tonality diamond, found by simulated annealing and then threaded together with Viterbi optimisation."
+		},
+		"12tet": {
+			"label": "12-tone equal temperament",
+			"short": "12-TET",
+			"description": "The modern standard: the octave split into twelve identical steps. Every key is equally usable and no chord is perfectly in tune."
+		},
+		"werckmeister": {
+			"label": "Werckmeister III",
+			"short": "Werckmeister III",
+			"description": "A well temperament from 1691, contemporary with Bach. Keys retain distinct character rather than sounding identical."
+		}
+	}
+}

@@ -1,0 +1,114 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SOCIAL } from "../consts";
+import videoData from "../data/videos.json";
+
+const videos = [...videoData.videos].sort((a, b) =>
+	b.date.localeCompare(a.date),
+);
+
+const title = `Watch | ${SITE_TITLE}`;
+const description =
+	"Animated orchestras playing Bach chorales in just intonation, rendered in Blender from the same data that produced the tuning.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Watch</h1>
+			<p class="lede">
+				Each video is rendered in Blender from the same features array that
+				produced the audio, so the instruments on screen are playing the notes
+				you hear — not an approximation of them.
+			</p>
+
+			{
+				videos.map((video) => (
+					<article class="video">
+						<h2>
+							BWV {video.bwv} — <span class="vtitle">{video.title}</span>
+						</h2>
+						<div class="frame">
+							{/* youtube-nocookie + lazy: no tracking cookie until play,
+							    and the iframe is not fetched until it scrolls into view. */}
+							<iframe
+								src={`https://www.youtube-nocookie.com/embed/${video.id}`}
+								title={`BWV ${video.bwv} — ${video.title}`}
+								loading="lazy"
+								allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen
+							/>
+						</div>
+						{video.blurb && <p class="blurb">{video.blurb}</p>}
+						<p class="links">
+							<a href={`https://youtu.be/${video.id}`} target="_blank" rel="noopener">
+								Watch on YouTube
+							</a>
+						</p>
+					</article>
+				))
+			}
+
+			<p class="more">
+				More are being rendered. New ones show up first on <a
+					href={SOCIAL.youtube}
+					target="_blank"
+					rel="noopener">YouTube</a
+				>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.lede {
+		font-size: 1.1em;
+	}
+	.video {
+		margin: 2.5em 0;
+	}
+	.video h2 {
+		font-size: 1.4em;
+		margin-bottom: 0.5em;
+	}
+	.vtitle {
+		font-weight: 400;
+	}
+	.frame {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		background: rgb(var(--gray-light));
+		border-radius: 8px;
+		overflow: hidden;
+	}
+	.frame iframe {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+	.blurb {
+		margin-top: 1em;
+		color: rgb(var(--gray-dark));
+	}
+	.links {
+		font-size: 0.85em;
+	}
+	.more {
+		margin-top: 3em;
+		padding-top: 1.5em;
+		border-top: 1px solid rgb(var(--gray-light));
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+	}
+</style>

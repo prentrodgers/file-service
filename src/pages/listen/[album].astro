@@ -1,0 +1,141 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import TrackList from "../../components/TrackList.astro";
+import { SITE_TITLE } from "../../consts";
+import { albums, tuningOf } from "../../lib/catalog";
+import type { Album } from "../../lib/catalog";
+
+export function getStaticPaths() {
+	// Imported here rather than at module scope so the page stays a pure
+	// static-path generator; Astro calls this at build time.
+	return albums.map((album) => ({
+		params: { album: album.id },
+		props: { album },
+	}));
+}
+
+interface Props {
+	album: Album;
+}
+
+const { album } = Astro.props;
+const tuning = tuningOf(album);
+
+const title = `${album.title} | ${SITE_TITLE}`;
+const description =
+	album.blurb ||
+	`${album.trackCount} Bach chorales in ${tuning.label}, BWV 253–264.`;
+
+const limits = [...new Set(album.tracks.map((t) => t.limit))].sort(
+	(a, b) => a - b,
+);
+const totalSeconds = album.tracks.reduce((n, t) => n + t.durationSeconds, 0);
+const totalTime = `${Math.floor(totalSeconds / 60)}:${String(totalSeconds % 60).padStart(2, "0")}`;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p class="back"><a href="/listen/">&larr; All albums</a></p>
+			<h1>{album.title}</h1>
+			<p class="tuning">
+				<strong>{tuning.label}</strong> — {tuning.description}
+			</p>
+			{album.blurb && <p class="blurb">{album.blurb}</p>}
+
+			<dl class="facts">
+				<div>
+					<dt>Recordings</dt>
+					<dd>{album.trackCount}</dd>
+				</div>
+				<div>
+					<dt>Total length</dt>
+					<dd>{totalTime}</dd>
+				</div>
+				<div>
+					<dt>Limits used</dt>
+					<dd>{limits.join(", ")}</dd>
+				</div>
+				<div>
+					<dt>Rendered</dt>
+					<dd>
+						{
+							new Date(album.date).toLocaleDateString("en-US", {
+								month: "long",
+								day: "numeric",
+								year: "numeric",
+								timeZone: "UTC",
+							})
+						}
+					</dd>
+				</div>
+			</dl>
+
+			<TrackList tracks={album.tracks} />
+
+			<p class="note">
+				Filenames encode the settings each render used: <code>lm17</code> is a
+				17-limit tonality diamond, <code>r1.12</code> the ratio factor,
+				<code>df2</code> the orchestration density, <code>t1</code> a tolerance of
+				one cent, and the trailing <code>t106</code> the tempo.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.back {
+		font-size: 0.85em;
+		margin-bottom: 0.5em;
+	}
+	.back a {
+		text-decoration: none;
+	}
+	h1 {
+		font-size: 2.4em;
+	}
+	.tuning {
+		color: rgb(var(--gray-dark));
+	}
+	.blurb {
+		color: rgb(var(--gray));
+	}
+	.facts {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5em;
+		margin: 1.5em 0 2em 0;
+		padding: 1em 0;
+		border-top: 1px solid rgb(var(--gray-light));
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.facts div {
+		margin: 0;
+	}
+	.facts dt {
+		font-size: 0.7em;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: rgb(var(--gray));
+	}
+	.facts dd {
+		margin: 0;
+		font-size: 1.1em;
+		font-weight: 700;
+	}
+	.note {
+		margin-top: 2.5em;
+		padding-top: 1.5em;
+		border-top: 1px solid rgb(var(--gray-light));
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+	}
+</style>

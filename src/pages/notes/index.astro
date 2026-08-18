@@ -1,0 +1,103 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { SITE_TITLE, SOCIAL } from "../../consts";
+import { getCollection } from "astro:content";
+
+const notes = (await getCollection("notes")).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const title = `Notes | ${SITE_TITLE}`;
+const description =
+	"Writing about retuning Bach chorales: tonality diamonds, simulated annealing, Viterbi optimisation, and what it all sounds like.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Notes</h1>
+			<p class="lede">
+				How the tuning works, why it sounds the way it does, and what turned up
+				along the way.
+			</p>
+
+			<ul class="notes">
+				{
+					notes.map((note) => (
+						<li>
+							<a href={`/notes/${note.id}/`}>
+								<h2>{note.data.title}</h2>
+							</a>
+							<p class="date">
+								<FormattedDate date={note.data.pubDate} />
+							</p>
+							<p class="desc">{note.data.description}</p>
+						</li>
+					))
+				}
+			</ul>
+
+			<p class="elsewhere">
+				Shorter and more frequent posts go out on <a
+					href={SOCIAL.substack}
+					target="_blank"
+					rel="noopener">Substack</a
+				>, and a chorale goes to <a href={SOCIAL.x} target="_blank" rel="noopener"
+					>X</a
+				> every morning. This page has an <a href="/rss.xml">RSS feed</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.lede {
+		font-size: 1.1em;
+		color: rgb(var(--gray-dark));
+	}
+	.notes {
+		list-style: none;
+		margin: 2em 0;
+		padding: 0;
+	}
+	.notes li {
+		border-top: 1px solid rgb(var(--gray-light));
+		padding: 1.2em 0;
+	}
+	.notes a {
+		text-decoration: none;
+	}
+	.notes h2 {
+		font-size: 1.5em;
+		margin: 0;
+		color: rgb(var(--black));
+	}
+	.notes a:hover h2 {
+		color: var(--accent);
+	}
+	.date {
+		margin: 0.2em 0 0.4em 0;
+		font-size: 0.8em;
+		color: rgb(var(--gray));
+	}
+	.desc {
+		margin: 0;
+		color: rgb(var(--gray-dark));
+	}
+	.elsewhere {
+		margin-top: 2.5em;
+		padding-top: 1.5em;
+		border-top: 1px solid rgb(var(--gray-light));
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+	}
+</style>

@@ -1,0 +1,12 @@
+{
+	"_comment": "Orchestra videos rendered with Blender (see gen-video.sh in the tuning repo). Add an entry per video: `id` is the YouTube ID from the youtu.be/<id> URL. Keep newest first.",
+	"videos": [
+		{
+			"id": "0h6--rnJmmw",
+			"bwv": "261",
+			"title": "Allein zu dir, Herr Jesu Christ",
+			"date": "2026-07-23",
+			"blurb": "Nine instrument sections — strings, marimba, finger piano, bass, woodwind, brass, bowed strings, melody, and a conductor — rendered separately in Blender and composited into one stage. The notes on screen are the notes in the audio: the animation is driven by the same features array that produced the tuning."
+		}
+	]
+}

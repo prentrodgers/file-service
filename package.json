@@ -1,6 +1,6 @@
 {
-	"name": "file-service",
-	"description": "Build a personal website, blog, or portfolio with Astro.",
+	"name": "microtonalnotes",
+	"description": "Bach chorales retuned in just intonation \u2014 microtonalnotes.net",
 	"cloudflare": {
 		"label": "Astro Framework Starter",
 		"products": [
@@ -33,7 +33,9 @@
 		"check": "astro build && tsc && wrangler deploy --dry-run",
 		"deploy": "wrangler deploy",
 		"dev": "astro dev",
-		"preview": "astro build && wrangler dev"
+		"preview": "astro build && wrangler dev",
+		"catalog": "node scripts/build-catalog.mjs",
+		"publish-album": "./scripts/publish-album.sh"
 	},
 	"type": "module"
 }

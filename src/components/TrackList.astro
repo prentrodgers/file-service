@@ -1,0 +1,90 @@
+---
+import { audioUrl } from "../consts";
+import { detailLabel } from "../lib/chorale";
+import type { ChoraleTrack } from "../lib/chorale";
+
+interface Props {
+	tracks: ChoraleTrack[];
+}
+
+const { tracks } = Astro.props;
+---
+
+<ol class="tracks">
+	{
+		tracks.map((track) => (
+			<li class="track">
+				<div class="track-head">
+					<h3>
+						<span class="bwv">BWV {track.bwv}</span>
+						<span class="title">{track.title}</span>
+					</h3>
+					<p class="meta">
+						{track.limit}-limit &middot; {track.duration} &middot; {track.tempo} BPM
+						&middot; {detailLabel(track.detail)} &middot; &plusmn;{track.tolerance}&cent;
+					</p>
+				</div>
+				{/* preload="none" matters: 12 tracks x ~12 MB would be 150 MB of
+				    prefetch on a page that most visitors only sample from. */}
+				<audio controls preload="none" src={audioUrl(track.file)} />
+				<p class="file">
+					<a href={audioUrl(track.file)} download>
+						Download MP3
+					</a>
+					<code>{track.file}</code>
+				</p>
+			</li>
+		))
+	}
+</ol>
+
+<style>
+	.tracks {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.track {
+		padding: 1.25em 0;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+	.track h3 {
+		font-size: 1.15em;
+		margin: 0 0 0.15em 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 0.5em;
+		align-items: baseline;
+	}
+	.bwv {
+		color: var(--accent);
+		font-variant-numeric: tabular-nums;
+	}
+	.title {
+		font-weight: 400;
+	}
+	.meta {
+		margin: 0 0 0.6em 0;
+		font-size: 0.8em;
+		color: rgb(var(--gray));
+	}
+	audio {
+		width: 100%;
+		height: 40px;
+	}
+	.file {
+		margin: 0.5em 0 0 0;
+		font-size: 0.75em;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 1em;
+		align-items: center;
+	}
+	.file code {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		background: none;
+		padding: 0;
+		word-break: break-all;
+	}
+</style>

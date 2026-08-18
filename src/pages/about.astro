@@ -1,62 +1,107 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SOCIAL, AUTHOR } from "../consts";
+
+const title = `About | ${SITE_TITLE}`;
+const description =
+	"About Microtonal Notes — retuning Bach's chorales into just intonation, and the tools behind it.";
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>About</h1>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+			<p class="lede">
+				Microtonal Notes is {AUTHOR}'s ongoing project to retune Bach's chorales
+				into just intonation — and to find out what they sound like when every
+				chord is allowed to be genuinely in tune.
+			</p>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+			<h2>The music</h2>
+			<p>
+				The source material is a set of twelve Bach chorales, BWV 253 through 264.
+				They are small, dense, and harmonically complete, which makes them ideal
+				test subjects: there is nowhere for a bad tuning to hide.
+			</p>
+			<p>
+				Each chord is retuned to whole-number frequency ratios drawn from a
+				tonality diamond — the structure Harry Partch used to organise his own
+				instruments — extended here to odd limits of 17, 19, and 23. A simulated
+				annealing search finds good candidate tunings for each chord in isolation.
+				A Viterbi pass then picks the route through those candidates that keeps
+				shared notes from lurching as the harmony moves. The
+				<a href="/notes/two-algorithms/">full write-up is in the notes</a>.
+			</p>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+			<h2>The tools</h2>
+			<ul>
+				<li><strong>Csound</strong> renders the audio from the tuned note data.</li>
+				<li>
+					<strong>Python + NumPy</strong> run the annealing and Viterbi passes.
+				</li>
+				<li>
+					<strong>Blender</strong> renders the orchestra videos — nine instrument
+					sections animated separately and composited, driven by the same data that
+					produced the audio.
+				</li>
+				<li><strong>LilyPond</strong> engraves the scores.</li>
+			</ul>
+			<p>
+				All of it is open, at <a href={SOCIAL.github} target="_blank" rel="noopener"
+					>github.com/prentrodgers/One-footed-bride-tuning</a
+				>.
+			</p>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+			<h2>Where to find it</h2>
+			<ul>
+				<li>
+					A chorale goes out every morning on <a
+						href={SOCIAL.x}
+						target="_blank"
+						rel="noopener">X</a
+					>.
+				</li>
+				<li>
+					Longer posts are on <a href={SOCIAL.substack} target="_blank" rel="noopener"
+						>Substack</a
+					>.
+				</li>
+				<li>
+					Videos are on <a href={SOCIAL.youtube} target="_blank" rel="noopener"
+						>YouTube</a
+					>.
+				</li>
+				<li>This site has an <a href="/rss.xml">RSS feed</a>.</li>
+			</ul>
+
+			{/*
+			  TODO (Prent): a short biography belongs here — background, how you came to
+			  microtonal music, anything about the One-Footed Bride name. Deliberately
+			  left blank rather than invented.
+			*/}
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.lede {
+		font-size: 1.15em;
+		color: rgb(var(--gray-dark));
+	}
+	h2 {
+		font-size: 1.6em;
+		margin-top: 1.5em;
+	}
+	li {
+		margin-bottom: 0.4em;
+	}
+</style>

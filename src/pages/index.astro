@@ -1,8 +1,15 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION, audioUrl } from "../consts";
+import { albums, featuredAlbum, tuningOf } from "../lib/catalog";
+import videoData from "../data/videos.json";
+
+const featuredTrack =
+	featuredAlbum.tracks.find((t) => t.bwv === "261") ?? featuredAlbum.tracks[0];
+const featuredVideo = videoData.videos[0];
+const totalTracks = albums.reduce((n, a) => n + a.trackCount, 0);
 ---
 
 <!doctype html>
@@ -13,38 +20,142 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
+			<h1>Bach, retuned</h1>
+			<p class="lede">
+				Bach wrote his chorales for voices that could bend a note to whatever
+				sounded right. We play them on instruments that cannot. Every piano in
+				the world is slightly out of tune with itself — a compromise that makes
+				all twelve keys usable by making none of them pure.
 			</p>
 			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
+				This project undoes that compromise. Each chord in a chorale is retuned
+				to whole-number frequency ratios drawn from a tonality diamond, the
+				structure Harry Partch built his instruments around. A simulated
+				annealing search finds good tunings for each chord on its own; a Viterbi
+				pass then chooses the path through those candidates that keeps shared
+				notes from lurching between chords. The result locks in — chords sit
+				still and ring in a way equal temperament never quite manages.
 			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+
+			<section class="feature">
+				<h2>Start here</h2>
+				<p class="feature-meta">
+					BWV {featuredTrack.bwv} — {featuredTrack.title}<br />
+					<span class="dim"
+						>{featuredTrack.limit}-limit just intonation &middot; {
+							featuredTrack.duration
+						} &middot; {featuredTrack.tempo} BPM</span
+					>
+				</p>
+				<audio controls preload="none" src={audioUrl(featuredTrack.file)}></audio>
+				<p class="feature-links">
+					<a href={`/listen/${featuredAlbum.id}/`}>The rest of this album &rarr;</a>
+				</p>
+			</section>
+
+			<section>
+				<h2>Hear the difference</h2>
+				<p>
+					The same twelve chorales, BWV 253 through 264, have been rendered in
+					equal temperament, in Werckmeister III (the well temperament of Bach's
+					own era), and in just intonation at the 17-, 19-, and 23-limit. Play
+					the same chorale from each and the argument makes itself — there are
+					{totalTracks} recordings across {albums.length} albums.
+				</p>
+				<p><a href="/listen/">Browse everything &rarr;</a></p>
+			</section>
+
+			{
+				featuredVideo && (
+					<section>
+						<h2>Watch an orchestra play it</h2>
+						<p>
+							The animation is driven by the same data that produced the tuning, so
+							the instruments on screen play exactly the notes you hear.
+						</p>
+						<div class="frame">
+							<iframe
+								src={`https://www.youtube-nocookie.com/embed/${featuredVideo.id}`}
+								title={`BWV ${featuredVideo.bwv} — ${featuredVideo.title}`}
+								loading="lazy"
+								allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen
+							/>
+						</div>
+						<p>
+							<a href="/watch/">More videos &rarr;</a>
+						</p>
+					</section>
+				)
+			}
+
+			<section>
+				<h2>How it works</h2>
+				<p>
+					The full explanation — simulated annealing, Viterbi optimisation, and
+					why simplifying the ratios paradoxically makes the music sound more
+					complex — is written up in the notes.
+				</p>
+				<p><a href="/notes/">Read the notes &rarr;</a></p>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	h1 {
+		font-size: 2.8em;
+	}
+	.lede {
+		font-size: 1.2em;
+		color: rgb(var(--gray-dark));
+	}
+	section {
+		margin: 2.5em 0;
+	}
+	h2 {
+		font-size: 1.6em;
+	}
+	.feature {
+		padding: 1.5em;
+		background: white;
+		border-radius: 8px;
+		box-shadow: var(--box-shadow);
+	}
+	.feature h2 {
+		margin-top: 0;
+		font-size: 1.3em;
+	}
+	.feature-meta {
+		margin-bottom: 0.6em;
+	}
+	.dim {
+		font-size: 0.8em;
+		color: rgb(var(--gray));
+	}
+	.feature audio {
+		width: 100%;
+		height: 40px;
+	}
+	.feature-links {
+		margin: 0.8em 0 0 0;
+		font-size: 0.9em;
+	}
+	.frame {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		background: rgb(var(--gray-light));
+		border-radius: 8px;
+		overflow: hidden;
+		margin-bottom: 1em;
+	}
+	.frame iframe {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+</style>

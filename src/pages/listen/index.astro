@@ -1,0 +1,119 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE } from "../../consts";
+import { albums, tunings } from "../../lib/catalog";
+
+const title = `Listen | ${SITE_TITLE}`;
+const description =
+	"Every rendering of Bach's chorales BWV 253–264, in just intonation, Werckmeister III, and equal temperament.";
+
+// Group by tuning so the comparison sets sit together, with the tunings
+// declared in albums.json driving the order.
+const byTuning = Object.keys(tunings)
+	.map((key) => ({
+		key,
+		tuning: tunings[key],
+		albums: albums.filter((a) => a.tuning === key),
+	}))
+	.filter((g) => g.albums.length > 0);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Listen</h1>
+			<p class="lede">
+				The same twelve chorales — Bach's BWV 253 through 264 — rendered again and
+				again under different tunings and different settings. {albums.length} albums,
+				{albums.reduce((n, a) => n + a.trackCount, 0)} recordings.
+			</p>
+
+			{
+				byTuning.map((group) => (
+					<section class="group">
+						<h2>{group.tuning.label}</h2>
+						<p class="group-desc">{group.tuning.description}</p>
+						<ul class="albums">
+							{group.albums.map((album) => (
+								<li>
+									<a href={`/listen/${album.id}/`}>
+										<span class="album-title">{album.title}</span>
+										<span class="album-meta">
+											{album.trackCount} tracks &middot;{" "}
+											{new Date(album.date).toLocaleDateString("en-US", {
+												month: "long",
+												year: "numeric",
+												timeZone: "UTC",
+											})}
+											{album.featured ? " · current rotation" : ""}
+										</span>
+									</a>
+									{album.blurb && <p class="album-blurb">{album.blurb}</p>}
+								</li>
+							))}
+						</ul>
+					</section>
+				))
+			}
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.lede {
+		font-size: 1.1em;
+		color: rgb(var(--gray-dark));
+	}
+	.group {
+		margin: 2.5em 0;
+	}
+	.group h2 {
+		font-size: 1.6em;
+		margin-bottom: 0.2em;
+	}
+	.group-desc {
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+		margin-bottom: 1em;
+	}
+	.albums {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.albums li {
+		border-top: 1px solid rgb(var(--gray-light));
+		padding: 0.8em 0;
+	}
+	.albums a {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 0 1em;
+		text-decoration: none;
+	}
+	.albums a:hover .album-title {
+		text-decoration: underline;
+	}
+	.album-title {
+		font-weight: 700;
+	}
+	.album-meta {
+		font-size: 0.8em;
+		color: rgb(var(--gray));
+	}
+	.album-blurb {
+		margin: 0.3em 0 0 0;
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+	}
+</style>
