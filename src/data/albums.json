@@ -3,13 +3,21 @@
 	"_order": "Key order in `tunings` drives section order on /listen. Albums are sorted by date, newest first, within each section.",
 	"albums": [
 		{
+			"id": "d0-08-21-26",
+			"dir": "d0-08-21-26",
+			"title": "Minimal Movement",
+			"date": "2026-08-21",
+			"tuning": "just",
+			"blurb": "Optimized for minimal movement of cent values between adjacent chords with common pitch classes. The first of the d series — the one the daily post draws from.",
+			"featured": true
+		},
+		{
 			"id": "c9-08-21-26",
 			"dir": "c9-08-21-26",
 			"title": "Late August 2026",
 			"date": "2026-08-21",
 			"tuning": "just",
-			"blurb": "The current rendering — the one the daily post draws from. A short-repeats pass on a new tuning search that closes the gap in cents between adjacent chords to zero or near zero, at the cost of slightly higher integer-ratio scores.",
-			"featured": true
+			"blurb": "A short-repeats pass on a new tuning search that closes the gap in cents between adjacent chords to zero or near zero, at the cost of slightly higher integer-ratio scores."
 		},
 		{
 			"id": "c8-08-03-26",

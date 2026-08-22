@@ -24,12 +24,214 @@
 	},
 	"albums": [
 		{
+			"id": "d0-08-21-26",
+			"title": "Minimal Movement",
+			"date": "2026-08-21",
+			"tuning": "just",
+			"blurb": "Optimized for minimal movement of cent values between adjacent chords with common pitch classes. The first of the d series — the one the daily post draws from.",
+			"featured": true,
+			"trackCount": 12,
+			"tracks": [
+				{
+					"file": "ball9-t53d_lm17_r1.12_df4_t1_d05_57_t122.mp3",
+					"bwv": "253",
+					"title": "Ach bleib bei uns, Herr Jesu Christ",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.12,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 1,
+					"duration": "5:57",
+					"durationSeconds": 357,
+					"tempo": 122
+				},
+				{
+					"file": "ball9-t54d_lm17_r1.12_df4_t3_d05_28_t100.mp3",
+					"bwv": "254",
+					"title": "Ach Gott, erhör mein Seufzen und Wehklagen",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.12,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "5:28",
+					"durationSeconds": 328,
+					"tempo": 100
+				},
+				{
+					"file": "ball9-t55d_lm17_r1.25_df4_t1_d03_50_t110.mp3",
+					"bwv": "255",
+					"title": "Ach Gott und Herr, wie groß und schwer",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 1,
+					"duration": "3:50",
+					"durationSeconds": 230,
+					"tempo": 110
+				},
+				{
+					"file": "ball9-t56d_lm19_r1.12_df4_t3_d06_49_t118.mp3",
+					"bwv": "256",
+					"title": "Ach lieben Christen, seid getrost",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.12,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "6:49",
+					"durationSeconds": 409,
+					"tempo": 118
+				},
+				{
+					"file": "ball9-t57d_lm19_r1.12_df4_t3_d07_35_t106.mp3",
+					"bwv": "257",
+					"title": "Wär Gott nicht mit uns diese Zeit",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.12,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "7:35",
+					"durationSeconds": 455,
+					"tempo": 106
+				},
+				{
+					"file": "ball9-t58d_lm17_r1.75_df4_t3_d09_42_t114.mp3",
+					"bwv": "258",
+					"title": "Wo Gott der Herr nicht bei uns hält",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.75,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "9:42",
+					"durationSeconds": 582,
+					"tempo": 114
+				},
+				{
+					"file": "ball9-t59d_lm19_r1.12_df4_t3_d05_28_t092.mp3",
+					"bwv": "259",
+					"title": "Ach, was soll ich Sünder machen",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.12,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "5:28",
+					"durationSeconds": 328,
+					"tempo": 92
+				},
+				{
+					"file": "ball9-t60d_lm19_r1.75_df4_t3_d07_06_t122.mp3",
+					"bwv": "260",
+					"title": "Allein Gott in der Höh sei Ehr",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.75,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "7:06",
+					"durationSeconds": 426,
+					"tempo": 122
+				},
+				{
+					"file": "ball9-t61d_lm19_r1.25_df4_t3_d13_38_t106.mp3",
+					"bwv": "261",
+					"title": "Allein zu dir, Herr Jesu Christ",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "13:38",
+					"durationSeconds": 818,
+					"tempo": 106
+				},
+				{
+					"file": "ball9-t62d_lm17_r1.12_df4_t3_d06_12_t080.mp3",
+					"bwv": "262",
+					"title": "Alle Menschen müssen sterben",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.12,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "6:12",
+					"durationSeconds": 372,
+					"tempo": 80
+				},
+				{
+					"file": "ball9-t63d_lm19_r1.25_df4_t3_d05_44_t104.mp3",
+					"bwv": "263",
+					"title": "Alles ist an Gottes Segen",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "5:44",
+					"durationSeconds": 344,
+					"tempo": 104
+				},
+				{
+					"file": "ball9-t64d_lm17_r1.12_df4_t3_d05_33_t106.mp3",
+					"bwv": "264",
+					"title": "Als der gütige Gott",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.12,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "5:33",
+					"durationSeconds": 333,
+					"tempo": 106
+				}
+			]
+		},
+		{
 			"id": "c9-08-21-26",
 			"title": "Late August 2026",
 			"date": "2026-08-21",
 			"tuning": "just",
-			"blurb": "The current rendering — the one the daily post draws from. A short-repeats pass on a new tuning search that closes the gap in cents between adjacent chords to zero or near zero, at the cost of slightly higher integer-ratio scores.",
-			"featured": true,
+			"blurb": "A short-repeats pass on a new tuning search that closes the gap in cents between adjacent chords to zero or near zero, at the cost of slightly higher integer-ratio scores.",
 			"trackCount": 12,
 			"tracks": [
 				{
