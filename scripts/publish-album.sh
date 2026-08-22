@@ -44,6 +44,22 @@ if [[ -z "$ALBUM_DIR" ]]; then
 		| sort -V | tail -1)"
 fi
 
+# Preflight. Both of these otherwise fail *silently*: the wrangler calls below
+# send stdout to /dev/null, so npx's "Ok to proceed?" install prompt and
+# wrangler's OAuth login URL are both invisible and the script just hangs.
+WRANGLER="$REPO_ROOT/node_modules/.bin/wrangler"
+if [[ $DRY_RUN -eq 0 ]]; then
+	if [[ ! -x "$WRANGLER" ]]; then
+		echo "wrangler not installed. Run: npm install" >&2
+		exit 1
+	fi
+	if [[ -z "${CLOUDFLARE_API_TOKEN:-}" ]] && ! "$WRANGLER" whoami 2>&1 | grep -q "You are logged in"; then
+		echo "Not authenticated to Cloudflare. Run: npx wrangler login" >&2
+		echo "(or export CLOUDFLARE_API_TOKEN with Workers R2 Storage: Edit)" >&2
+		exit 1
+	fi
+fi
+
 if [[ -z "$ALBUM_DIR" || ! -d "$ALBUM_DIR" ]]; then
 	echo "No album directory found. Pass one explicitly." >&2
 	exit 1
@@ -72,7 +88,7 @@ for f in "${FILES[@]}"; do
 	printf '  %s (%s) ... ' "$key" "$size"
 	# --remote targets the real bucket; without it wrangler writes to the local
 	# simulator and the files never leave this machine.
-	npx wrangler r2 object put "$BUCKET/$key" \
+	"$WRANGLER" r2 object put "$BUCKET/$key" \
 		--file "$f" --content-type audio/mpeg --remote >/dev/null
 	echo "ok"
 	uploaded=$((uploaded + 1))
