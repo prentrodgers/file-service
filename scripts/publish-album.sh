@@ -31,15 +31,17 @@ for arg in "$@"; do
 	esac
 done
 
-# Default to the highest-numbered album directory holding ball9 MP3s.
+# Default to the highest album directory holding ball9 MP3s, across both the
+# c and d series.
 #
-# Deliberately version-sorted by NAME (c0 < c1 < ... < c9 < c10), not by mtime.
-# daily_chorale_tweet.py's find_latest_album_dir() uses st_mtime, which is not
-# stable here: Dropbox re-syncs directories in arbitrary order, so on this node
-# c0 currently looks newer than c8. Sorting by name gives the same answer on
-# every machine.
+# Version-sorted by NAME, which orders these correctly on both axes: the prefix
+# letter first (c9 < d0, so the d series supersedes the c one) and then the
+# number numerically (c9 < c10, where a plain lexical sort would disagree).
+# This matches find_latest_album_dir() in daily_chorale_tweet.py, which sorts on
+# (prefix letter, number) for the same reason. Neither uses mtime: Dropbox
+# re-syncs directories in arbitrary order, so mtimes differ per node.
 if [[ -z "$ALBUM_DIR" ]]; then
-	ALBUM_DIR="$(find "$UPLOADS" -mindepth 1 -maxdepth 1 -type d -name 'c[0-9]*' \
+	ALBUM_DIR="$(find "$UPLOADS" -mindepth 1 -maxdepth 1 -type d -name '[cd][0-9]*' \
 		-exec sh -c 'ls "$1"/ball9-*.mp3 >/dev/null 2>&1' _ {} \; -print \
 		| sort -V | tail -1)"
 fi
