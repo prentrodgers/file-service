@@ -3,13 +3,21 @@
 	"_order": "Key order in `tunings` drives section order on /listen. Albums are sorted by date, newest first, within each section.",
 	"albums": [
 		{
+			"id": "c9-08-21-26",
+			"dir": "c9-08-21-26",
+			"title": "Late August 2026",
+			"date": "2026-08-21",
+			"tuning": "just",
+			"blurb": "The current rendering — the one the daily post draws from. A short-repeats pass on a new tuning search that closes the gap in cents between adjacent chords to zero or near zero, at the cost of slightly higher integer-ratio scores.",
+			"featured": true
+		},
+		{
 			"id": "c8-08-03-26",
 			"dir": "c8-08-03-26",
 			"title": "August 2026",
 			"date": "2026-08-03",
 			"tuning": "just",
-			"blurb": "The current rendering — the one the daily post draws from.",
-			"featured": true
+			"blurb": ""
 		},
 		{
 			"id": "c7-07-25-26",
