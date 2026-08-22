@@ -1,0 +1,165 @@
+8/18/26 Trouble with the daily tweet, since X not rewrites the URL with https:. Move to Cloudflare is documented here.
+    Step 0 — Try the zero-risk option first
+      Before migrating anything, check whether your GoDaddy hosting plan now includes free SSL (many cPanel plans added Let's Encrypt/AutoSSL). GoDaddy Dashboard → your hosting → look for "SSL Certificate" or cPanel → "SSL/TLS Status". If it's there, enable it, and the whole problem disappears with zero DNS risk. The $314 quote may have been for a product you no longer need.
+
+      Only proceed if that's genuinely unavailable.
+
+      Your complete record inventory
+      Everything currently live. Grey cloud = DNS only, orange = Proxied. The proxy setting is where this goes wrong.
+
+      Email — Microsoft 365 (must be exact):
+
+      Type	Name	Value	Proxy
+      MX	@	ripnread-com.mail.protection.outlook.com pri 0	n/a
+      TXT	@	v=spf1 include:secureserver.net -all	n/a
+      TXT	@	<tenant>.onmicrosoft.com	n/a
+      CNAME	autodiscover	autodiscover.outlook.com	🔘 DNS only
+      CNAME	msoid	clientconfig.microsoftonline-p.net	🔘 DNS only
+      CNAME	sip	sipdir.online.lync.com	🔘 DNS only
+      CNAME	lyncdiscover	webdir.online.lync.com	🔘 DNS only
+      SRV	_sip._tls	100 1 443 sipdir.online.lync.com	n/a
+      SRV	_sipfederationtls._tcp	100 1 5061 sipfed.online.lync.com	n/a
+      Mail client hostnames (GoDaddy):
+
+      Type	Name	Value	Proxy
+      CNAME	mail / pop	pop.secureserver.net	🔘 DNS only
+      CNAME	smtp	smtp.secureserver.net	🔘 DNS only
+      CNAME	imap	imap.secureserver.net	🔘 DNS only
+      CNAME	webmail	webmail.secureserver.net	🔘 DNS only
+      CNAME	email	email.secureserver.net	🔘 DNS only
+      Web — this is the part that fixes your tweets:
+
+      Type	Name	Value	Proxy
+      A	@	<origin-ip>	🟠 Proxied ← gives free TLS
+      CNAME	www	ripnread.com	🟠 Proxied
+      CNAME	ftp	ripnread.com	🔘 DNS only
+      TXT	@	google-site-verification=<token>	n/a
+      Good news: no DKIM selectors exist (selector1/selector2._domainkey return nothing), so there's nothing fragile to miss there. No DMARC either.
+
+      The five ways this breaks
+      autodiscover proxied. The #1 M365-on-Cloudflare failure. Outlook stops finding your server; mail still delivers but clients can't configure. Cloudflare's import often defaults CNAMEs to proxied — check every mail row is grey.
+      Any mail hostname proxied. Cloudflare's proxy only speaks HTTP/HTTPS. Orange-clouding smtp/imap/pop breaks those protocols outright.
+      ftp proxied — same reason. Breaks FTP uploads to your site.
+      Enabling Cloudflare Email Routing. It replaces your MX records. Do not turn it on. It's offered prominently.
+      SSL mode. Set SSL/TLS → Overview → Flexible, because GoDaddy's origin has no certificate. Full or Strict will produce a 5xx error page.
+      The steps
+      Cloudflare → Add a site → ripnread.com → Free plan.
+      Let it scan, then audit every row against the tables above. Add anything missing. This is the step that matters — don't rush it.
+      Set proxy status per the tables: only @ and www orange, everything else grey.
+      SSL/TLS → Overview → Flexible.
+      Screenshot your GoDaddy DNS zone before touching nameservers. That's your rollback.
+      GoDaddy → Domain → Nameservers → Change → enter the two Cloudflare nameservers it gives you.
+      Wait for Cloudflare to report the zone Active (usually under an hour).
+      Verify — send yourself a test email and reply to it, then check https://ripnread.com/listen/<a-file>.mp3 returns 200.
+      Rollback: set the nameservers back to ns41/ns42.domaincontrol.com. GoDaddy keeps your old zone, so it's a full revert.
+
+      Two things I noticed but would not change now
+      Copy records verbatim during the migration — if something breaks, you want to know it was the move and not an edit. Fix these afterwards as separate changes:
+
+      Your SPF looks wrong for M365. It's v=spf1 include:secureserver.net -all with a hard fail, but no include:spf.protection.outlook.com. If you send mail through Outlook, those messages may fail SPF at the recipient. It's working well enough today, so leave it — but worth revisiting for deliverability.
+      No DMARC record. Adding one later is a deliverability win.
+      One caveat I can't verify from outside: because your M365 was provisioned through GoDaddy, GoDaddy currently auto-manages those Microsoft records. Once DNS moves, that automation stops — if Microsoft ever changes requirements, you'd update Cloudflare by hand. Mail keeps flowing; it's a maintenance consideration, not a breakage.
+
+      Want me to turn this into a checklist artifact you can tick through at the dashboard?
+
+      When I set up a new server, if it's a desktop machine, I generally want email using prent@ripnread.com. Today, what I do is log onto Godaddy and go through some options to view my email, then after a few clicks I get Outlook on the web to view my emails. Will that still be the same or will I go to Cloudflare to obtain the Outlook on the web access?
+      Neither, actually — Cloudflare has nothing to do with getting to your email. It has no mailbox and no webmail UI. It's purely a DNS provider: it answers "where does mail for ripnread.com go?" and nothing more.
+
+      Three separate things are getting conflated, and it's worth pulling them apart because it makes your new-machine setup simpler:
+
+      Thing	Who does it	Changes in the move?
+      DNS — directions to your mail server	GoDaddy → Cloudflare	✅ this is the only change
+      Mailbox — actual mail storage, Outlook on the Web	Microsoft 365	❌ unchanged
+      Billing / account portal	GoDaddy (reseller)	❌ unchanged
+      Your mail has been on Microsoft 365 all along — autodiscover points at autodiscover.outlook.com and your tenant is <tenant>.onmicrosoft.com. GoDaddy is just the shop you bought the licence from. Those clicks you go through are GoDaddy handing you off to Microsoft.
+
+      Since DNS and billing are unrelated, the GoDaddy click-through path keeps working exactly as it does today.
+
+      But you can skip GoDaddy entirely
+      That click-through is an unnecessary detour, and this is true right now, before any migration:
+
+      https://outlook.office.com → sign in as prent@ripnread.com
+
+      Same inbox, one step. On a new desktop that's your whole email setup. You can bookmark it and never touch GoDaddy for mail again.
+
+      If you'd rather have a native client on Fedora, Thunderbird and Evolution both handle M365 — pick Microsoft/Exchange and it'll discover settings via that autodiscover record automatically.
+
+      One pre-flight check worth doing
+      Before you migrate DNS, sign in at outlook.office.com directly and confirm it works. Two reasons:
+
+      It proves your access doesn't depend on the GoDaddy portal — so if GoDaddy's UI ever gets confused post-migration, you already have a working route in.
+      It's the same check that tells you your M365 credentials are what you think they are, while the current setup is still untouched.
+      The one caveat
+      Because your M365 was sold through GoDaddy, their control panel may start showing a "domain not set up correctly" warning once DNS moves — it can no longer see or manage those records. Mail keeps flowing regardless; the warning is cosmetic, about GoDaddy's ability to auto-manage DNS it no longer controls. It's the maintenance trade-off I mentioned: you'd hand-edit Cloudflare if Microsoft ever changes its requirements.
+
+      That's also the strongest argument for trying Step 0 first — check whether your GoDaddy hosting plan already includes free SSL. If it does, you get working https:// links with zero DNS changes, zero email risk, and none of this complexity.
+
+      To convert from Godaddy to Cloudflare:
+      I've attached the screen shot from the CloudFlare scanned records user interface. Is there anything I need to change here?
+      
+      Yes — 16 records are wrong, and they'd break your email. This is exactly the failure mode I flagged: Cloudflare's scan defaulted every CNAME to Proxied (orange).
+
+      Do not click "Continue to activation" yet.
+
+      What's correct ✅
+      A ripnread.com → <origin-ip> — Proxied. Leave it. This is the record that gives you free TLS and fixes your tweets.
+      CNAME www → ripnread.com — Proxied. Correct.
+      MX, both SRV, all three TXT — DNS only. All correct, nothing to touch.
+      What to change ❌
+      Click the orange toggle on each of these to flip it grey ("DNS only"). Everything except www:
+
+      #	Record	Why it must be grey
+      1	autodiscover	Most important. Outlook can't find your server if proxied
+      2	mail	POP — not an HTTP protocol
+      3	pop	POP
+      4	imap	IMAP
+      5	smtp	SMTP — outbound mail
+      6	webmail	GoDaddy webmail host
+      7	email	Mail service
+      8	e	Alias of the same
+      9	mobilemail	Mobile mail access
+      10	pda	Mobile mail access
+      11	msoid	Microsoft sign-in
+      12	sip	Teams/Skype
+      13	lyncdiscover	Teams/Skype
+      14	ftp	FTP — not HTTP, breaks uploads
+      15	_domainconnect	GoDaddy service record
+      16	pay	External GoDaddy payment host
+      The rule underneath: Cloudflare's proxy only speaks HTTP and HTTPS. Anything orange gets its traffic pulled through Cloudflare's network — fine for a website, fatal for IMAP, SMTP, POP, FTP and SIP, which aren't web protocols at all. Autodiscover is technically HTTPS but Microsoft requires a direct connection to its own endpoint.
+
+      Those ⚠️ triangles beside each row are Cloudflare telling you the same thing.
+
+      Then
+      Flip all 16 to grey.
+      Re-check that ripnread.com (A) and www are still orange — those two must stay proxied.
+      SSL/TLS → Overview → Flexible (your GoDaddy origin has no certificate; Full or Strict gives a 5xx).
+      Then "Continue to activation" and change nameservers at GoDaddy.
+      Worth noting
+      Cloudflare's scan found five records my external probe missed — e, mobilemail, pda, pay, _domainconnect. I was testing a fixed list of likely names; Cloudflare can enumerate more. Good news: everything from my inventory is present, so nothing's missing — the record set is complete, just misconfigured.
+
+      After activation, test in this order: send and reply to a test email first, then check https://ripnread.com/listen/<a-file>.mp3 returns 200. If mail misbehaves, the nameserver revert to ns41/ns42.domaincontrol.com is your rollback.
+
+
+
+_____________________
+8/22/26 Trouble with the Cloudflare instance. 
+    I've forgotten where I put the script. Claude helped me remember. It's a dedicated Repo called file-service in git and locally on fs2. 
+        ssh fs3
+        cd ~/Repos
+        git clone https://github.com/prentrodgers/file-service
+        cd file-service
+
+    I was planning to create a new set of albums starting with Uploads/dn-date format and stop creating new ones with Uploads/cn-date format. Claude identifies some things I had not considered:
+
+    Before you go — three things on fs2 that the c → d rename will hit:
+
+    1. d0-08-21-26 already exists. It sits next to c9-08-21-26; both hold 12 mp3s but with different filenames, so they're two distinct albums, not a rename already in flight. If the plan was c9 → d0, the name is taken. - this is not important. They are two albums. First I need to upload c9-08-21-26 which is a short_repeats version of the new tunings that minimize gaps between cent values of adjacent chords to 0 or near 0, at a cost of slightly higher integer ratio scores.
+        ./scripts/publish-album.sh ~/Dropbox/Uploads/c9-08-21-26
+
+    2. The daily tweet cron on fs7 only recognizes c*. daily_chorale_tweet.py:146-158 filters on d.name.startswith("c") and parses the number with re.match(r"c(\d+)"). Rename the albums to d* and it finds no candidates, prints "No numbered album directory (c0, c1, ...)" and exits 1 — the daily post stops, quietly, with only /tmp/daily_chorale_tweet.log to show for it. publish-album.sh has the same assumption in its default discovery (-name 'c[0-9]*'), though passing the album directory explicitly sidesteps it.
+
+    3. The rename must be mirrored into src/data/albums.json. build-catalog.mjs iterates only over the dir fields listed there, and a directory it can't read is a console.warn and a skip, not a failure — so a stale entry means the album silently vanishes from the site while the build still reports success.
+
+    One unrelated thing I noticed while checking: R2 objects are keyed by basename at the bucket root, and c1-05-23-26-12-TET and c2-05-23-26-Werch-III already share two identical ball9-…mp3 filenames. Whichever uploaded last is what both albums' links now serve. Not today's problem, but the 12-TET and Werckmeister versions of those two tracks are not distinguishable at the URL level.
+
+    Want me to widen both globs to accept c or d before you switch over? It's a two-line change in each script — startswith(("c", "d")) plus r"[cd](\d+)" in the Python, and -name '[cd][0-9]*' in the shell — but note the tweet script's numbering would then sort c9 and d0 as 9 and 0, so d0 would rank below every c album. If the d series is meant to supersede the c one, the cleaner fix is to sort on the prefix letter first.
