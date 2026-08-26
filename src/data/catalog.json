@@ -28,8 +28,7 @@
 			"title": "Minimal Movement",
 			"date": "2026-08-21",
 			"tuning": "just",
-			"blurb": "Optimized for minimal movement of cent values between adjacent chords with common pitch classes. The first of the d series — the one the daily post draws from.",
-			"featured": true,
+			"blurb": "Optimized for minimal movement of cent values between adjacent chords with common pitch classes. The first of the d series.",
 			"trackCount": 12,
 			"tracks": [
 				{
@@ -223,6 +222,209 @@
 					"duration": "5:33",
 					"durationSeconds": 333,
 					"tempo": 106
+				}
+			]
+		},
+		{
+			"id": "d4-08-24-26",
+			"title": "Just the Chorale",
+			"date": "2026-08-24",
+			"tuning": "just",
+			"blurb": "A short-repeats pass after six episodes of heavy compute, 12 hours of annealing and Viterbi, to see if the chorale itself can be made to sound better. The answer is yes, but at the cost of a few cents of extra movement between adjacent chords.",
+			"featured": true,
+			"trackCount": 12,
+			"tracks": [
+				{
+					"file": "ball9-t53d_lm17_r1.25_df5_t1_d01_09_t038.mp3",
+					"bwv": "253",
+					"title": "Ach bleib bei uns, Herr Jesu Christ",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:09",
+					"durationSeconds": 69,
+					"tempo": 38
+				},
+				{
+					"file": "ball9-t54d_lm17_r1.38_df5_t1_d01_34_t030.mp3",
+					"bwv": "254",
+					"title": "Ach Gott, erhör mein Seufzen und Wehklagen",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:34",
+					"durationSeconds": 94,
+					"tempo": 30
+				},
+				{
+					"file": "ball9-t55d_lm17_r1.25_df5_t1_d00_57_t038.mp3",
+					"bwv": "255",
+					"title": "Ach Gott und Herr, wie groß und schwer",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "0:57",
+					"durationSeconds": 57,
+					"tempo": 38
+				},
+				{
+					"file": "ball9-t56d_lm17_r1.25_df5_t1_d01_09_t038.mp3",
+					"bwv": "256",
+					"title": "Ach lieben Christen, seid getrost",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:09",
+					"durationSeconds": 69,
+					"tempo": 38
+				},
+				{
+					"file": "ball9-t57d_lm17_r1.25_df5_t1_d01_26_t030.mp3",
+					"bwv": "257",
+					"title": "Wär Gott nicht mit uns diese Zeit",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:26",
+					"durationSeconds": 86,
+					"tempo": 30
+				},
+				{
+					"file": "ball9-t58d_lm17_r1.25_df5_t1_d01_09_t038.mp3",
+					"bwv": "258",
+					"title": "Wo Gott der Herr nicht bei uns hält",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:09",
+					"durationSeconds": 69,
+					"tempo": 38
+				},
+				{
+					"file": "ball9-t59d_lm17_r1.25_df5_t1_d01_31_t034.mp3",
+					"bwv": "259",
+					"title": "Ach, was soll ich Sünder machen",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:31",
+					"durationSeconds": 91,
+					"tempo": 34
+				},
+				{
+					"file": "ball9-t60d_lm17_r1.25_df5_t2_d01_17_t034.mp3",
+					"bwv": "260",
+					"title": "Allein Gott in der Höh sei Ehr",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 2,
+					"duration": "1:17",
+					"durationSeconds": 77,
+					"tempo": 34
+				},
+				{
+					"file": "ball9-t61d_lm19_r1.25_df5_t1_d02_10_t034.mp3",
+					"bwv": "261",
+					"title": "Allein zu dir, Herr Jesu Christ",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "2:10",
+					"durationSeconds": 130,
+					"tempo": 34
+				},
+				{
+					"file": "ball9-t62d_lm19_r1.50_df5_t3_d01_42_t030.mp3",
+					"bwv": "262",
+					"title": "Alle Menschen müssen sterben",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 3,
+					"duration": "1:42",
+					"durationSeconds": 102,
+					"tempo": 30
+				},
+				{
+					"file": "ball9-t63d_lm17_r1.25_df5_t1_d01_42_t030.mp3",
+					"bwv": "263",
+					"title": "Alles ist an Gottes Segen",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:42",
+					"durationSeconds": 102,
+					"tempo": 30
+				},
+				{
+					"file": "ball9-t64d_lm17_r1.25_df5_t1_d01_04_t038.mp3",
+					"bwv": "264",
+					"title": "Als der gütige Gott",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:04",
+					"durationSeconds": 64,
+					"tempo": 38
 				}
 			]
 		},
@@ -1847,7 +2049,7 @@
 			"title": "Werckmeister III",
 			"date": "2026-05-23",
 			"tuning": "werckmeister",
-			"blurb": "The same twelve chorales in the well temperament of Bach's own era — a reference point between equal temperament and just intonation.",
+			"blurb": "The same twelve chorales in a well temperament of Bach's own era — a reference point between equal temperament and just intonation.",
 			"trackCount": 12,
 			"tracks": [
 				{

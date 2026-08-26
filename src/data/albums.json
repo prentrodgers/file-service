@@ -8,16 +8,15 @@
 			"title": "Minimal Movement",
 			"date": "2026-08-21",
 			"tuning": "just",
-			"blurb": "Optimized for minimal movement of cent values between adjacent chords with common pitch classes. The first of the d series — the one the daily post draws from.",
-			"featured": true
+			"blurb": "Optimized for minimal movement of cent values between adjacent chords with common pitch classes. The first of the d series."
 		},
 		{
 			"id": "d4-08-24-26",
-			"dir": "d4-08-24-26",
+			"dir": "d4-08-24-26-short-repeats",
 			"title": "Just the Chorale",
 			"date": "2026-08-24",
 			"tuning": "just",
-			"blurb": "A short-repeats pass on after six episodes of heavy compute, 12 hours of annealing and Viterbi, to see if the chorale itself can be made to sound better. The answer is yes, but at the cost of a few cents of extra movement between adjacent chords.",
+			"blurb": "A short-repeats pass after six episodes of heavy compute, 12 hours of annealing and Viterbi, to see if the chorale itself can be made to sound better. The answer is yes, but at the cost of a few cents of extra movement between adjacent chords.",
 			"featured": true
 		},
 		{
@@ -90,7 +89,7 @@
 			"title": "Werckmeister III",
 			"date": "2026-05-23",
 			"tuning": "werckmeister",
-			"blurb": "The same twelve chorales in the well temperament of Bach's own era — a reference point between equal temperament and just intonation."
+			"blurb": "The same twelve chorales in a well temperament of Bach's own era — a reference point between equal temperament and just intonation."
 		},
 		{
 			"id": "c1-05-23-26-12-tet",

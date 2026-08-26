@@ -84,8 +84,8 @@ For those interested in the details:
 Listen to the difference. Take any chorale — BWV 261, say — and play it three ways:
 
 - [**12-tone equal temperament**](/listen/c1-05-23-26-12-tet/) — what you'd hear on a piano.
-- [**Werckmeister III**](/listen/c2-05-23-26-werckmeister-iii/) — the well temperament of Bach's own era, where each key keeps its own character.
-- [**One Footed Bride Tuning**](/listen/c8-08-03-26/) — pure chords that flow seamlessly.
+- [**Werckmeister III**](/listen/c2-05-23-26-werckmeister-iii/) — a well temperament of Bach's own era, where each key keeps its own character.
+- [**One Footed Bride Tuning**](/listen/d4-08-24-26/) — pure chords that flow seamlessly.
 
 The full catalogue is on the [listen page](/listen/).
 
