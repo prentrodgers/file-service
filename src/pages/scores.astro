@@ -1,0 +1,152 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE } from "../consts";
+
+// Engraved by features_to_lilypond.py. The PNGs are the music system cropped
+// out of the LilyPond A4 page; the full page is linked as the PDF beside it.
+// Only three so far, so they live here rather than in a data file — move them
+// to src/data/ if this grows the way videos.json did.
+const scores = [
+	{
+		slug: "bwv261-12-tet",
+		title: "12-tone equal temperament",
+		width: 1111,
+		height: 617,
+		blurb:
+			"The control. Every semitone identical, so no pitch carries an inflection and nothing needs marking.",
+	},
+	{
+		slug: "bwv261-werckmeister-iii",
+		title: "Werckmeister III",
+		width: 1200,
+		height: 623,
+		blurb:
+			"A well temperament of 1691. The deviations are small enough that only a few pitches are marked.",
+	},
+	{
+		slug: "bwv261-one-footed-bride",
+		title: "One Footed Bride Tuning",
+		width: 1200,
+		height: 618,
+		blurb:
+			"The 17-limit rendering. Cent offsets are written above the staff where a pitch departs from its notated position.",
+	},
+];
+
+const title = `Scores | ${SITE_TITLE}`;
+const description =
+	"The last four measures of BWV 261 engraved in three tunings — 12-tone equal temperament, Werckmeister III, and One Footed Bride Tuning.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Scores</h1>
+			<p class="lede">
+				The same passage — the last four measures of BWV 261, <em
+					>Allein zu dir, Herr Jesu Christ</em
+				> — engraved three times. The notes are Bach's in every case; what changes
+				is how far each pitch is moved from equal temperament, and how that movement
+				has to be written down.
+			</p>
+
+			{
+				scores.map((score, i) => (
+					<figure class="score">
+						<h2>{score.title}</h2>
+						<img
+							src={`/scores/${score.slug}.png`}
+							width={score.width}
+							height={score.height}
+							loading={i === 0 ? "eager" : "lazy"}
+							decoding="async"
+							alt={`Last four measures of BWV 261 in ${score.title}, four staves marked S, A, T and B.`}
+						/>
+						<figcaption>
+							{score.blurb}{" "}
+							<a href={`/scores/${score.slug}.pdf`}>Full page (PDF)</a>
+						</figcaption>
+					</figure>
+				))
+			}
+
+			<section class="legend">
+				<h2>Reading the accidentals</h2>
+				<p>
+					The One Footed Bride score uses <a
+						href="https://sagittal.org/"
+						target="_blank"
+						rel="noopener">Sagittal</a
+					> accidentals, which name an exact size in cents rather than a
+					key-signature role. This is the legend printed with that score:
+				</p>
+				<img
+					src="/scores/sagittal-legend.png"
+					width="620"
+					height="478"
+					loading="lazy"
+					decoding="async"
+					alt="Sagittal legend: eight accidental symbols against their sizes in cents, from 8.1 cents up to 48.77 cents."
+				/>
+			</section>
+
+			<p class="more">
+				These are engravings of the tuning, not of the recordings — the audio on
+				the <a href="/listen/">listen page</a> is rendered from the same data.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.lede {
+		font-size: 1.1em;
+	}
+	.score {
+		margin: 2.5em 0;
+	}
+	.score h2 {
+		font-size: 1.4em;
+		margin-bottom: 0.5em;
+	}
+	/* White plate behind the engraving: the PNGs are black on white, and the
+	   page background is a gradient, not flat white. */
+	.score img,
+	.legend img {
+		display: block;
+		width: 100%;
+		height: auto;
+		background: #fff;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 8px;
+	}
+	.legend img {
+		max-width: 420px;
+	}
+	figcaption {
+		margin-top: 0.75em;
+		color: rgb(var(--gray-dark));
+		font-size: 0.95em;
+	}
+	.legend {
+		margin-top: 3em;
+	}
+	.legend h2 {
+		font-size: 1.4em;
+	}
+	.more {
+		margin-top: 3em;
+		padding-top: 1.5em;
+		border-top: 1px solid rgb(var(--gray-light));
+		color: rgb(var(--gray));
+		font-size: 0.9em;
+	}
+</style>
