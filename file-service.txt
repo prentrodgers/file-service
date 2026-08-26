@@ -154,7 +154,7 @@ _____________________
     Before you go — three things on fs2 that the c → d rename will hit:
 
     1. d0-08-21-26 already exists. It sits next to c9-08-21-26; both hold 12 mp3s but with different filenames, so they're two distinct albums, not a rename already in flight. If the plan was c9 → d0, the name is taken. - this is not important. They are two albums. First I need to upload c9-08-21-26 which is a short_repeats version of the new tunings that minimize gaps between cent values of adjacent chords to 0 or near 0, at a cost of slightly higher integer ratio scores.
-        ./scripts/publish-album.sh ~/Dropbox/Uploads/c9-08-21-26
+        ./scripts/publish-album.sh ~/Dropbox/Uploads/c9-08-21-26 # failed, needs authentication. Claude suggested missing libraries on fs3 and 
 
     2. The daily tweet cron on fs7 only recognizes c*. daily_chorale_tweet.py:146-158 filters on d.name.startswith("c") and parses the number with re.match(r"c(\d+)"). Rename the albums to d* and it finds no candidates, prints "No numbered album directory (c0, c1, ...)" and exits 1 — the daily post stops, quietly, with only /tmp/daily_chorale_tweet.log to show for it. publish-album.sh has the same assumption in its default discovery (-name 'c[0-9]*'), though passing the album directory explicitly sidesteps it.
 
@@ -163,3 +163,85 @@ _____________________
     One unrelated thing I noticed while checking: R2 objects are keyed by basename at the bucket root, and c1-05-23-26-12-TET and c2-05-23-26-Werch-III already share two identical ball9-…mp3 filenames. Whichever uploaded last is what both albums' links now serve. Not today's problem, but the 12-TET and Werckmeister versions of those two tracks are not distinguishable at the URL level.
 
     Want me to widen both globs to accept c or d before you switch over? It's a two-line change in each script — startswith(("c", "d")) plus r"[cd](\d+)" in the Python, and -name '[cd][0-9]*' in the shell — but note the tweet script's numbering would then sort c9 and d0 as 9 and 0, so d0 would rank below every c album. If the d series is meant to supersede the c one, the cleaner fix is to sort on the prefix letter first.
+
+    To include this file in the github repo, I need to issue the git push command:
+        eval $(op signin)
+        GIT_PAT=$(op item get "GitHub PAT" --fields credential --reveal)
+        git remote set-url origin https://$GIT_PAT@github.com/prentrodgers/file-service.git
+        git push
+        git remote set-url origin https://github.com/prentrodgers/file-service
+        cat .git/config | grep url
+
+            url = https://github.com/prentrodgers/file-service
+
+    New trouble. I ssh'ed into node fs7 where the cronjob for the daily tweet is located and ran the command: 
+        mamba run -n csound python /home/prent/Repos/One-footed-bride-tuning/daily_chorale_tweet.py
+            Album directory: /home/prent/Dropbox/Uploads/c9-08-21-26
+            Posting tweet for ball9-t59d_lm19_r1.62_df5_t3_d01_22_t038.mp3 ...
+            Traceback (most recent call last):
+            File "/home/prent/Repos/One-footed-bride-tuning/...
+            ~~~~~~~~~~~~~~~~~~^
+            "POST", f"/2/tweets", json=json, user_auth=user_auth
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            ...
+            File "/home/prent/miniforge3/envs/csound/lib/python3.14/site-packages/tweepy/client.py", line 129, in _make_request
+                response = self.request(method, route, params=request_params, json=json, user_auth=user_auth)
+            File "/home/prent/miniforge3/envs/csound/lib/python3.14/site-packages/tweepy/client.py", line 119, in request
+                raise HTTPException(response)
+            tweepy.errors.HTTPException: 402 Payment Required
+            credits depleted
+    To fix this I had to add credits here: https://console.x.com/accounts/1527007905374867456
+    Last time was 5/22/26 for $25. This is separate from X premium. But it fixed the problem.
+
+_________________________________
+8/26/26 I want to clean up some issues that have been bothering me about the new web site/blog at https://microtonalnotes.net/
+    The structure is set up to not allow what-you-see-is-what-you-get editing. It has lots of json, with keys for certain values. 
+    I asked claude to replace all the references to Just Intonation with One Footed Bride Tuning. This is his response:
+    Done — /listen now reads:
+
+    One Footed Bride Tuning
+    Werckmeister III
+    12-tone equal temperament
+    Early experiments
+    The answer to "where do I edit it": albums.json:105. One string drives every section heading on that page. What made it hard to find is that the word just also appears as a key — line 104 and the "tuning": "just" on all twelve albums — which is an internal lookup id that never renders. I left those alone; renaming the key would mean editing every album entry for no visible gain.
+
+    Nine other spots outside that file said "just intonation" too, so I did those as well: the site tagline in consts.ts, about.astro (×2), the homepage caption and paragraph in index.astro (×2), watch.astro, the c0 and "early experiments" blurbs, and the link label in the notes post.
+
+    Where the name alone would leave a first-time visitor stranded, it's followed by a brief gloss — the /listen section description now opens "A just-intonation system of my own." and the tagline reads "retuned in One Footed Bride Tuning — a just-intonation system where every chord…".
+
+    Four uses stay as they were, because they describe the general technique rather than your tuning: the Werckmeister blurb ("a reference point between equal temperament and just intonation"), the 4:5:6 major-triad explanation in the notes post, and the two ratio-tolerance tooltips in chorale.ts. Renaming those would have made them false.
+
+    Catalog regenerated, build passes, committed as 8c10cec. Unpushed — git push deploys it.
+
+    Two things while you're in there:
+
+    npm run dev gives you http://localhost:4321 with live reload, which is the fastest way to try further wording changes — edit albums.json, but remember npm run catalog after, since the pages read the generated catalog.json.
+
+    And the notes post links "One Footed Bride Tuning" to /listen/c8-08-03-26/, which was the current album back when it was written. The rotation is on d0-08-21-26 now. Not something I'd change without asking, since you may have meant to link that specific album.
+
+    I want the example linked to this file: /home/prent/Dropbox/Uploads/d4-08-24-26-short-repeats/ball9-t53d_lm17_r1.25_df5_t1_d01_09_t038.mp3
+    I have uploaded this: ball9-t53a_lm17_r1.12_sf0.00_df0_sp07_t1_d03_01_t096.mp3 on 8/18/26
+    You need to publish this ~/Dropbox/Uploads/d4-08-24-26-short-repeats/
+        ./scripts/publish-album.sh ~/Dropbox/Uploads/d4-08-24-26-short-repeats
+            Album:  /home/prent/Dropbox/Uploads/d4-08-24-26-short-repeats
+            Files:  12
+            Bucket: microtonalnotes-audio
+
+            ball9-t53d_lm17_r1.25_df5_t1_d01_09_t038.mp3 (2.5M) ... ok
+            ...
+            ball9-t64d_lm17_r1.25_df5_t1_d01_04_t038.mp3 (2.4M) ... ok
+
+            Refreshing catalog...
+            d0-08-21-26                      12 tracks
+            ...
+            original-bach                    12 tracks
+
+            Wrote /home/prent/Repos/file-service/src/data/catalog.json: 12 albums, 144 tracks
+
+            Uploaded 12 file(s).
+
+            Next:
+            1. If this is a new album, add an entry to src/data/albums.json
+                (id, dir, title, date, tuning) and re-run scripts/build-catalog.mjs.
+            2. git add src/data/catalog.json src/data/albums.json && git commit
+            3. git push   (Cloudflare builds and deploys from main)
