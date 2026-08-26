@@ -165,14 +165,10 @@ _____________________
     Want me to widen both globs to accept c or d before you switch over? It's a two-line change in each script — startswith(("c", "d")) plus r"[cd](\d+)" in the Python, and -name '[cd][0-9]*' in the shell — but note the tweet script's numbering would then sort c9 and d0 as 9 and 0, so d0 would rank below every c album. If the d series is meant to supersede the c one, the cleaner fix is to sort on the prefix letter first.
 
     To include this file in the github repo, I need to issue the git push command:
-        eval $(op signin)
-        GIT_PAT=$(op item get "GitHub PAT" --fields credential --reveal)
-        git remote set-url origin https://$GIT_PAT@github.com/prentrodgers/file-service.git
-        git push
-        git remote set-url origin https://github.com/prentrodgers/file-service
-        cat .git/config | grep url
-
-            url = https://github.com/prentrodgers/file-service
+        Now the git push becomes this:
+            eval $(op signin)
+            git push
+            git status
 
     New trouble. I ssh'ed into node fs7 where the cronjob for the daily tweet is located and ran the command: 
         mamba run -n csound python /home/prent/Repos/One-footed-bride-tuning/daily_chorale_tweet.py
@@ -220,7 +216,12 @@ _________________________________
     And the notes post links "One Footed Bride Tuning" to /listen/c8-08-03-26/, which was the current album back when it was written. The rotation is on d0-08-21-26 now. Not something I'd change without asking, since you may have meant to link that specific album.
 
     I want the example linked to this file: /home/prent/Dropbox/Uploads/d4-08-24-26-short-repeats/ball9-t53d_lm17_r1.25_df5_t1_d01_09_t038.mp3
-    I have uploaded this: ball9-t53a_lm17_r1.12_sf0.00_df0_sp07_t1_d03_01_t096.mp3 on 8/18/26
+    After doing the next few things I now have ball9-t53d_lm17_r1.25_df5_t1_d01_09_t038.mp3 in the cloudflare R bucket. Goal achieved.
+    https://audio.microtonalnotes.net/ball9-t53d_lm17_r1.25_df5_t1_d01_17_t034.mp3 # that's not what I want!
+    https://audio.microtonalnotes.net/ball9-t53d_lm17_r1.12_df4_t1_d05_57_t122.mp3 # nor is that.
+    https://audio.microtonalnotes.net/ball9-t53c_lm17_r1.12_df2_t1_d07_34_t106.mp3
+    Last uploaded is this: ball9-t53a_lm17_r1.12_sf0.00_df0_sp07_t1_d03_01_t096.mp3 on 8/18/26
+    
     You need to publish this ~/Dropbox/Uploads/d4-08-24-26-short-repeats/
         ./scripts/publish-album.sh ~/Dropbox/Uploads/d4-08-24-26-short-repeats
             Album:  /home/prent/Dropbox/Uploads/d4-08-24-26-short-repeats
@@ -245,3 +246,10 @@ _________________________________
                 (id, dir, title, date, tuning) and re-run scripts/build-catalog.mjs.
             2. git add src/data/catalog.json src/data/albums.json && git commit
             3. git push   (Cloudflare builds and deploys from main)
+
+    For every upload of an album do this now:
+        ./scripts/publish-album.sh ~/Dropbox/Uploads/d5-08-24-26
+        git add src/data/albums.json src/data/catalog.json
+        git commit
+        eval $(op signin)
+        git push
