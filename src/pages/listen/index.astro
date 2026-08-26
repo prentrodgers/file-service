@@ -7,7 +7,7 @@ import { albums, tunings } from "../../lib/catalog";
 
 const title = `Listen | ${SITE_TITLE}`;
 const description =
-	"Every rendering of Bach's chorales BWV 253–264, in just intonation, Werckmeister III, and equal temperament.";
+	"Every rendering of Bach's chorales BWV 253–264, in One Footed Bride Tuning, Werckmeister III, and equal temperament.";
 
 // Group by tuning so the comparison sets sit together, with the tunings
 // declared in albums.json driving the order.
@@ -30,8 +30,7 @@ const byTuning = Object.keys(tunings)
 		<main>
 			<h1>Listen</h1>
 			<p class="lede">
-				The same twelve chorales — Bach's BWV 253 through 264 — rendered again and
-				again under different tunings and different settings. {albums.length} albums,
+				The same twelve chorales — Bach's BWV 253 through 264 — rendered under different tunings and different settings. {albums.length} albums,
 				{albums.reduce((n, a) => n + a.trackCount, 0)} recordings.
 			</p>
 

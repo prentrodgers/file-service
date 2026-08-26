@@ -73,7 +73,7 @@
 			"title": "June 2026",
 			"date": "2026-06-01",
 			"tuning": "just",
-			"blurb": "The first full pass in just intonation."
+			"blurb": "The first full pass in One Footed Bride Tuning."
 		},
 		{
 			"id": "c2-05-23-26-werckmeister-iii",
@@ -102,9 +102,9 @@
 	],
 	"tunings": {
 		"just": {
-			"label": "Just intonation",
-			"short": "JI",
-			"description": "Chords tuned to whole-number frequency ratios drawn from a tonality diamond, found by simulated annealing and then threaded together with Viterbi optimisation. These are successive passes at the same idea, newest first — each refines the tuning search and the orchestration over the one before it."
+			"label": "One Footed Bride Tuning",
+			"short": "OFB",
+			"description": "A just-intonation system of my own. Chords tuned to whole-number frequency ratios drawn from a tonality diamond, found by simulated annealing and then threaded together with Viterbi optimisation. These are successive passes at the same idea, newest first — each refines the tuning search and the orchestration over the one before it."
 		},
 		"werckmeister": {
 			"label": "Werckmeister III",
@@ -119,7 +119,7 @@
 		"early": {
 			"label": "Early experiments",
 			"short": "Early",
-			"description": "The first renders, made before the density control existed — they use the legacy max-shift setting and much slower tempos. Kept for reference; superseded by the just-intonation passes above."
+			"description": "The first renders, made before the density control existed — they use the legacy max-shift setting and much slower tempos. Kept for reference; superseded by the One Footed Bride Tuning passes above."
 		}
 	}
 }

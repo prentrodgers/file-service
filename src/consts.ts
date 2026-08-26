@@ -2,7 +2,7 @@
 
 export const SITE_TITLE = "Microtonal Notes";
 export const SITE_DESCRIPTION =
-	"Bach chorales retuned in just intonation — where every chord is tuned to whole-number ratios, found by simulated annealing and threaded together with Viterbi optimisation.";
+	"Bach chorales retuned in One Footed Bride Tuning — a just-intonation system where every chord is tuned to whole-number ratios, found by simulated annealing and threaded together with Viterbi optimisation.";
 
 /**
  * Where the MP3s live. This is a Cloudflare R2 bucket attached to its own
