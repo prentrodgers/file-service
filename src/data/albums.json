@@ -3,12 +3,13 @@
 	"_order": "Key order in `tunings` drives section order on /listen. Albums are sorted by date, newest first, within each section.",
 	"albums": [
 		{
-			"id": "d0-08-21-26",
-			"dir": "d0-08-21-26",
-			"title": "Minimal Movement",
-			"date": "2026-08-21",
+			"id": "d5-08-24-26",
+			"dir": "d5-08-24-26",
+			"title": "Chorale Preludes",
+			"date": "2026-08-25",
 			"tuning": "just",
-			"blurb": "Optimized for minimal movement of cent values between adjacent chords with common pitch classes. The first of the d series."
+			"blurb": "A full chorale prelude based on the latest tuning runs.",
+			"featured": true
 		},
 		{
 			"id": "d4-08-24-26",
@@ -16,8 +17,7 @@
 			"title": "Just the Chorale",
 			"date": "2026-08-24",
 			"tuning": "just",
-			"blurb": "A short-repeats pass after six episodes of heavy compute, 12 hours of annealing and Viterbi, to see if the chorale itself can be made to sound better. The answer is yes, but at the cost of a few cents of extra movement between adjacent chords.",
-			"featured": true
+			"blurb": "A short-repeats pass after six episodes of heavy compute, 12 hours of annealing and Viterbi, to see if the chorale itself can be made to sound better. The answer is yes, but at the cost of a few cents of extra movement between adjacent chords."
 		},
 		{
 			"id": "c9-08-21-26",
@@ -26,6 +26,14 @@
 			"date": "2026-08-21",
 			"tuning": "just",
 			"blurb": "A short-repeats pass on a new tuning search that closes the gap in cents between adjacent chords to zero or near zero, at the cost of slightly higher integer-ratio scores."
+		},
+		{
+			"id": "d0-08-21-26",
+			"dir": "d0-08-21-26",
+			"title": "Minimal Movement",
+			"date": "2026-08-21",
+			"tuning": "just",
+			"blurb": "Optimized for minimal movement of cent values between adjacent chords with common pitch classes. The first of the d series."
 		},
 		{
 			"id": "c8-08-03-26",
