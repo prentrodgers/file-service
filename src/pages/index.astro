@@ -47,7 +47,7 @@ const totalTracks = albums.reduce((n, a) => n + a.trackCount, 0);
 						} &middot; {featuredTrack.tempo} BPM</span
 					>
 				</p>
-				<audio controls preload="none" src={audioUrl(featuredTrack.file)}></audio>
+				<audio controls preload="none" src={audioUrl(featuredTrack.key)}></audio>
 				<p class="feature-links">
 					<a href={`/listen/${featuredAlbum.id}/`}>The rest of this album &rarr;</a>
 				</p>

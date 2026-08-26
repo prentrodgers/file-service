@@ -26,9 +26,9 @@ const { tracks } = Astro.props;
 				</div>
 				{/* preload="none" matters: 12 tracks x ~12 MB would be 150 MB of
 				    prefetch on a page that most visitors only sample from. */}
-				<audio controls preload="none" src={audioUrl(track.file)} />
+				<audio controls preload="none" src={audioUrl(track.key)} />
 				<p class="file">
-					<a href={audioUrl(track.file)} download>
+					<a href={audioUrl(track.key)} download>
 						Download MP3
 					</a>
 					<code>{track.file}</code>

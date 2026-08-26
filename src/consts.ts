@@ -15,9 +15,16 @@ export const SITE_DESCRIPTION =
  */
 export const AUDIO_BASE = "https://audio.microtonalnotes.net";
 
-/** Full URL for a chorale MP3, given its filename / R2 object key. */
-export function audioUrl(file: string): string {
-	return `${AUDIO_BASE}/${encodeURIComponent(file)}`;
+/**
+ * Full URL for a chorale MP3, given its R2 object key.
+ *
+ * Keys contain a "/" (album prefix), so each segment is encoded separately —
+ * encodeURIComponent on the whole key would escape the separator as %2F and
+ * point at an object that does not exist.
+ */
+export function audioUrl(key: string): string {
+	const path = key.split("/").map(encodeURIComponent).join("/");
+	return `${AUDIO_BASE}/${path}`;
 }
 
 export const SOCIAL = {

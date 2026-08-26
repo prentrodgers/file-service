@@ -79,15 +79,28 @@ echo "Bucket: $BUCKET"
 [[ $DRY_RUN -eq 1 ]] && echo "(dry run — nothing will be uploaded)"
 echo
 
+# Objects are keyed "<album-dir>/<filename>", NOT by filename alone.
+#
+# The filenames encode render parameters and nothing about which album they
+# belong to, so two albums that render the same chorale with the same settings
+# produce byte-different files with identical names. Flat at the bucket root,
+# the second upload silently replaced the first and both albums' links then
+# served the same audio. Four such pairs accumulated before this was noticed.
+#
+# Objects uploaded flat before this change are deliberately left in place:
+# already-posted tweets link to them at the root and would otherwise 404.
+ALBUM="$(basename "$ALBUM_DIR")"
+
 uploaded=0
 for f in "${FILES[@]}"; do
-	key="$(basename "$f")"
+	name="$(basename "$f")"
+	key="$ALBUM/$name"
 	size="$(du -h "$f" | cut -f1)"
 	if [[ $DRY_RUN -eq 1 ]]; then
 		echo "  would upload $key ($size)"
 		continue
 	fi
-	printf '  %s (%s) ... ' "$key" "$size"
+	printf '  %s (%s) ... ' "$name" "$size"
 	# --remote targets the real bucket; without it wrangler writes to the local
 	# simulator and the files never leave this machine.
 	"$WRANGLER" r2 object put "$BUCKET/$key" \

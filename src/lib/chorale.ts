@@ -47,8 +47,18 @@ const FILENAME_RE = new RegExp(
 export type DetailKind = "density" | "maxDelta";
 
 export interface ChoraleTrack {
-	/** Original filename, also the R2 object key. */
+	/** Original filename, as rendered. Shown to the reader. */
 	file: string;
+	/**
+	 * R2 object key, "<album-dir>/<file>".
+	 *
+	 * The album has to be in the key. Filenames encode render parameters and
+	 * nothing about which album they belong to, so two albums that render the
+	 * same chorale with the same parameters produce byte-different files with
+	 * identical names — at the bucket root the second upload silently replaces
+	 * the first. Four such pairs exist across the published albums.
+	 */
+	key: string;
 	/** e.g. "253" */
 	bwv: string;
 	/** e.g. "Ach bleib bei uns, Herr Jesu Christ" */
@@ -104,6 +114,8 @@ export function parseChoraleFilename(file: string): ChoraleTrack | null {
 
 	return {
 		file,
+		// A bare filename is its own key; build-catalog.mjs sets the real one.
+		key: file,
 		bwv,
 		title: BWV_TITLES[bwv] ?? "Bach Chorale",
 		variant,

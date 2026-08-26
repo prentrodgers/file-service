@@ -85,7 +85,10 @@ for (const album of meta.albums) {
 	const tracks = [];
 	for (const f of entries.filter((f) => f.endsWith(".mp3")).sort()) {
 		const t = parse(f);
-		if (t) tracks.push(t);
+		// The R2 key carries the album directory. Without it two albums holding
+		// the same filename collide at the bucket root and the later upload
+		// silently serves both albums' links.
+		if (t) tracks.push({ ...t, key: `${album.dir}/${f}` });
 		else console.warn(`  ? unparsed filename in ${album.dir}: ${f}`);
 	}
 	tracks.sort((a, b) => a.bwv.localeCompare(b.bwv));
