@@ -253,3 +253,10 @@ _________________________________
         git commit
         eval $(op signin)
         git push
+        git status # then resolve whatevery pops up. 
+
+    To see the results:
+        http://localhost:4321/
+
+    I asked claude to create a page with the Sagittal scores realized by Lilypond. Looks good. 
+        The tuning is from 7/1/26, so I'd like to redo this. While I'm at it, the link should go to a pdf of the entire chorale. Later.
