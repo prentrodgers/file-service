@@ -1,0 +1,40 @@
+8/18/26 Claude created a web site to host my music files.
+    I found out that X turns all http:// in a post to https:// automatically. All my music now is inaccessible to the posts I've made for the past few months. I asked Claude to build me a free site on Cloudflare. He did it in a couple of hours. I had other stuff going on at the time. 
+
+    Cloudflare buit a template site based on the Bear Blog minimalist style. and posted it to github as https://github.com/prentrodgers/file-service. Claude then took that and asked a ton of questions, and built a site with a Home page, a Listen page, a Watch (for video) page, a Notes page,  and an About page that points to the Substack site. 
+    Then he created an R2 bucket on Cloudflare, copied all my recent work there, and told me when to push it. Once it was pushed the github actions took over and uploaded it to the site, now live here: https://microtonalnotes.net/
+
+    To push it:
+        eval $(op signin)
+        git push # may open Edge window to accept github auth
+    git pull
+    
+    There are a few things I would change, but there is time later to refine the wording and make it personal. 
+    1. Change the example on the home page to a short_repeats version and a long version 
+    2. Include a LilyPond version of a short_repeats chorale 
+    3. Build out the Notes page more
+    4. Refine the description of the Werckmeister II and 12 TET entries on Listen to explain the Triangle wave realization. 
+
+    When you create an album, use this bash script to move them to the R2 storage bucket:
+        ./scripts/publish-album.sh ~/Dropbox/Uploads/c8-08-03-26
+
+_____________________
+8/30/26 Publish another album - this one has the all_primes       
+        ls -lth ~/Dropbox/Uploads | head
+            total 75M
+            drwxr-xr-x. 1 prent prent 1.1K Aug 29 16:30 d6-08-29-26
+            ...
+        ./scripts/publish-album.sh ~/Dropbox/Uploads/d6-08-29-26
+            1. If this is a new album, add an entry to src/data/albums.json (id, dir, title, date, tuning) and re-run 
+            ./scripts/build-catalog.mjs
+
+            bash: ./scripts/build-catalog.mjs: Permission denied
+            prent@fs2:~/file-service$ sh ./scripts/build-catalog.mjs
+            ./scripts/build-catalog.mjs: line 2: /afs: Is a directory
+            ./scripts/build-catalog.mjs: line 3: astro.config.mjs: command not found
+            ./scripts/build-catalog.mjs: line 4: astro.config.mjs: command not found
+            ./scripts/build-catalog.mjs: line 5: unexpected EOF while looking for matching `''
+     it needs the execute bit (chmod +x), which the file was missing, hence your original Permission denied. Works now.
+
+            2. git add src/data/catalog.json src/data/albums.json && git commit
+            3. git push   (Cloudflare builds and deploys from main)
