@@ -3,13 +3,21 @@
 	"_order": "Key order in `tunings` drives section order on /listen. Albums are sorted by date, newest first, within each section.",
 	"albums": [
 		{
+			"id": "d6-08-29-26",
+			"dir": "d6-08-29-26",
+			"title": "End of August 2026",
+			"date": "2026-08-30",
+			"tuning": "just",
+			"blurb": "Modified durations to include simpler rhythm patterns.",
+			"featured": true
+		},
+		{
 			"id": "d5-08-24-26",
 			"dir": "d5-08-24-26",
 			"title": "Chorale Preludes",
 			"date": "2026-08-25",
 			"tuning": "just",
-			"blurb": "A full chorale prelude based on the latest tuning runs.",
-			"featured": true
+			"blurb": "A full chorale prelude based on the latest tuning runs."
 		},
 		{
 			"id": "d4-08-24-26",

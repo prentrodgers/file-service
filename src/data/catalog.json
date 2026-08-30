@@ -24,12 +24,226 @@
 	},
 	"albums": [
 		{
+			"id": "d6-08-29-26",
+			"title": "End of August 2026",
+			"date": "2026-08-30",
+			"tuning": "just",
+			"blurb": "Modified durations to include simpler rhythm patterns.",
+			"featured": true,
+			"trackCount": 12,
+			"tracks": [
+				{
+					"file": "ball9-t53d_lm17_r1.25_df2_t1_d03_27_t100.mp3",
+					"bwv": "253",
+					"title": "Ach bleib bei uns, Herr Jesu Christ",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 1,
+					"duration": "3:27",
+					"durationSeconds": 207,
+					"tempo": 100,
+					"key": "d6-08-29-26/ball9-t53d_lm17_r1.25_df2_t1_d03_27_t100.mp3"
+				},
+				{
+					"file": "ball9-t54d_lm17_r1.38_df2_t1_d07_41_t114.mp3",
+					"bwv": "254",
+					"title": "Ach Gott, erhör mein Seufzen und Wehklagen",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 1,
+					"duration": "7:41",
+					"durationSeconds": 461,
+					"tempo": 114,
+					"key": "d6-08-29-26/ball9-t54d_lm17_r1.38_df2_t1_d07_41_t114.mp3"
+				},
+				{
+					"file": "ball9-t55d_lm17_r1.25_df3_t1_d04_40_t110.mp3",
+					"bwv": "255",
+					"title": "Ach Gott und Herr, wie groß und schwer",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 1,
+					"duration": "4:40",
+					"durationSeconds": 280,
+					"tempo": 110,
+					"key": "d6-08-29-26/ball9-t55d_lm17_r1.25_df3_t1_d04_40_t110.mp3"
+				},
+				{
+					"file": "ball9-t56d_lm17_r1.25_df5_t1_d08_03_t114.mp3",
+					"bwv": "256",
+					"title": "Ach lieben Christen, seid getrost",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "8:03",
+					"durationSeconds": 483,
+					"tempo": 114,
+					"key": "d6-08-29-26/ball9-t56d_lm17_r1.25_df5_t1_d08_03_t114.mp3"
+				},
+				{
+					"file": "ball9-t57d_lm17_r1.25_df4_t1_d06_03_t088.mp3",
+					"bwv": "257",
+					"title": "Wär Gott nicht mit uns diese Zeit",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 1,
+					"duration": "6:03",
+					"durationSeconds": 363,
+					"tempo": 88,
+					"key": "d6-08-29-26/ball9-t57d_lm17_r1.25_df4_t1_d06_03_t088.mp3"
+				},
+				{
+					"file": "ball9-t58d_lm17_r1.25_df0_t1_d04_18_t060.mp3",
+					"bwv": "258",
+					"title": "Wo Gott der Herr nicht bei uns hält",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 0
+					},
+					"tolerance": 1,
+					"duration": "4:18",
+					"durationSeconds": 258,
+					"tempo": 60,
+					"key": "d6-08-29-26/ball9-t58d_lm17_r1.25_df0_t1_d04_18_t060.mp3"
+				},
+				{
+					"file": "ball9-t59d_lm17_r1.25_df3_t1_d05_01_t088.mp3",
+					"bwv": "259",
+					"title": "Ach, was soll ich Sünder machen",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 1,
+					"duration": "5:01",
+					"durationSeconds": 301,
+					"tempo": 88,
+					"key": "d6-08-29-26/ball9-t59d_lm17_r1.25_df3_t1_d05_01_t088.mp3"
+				},
+				{
+					"file": "ball9-t60d_lm19_r1.50_df4_t1_d07_34_t106.mp3",
+					"bwv": "260",
+					"title": "Allein Gott in der Höh sei Ehr",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 1,
+					"duration": "7:34",
+					"durationSeconds": 454,
+					"tempo": 106,
+					"key": "d6-08-29-26/ball9-t60d_lm19_r1.50_df4_t1_d07_34_t106.mp3"
+				},
+				{
+					"file": "ball9-t61d_lm19_r1.25_df5_t1_d05_09_t060.mp3",
+					"bwv": "261",
+					"title": "Allein zu dir, Herr Jesu Christ",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "5:09",
+					"durationSeconds": 309,
+					"tempo": 60,
+					"key": "d6-08-29-26/ball9-t61d_lm19_r1.25_df5_t1_d05_09_t060.mp3"
+				},
+				{
+					"file": "ball9-t62d_lm19_r1.50_df1_t3_d04_55_t096.mp3",
+					"bwv": "262",
+					"title": "Alle Menschen müssen sterben",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 1
+					},
+					"tolerance": 3,
+					"duration": "4:55",
+					"durationSeconds": 295,
+					"tempo": 96,
+					"key": "d6-08-29-26/ball9-t62d_lm19_r1.50_df1_t3_d04_55_t096.mp3"
+				},
+				{
+					"file": "ball9-t63d_lm17_r1.25_df0_t1_d04_26_t096.mp3",
+					"bwv": "263",
+					"title": "Alles ist an Gottes Segen",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 0
+					},
+					"tolerance": 1,
+					"duration": "4:26",
+					"durationSeconds": 266,
+					"tempo": 96,
+					"key": "d6-08-29-26/ball9-t63d_lm17_r1.25_df0_t1_d04_26_t096.mp3"
+				},
+				{
+					"file": "ball9-t64d_lm17_r1.25_df1_t1_d05_19_t092.mp3",
+					"bwv": "264",
+					"title": "Als der gütige Gott",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 1
+					},
+					"tolerance": 1,
+					"duration": "5:19",
+					"durationSeconds": 319,
+					"tempo": 92,
+					"key": "d6-08-29-26/ball9-t64d_lm17_r1.25_df1_t1_d05_19_t092.mp3"
+				}
+			]
+		},
+		{
 			"id": "d5-08-24-26",
 			"title": "Chorale Preludes",
 			"date": "2026-08-25",
 			"tuning": "just",
 			"blurb": "A full chorale prelude based on the latest tuning runs.",
-			"featured": true,
 			"trackCount": 12,
 			"tracks": [
 				{
