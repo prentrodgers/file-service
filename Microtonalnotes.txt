@@ -19,7 +19,7 @@
         ./scripts/publish-album.sh ~/Dropbox/Uploads/c8-08-03-26
 
 _____________________
-8/30/26 Publish another album - this one has the all_primes       
+8/30/26 Publish another album - this one has the new all_primes       
         ls -lth ~/Dropbox/Uploads | head
             total 75M
             drwxr-xr-x. 1 prent prent 1.1K Aug 29 16:30 d6-08-29-26
@@ -37,4 +37,4 @@ _____________________
      it needs the execute bit (chmod +x), which the file was missing, hence your original Permission denied. Works now.
 
             2. git add src/data/catalog.json src/data/albums.json && git commit
-            3. git push   (Cloudflare builds and deploys from main)
+            3. git push origin main (Cloudflare builds and deploys from main)
