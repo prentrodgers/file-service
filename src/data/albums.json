@@ -3,13 +3,29 @@
 	"_order": "Key order in `tunings` drives section order on /listen. Albums are sorted by date, newest first, within each section.",
 	"albums": [
 		{
+			"id": "d9-09-13-26",
+			"dir": "d9-09-13-26",
+			"title": "Mid September 2026 427-438",
+			"date": "2026-09-13",
+			"tuning": "just",
+			"blurb": "New more challenging chorales",
+			"featured": true
+		},
+		{
+			"id": "d7-09-01-26",
+			"dir": "d7-09-01-26",
+			"title": "Early September 2026",
+			"date": "2026-09-01",
+			"tuning": "just",
+			"blurb": "Fixed all_prime array"
+		},
+		{
 			"id": "d6-08-29-26",
 			"dir": "d6-08-29-26",
 			"title": "End of August 2026",
 			"date": "2026-08-30",
 			"tuning": "just",
-			"blurb": "Modified durations to include simpler rhythm patterns.",
-			"featured": true
+			"blurb": "Modified durations to include simpler rhythm patterns."
 		},
 		{
 			"id": "d5-08-24-26",

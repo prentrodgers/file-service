@@ -24,12 +24,440 @@
 	},
 	"albums": [
 		{
+			"id": "d9-09-13-26",
+			"title": "Mid September 2026 427-438",
+			"date": "2026-09-13",
+			"tuning": "just",
+			"blurb": "New more challenging chorales",
+			"featured": true,
+			"trackCount": 12,
+			"tracks": [
+				{
+					"file": "ball9-t27d_lm17_r1.25_df3_t1_d08_01_t106.mp3",
+					"bwv": "227",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 1,
+					"duration": "8:01",
+					"durationSeconds": 481,
+					"tempo": 106,
+					"key": "d9-09-13-26/ball9-t27d_lm17_r1.25_df3_t1_d08_01_t106.mp3"
+				},
+				{
+					"file": "ball9-t28d_lm19_r1.25_df5_t2_d10_14_t118.mp3",
+					"bwv": "228",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 2,
+					"duration": "10:14",
+					"durationSeconds": 614,
+					"tempo": 118,
+					"key": "d9-09-13-26/ball9-t28d_lm19_r1.25_df5_t2_d10_14_t118.mp3"
+				},
+				{
+					"file": "ball9-t29d_lm19_r1.38_df1_t3_d04_58_t100.mp3",
+					"bwv": "229",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 1
+					},
+					"tolerance": 3,
+					"duration": "4:58",
+					"durationSeconds": 298,
+					"tempo": 100,
+					"key": "d9-09-13-26/ball9-t29d_lm19_r1.38_df1_t3_d04_58_t100.mp3"
+				},
+				{
+					"file": "ball9-t30d_lm19_r1.25_df0_t3_d05_48_t060.mp3",
+					"bwv": "230",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 0
+					},
+					"tolerance": 3,
+					"duration": "5:48",
+					"durationSeconds": 348,
+					"tempo": 60,
+					"key": "d9-09-13-26/ball9-t30d_lm19_r1.25_df0_t3_d05_48_t060.mp3"
+				},
+				{
+					"file": "ball9-t31d_lm17_r1.38_df4_t1_d08_18_t114.mp3",
+					"bwv": "231",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 1,
+					"duration": "8:18",
+					"durationSeconds": 498,
+					"tempo": 114,
+					"key": "d9-09-13-26/ball9-t31d_lm17_r1.38_df4_t1_d08_18_t114.mp3"
+				},
+				{
+					"file": "ball9-t32d_lm19_r1.25_df3_t3_d03_30_t118.mp3",
+					"bwv": "232",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 3,
+					"duration": "3:30",
+					"durationSeconds": 210,
+					"tempo": 118,
+					"key": "d9-09-13-26/ball9-t32d_lm19_r1.25_df3_t3_d03_30_t118.mp3"
+				},
+				{
+					"file": "ball9-t33d_lm19_r1.25_df2_t3_d05_34_t096.mp3",
+					"bwv": "233",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 3,
+					"duration": "5:34",
+					"durationSeconds": 334,
+					"tempo": 96,
+					"key": "d9-09-13-26/ball9-t33d_lm19_r1.25_df2_t3_d05_34_t096.mp3"
+				},
+				{
+					"file": "ball9-t34d_lm19_r1.25_df5_t1_d09_21_t106.mp3",
+					"bwv": "234",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "9:21",
+					"durationSeconds": 561,
+					"tempo": 106,
+					"key": "d9-09-13-26/ball9-t34d_lm19_r1.25_df5_t1_d09_21_t106.mp3"
+				},
+				{
+					"file": "ball9-t35d_lm19_r1.38_df0_t3_d04_23_t056.mp3",
+					"bwv": "235",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 0
+					},
+					"tolerance": 3,
+					"duration": "4:23",
+					"durationSeconds": 263,
+					"tempo": 56,
+					"key": "d9-09-13-26/ball9-t35d_lm19_r1.38_df0_t3_d04_23_t056.mp3"
+				},
+				{
+					"file": "ball9-t36d_lm19_r1.50_df2_t1_d06_13_t100.mp3",
+					"bwv": "236",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 1,
+					"duration": "6:13",
+					"durationSeconds": 373,
+					"tempo": 100,
+					"key": "d9-09-13-26/ball9-t36d_lm19_r1.50_df2_t1_d06_13_t100.mp3"
+				},
+				{
+					"file": "ball9-t37d_lm19_r1.38_df1_t2_d12_11_t084.mp3",
+					"bwv": "237",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 1
+					},
+					"tolerance": 2,
+					"duration": "12:11",
+					"durationSeconds": 731,
+					"tempo": 84,
+					"key": "d9-09-13-26/ball9-t37d_lm19_r1.38_df1_t2_d12_11_t084.mp3"
+				},
+				{
+					"file": "ball9-t38d_lm19_r1.62_df4_t2_d03_40_t114.mp3",
+					"bwv": "238",
+					"title": "Bach Chorale",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.62,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 2,
+					"duration": "3:40",
+					"durationSeconds": 220,
+					"tempo": 114,
+					"key": "d9-09-13-26/ball9-t38d_lm19_r1.62_df4_t2_d03_40_t114.mp3"
+				}
+			]
+		},
+		{
+			"id": "d7-09-01-26",
+			"title": "Early September 2026",
+			"date": "2026-09-01",
+			"tuning": "just",
+			"blurb": "Fixed all_prime array",
+			"trackCount": 12,
+			"tracks": [
+				{
+					"file": "ball9-t53d_lm17_r1.25_df1_t1_d05_14_t080.mp3",
+					"bwv": "253",
+					"title": "Ach bleib bei uns, Herr Jesu Christ",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 1
+					},
+					"tolerance": 1,
+					"duration": "5:14",
+					"durationSeconds": 314,
+					"tempo": 80,
+					"key": "d7-09-01-26/ball9-t53d_lm17_r1.25_df1_t1_d05_14_t080.mp3"
+				},
+				{
+					"file": "ball9-t54d_lm17_r1.38_df2_t1_d05_47_t084.mp3",
+					"bwv": "254",
+					"title": "Ach Gott, erhör mein Seufzen und Wehklagen",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 1,
+					"duration": "5:47",
+					"durationSeconds": 347,
+					"tempo": 84,
+					"key": "d7-09-01-26/ball9-t54d_lm17_r1.38_df2_t1_d05_47_t084.mp3"
+				},
+				{
+					"file": "ball9-t55d_lm17_r1.25_df0_t1_d03_17_t088.mp3",
+					"bwv": "255",
+					"title": "Ach Gott und Herr, wie groß und schwer",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 0
+					},
+					"tolerance": 1,
+					"duration": "3:17",
+					"durationSeconds": 197,
+					"tempo": 88,
+					"key": "d7-09-01-26/ball9-t55d_lm17_r1.25_df0_t1_d03_17_t088.mp3"
+				},
+				{
+					"file": "ball9-t56d_lm17_r1.25_df5_t1_d04_46_t104.mp3",
+					"bwv": "256",
+					"title": "Ach lieben Christen, seid getrost",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "4:46",
+					"durationSeconds": 286,
+					"tempo": 104,
+					"key": "d7-09-01-26/ball9-t56d_lm17_r1.25_df5_t1_d04_46_t104.mp3"
+				},
+				{
+					"file": "ball9-t57d_lm17_r1.25_df5_t1_d06_42_t114.mp3",
+					"bwv": "257",
+					"title": "Wär Gott nicht mit uns diese Zeit",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "6:42",
+					"durationSeconds": 402,
+					"tempo": 114,
+					"key": "d7-09-01-26/ball9-t57d_lm17_r1.25_df5_t1_d06_42_t114.mp3"
+				},
+				{
+					"file": "ball9-t58d_lm17_r1.25_df4_t1_d04_22_t080.mp3",
+					"bwv": "258",
+					"title": "Wo Gott der Herr nicht bei uns hält",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 1,
+					"duration": "4:22",
+					"durationSeconds": 262,
+					"tempo": 80,
+					"key": "d7-09-01-26/ball9-t58d_lm17_r1.25_df4_t1_d04_22_t080.mp3"
+				},
+				{
+					"file": "ball9-t59d_lm17_r1.25_df0_t1_d04_33_t072.mp3",
+					"bwv": "259",
+					"title": "Ach, was soll ich Sünder machen",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 0
+					},
+					"tolerance": 1,
+					"duration": "4:33",
+					"durationSeconds": 273,
+					"tempo": 72,
+					"key": "d7-09-01-26/ball9-t59d_lm17_r1.25_df0_t1_d04_33_t072.mp3"
+				},
+				{
+					"file": "ball9-t60d_lm19_r1.50_df3_t1_d06_22_t084.mp3",
+					"bwv": "260",
+					"title": "Allein Gott in der Höh sei Ehr",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 1,
+					"duration": "6:22",
+					"durationSeconds": 382,
+					"tempo": 84,
+					"key": "d7-09-01-26/ball9-t60d_lm19_r1.50_df3_t1_d06_22_t084.mp3"
+				},
+				{
+					"file": "ball9-t61d_lm19_r1.25_df1_t1_d05_20_t092.mp3",
+					"bwv": "261",
+					"title": "Allein zu dir, Herr Jesu Christ",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 1
+					},
+					"tolerance": 1,
+					"duration": "5:20",
+					"durationSeconds": 320,
+					"tempo": 92,
+					"key": "d7-09-01-26/ball9-t61d_lm19_r1.25_df1_t1_d05_20_t092.mp3"
+				},
+				{
+					"file": "ball9-t62d_lm19_r1.50_df3_t3_d06_37_t092.mp3",
+					"bwv": "262",
+					"title": "Alle Menschen müssen sterben",
+					"variant": "d",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 3,
+					"duration": "6:37",
+					"durationSeconds": 397,
+					"tempo": 92,
+					"key": "d7-09-01-26/ball9-t62d_lm19_r1.50_df3_t3_d06_37_t092.mp3"
+				},
+				{
+					"file": "ball9-t63d_lm17_r1.25_df2_t1_d07_46_t122.mp3",
+					"bwv": "263",
+					"title": "Alles ist an Gottes Segen",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 1,
+					"duration": "7:46",
+					"durationSeconds": 466,
+					"tempo": 122,
+					"key": "d7-09-01-26/ball9-t63d_lm17_r1.25_df2_t1_d07_46_t122.mp3"
+				},
+				{
+					"file": "ball9-t64d_lm17_r1.25_df4_t1_d04_42_t114.mp3",
+					"bwv": "264",
+					"title": "Als der gütige Gott",
+					"variant": "d",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 1,
+					"duration": "4:42",
+					"durationSeconds": 282,
+					"tempo": 114,
+					"key": "d7-09-01-26/ball9-t64d_lm17_r1.25_df4_t1_d04_42_t114.mp3"
+				}
+			]
+		},
+		{
 			"id": "d6-08-29-26",
 			"title": "End of August 2026",
 			"date": "2026-08-30",
 			"tuning": "just",
 			"blurb": "Modified durations to include simpler rhythm patterns.",
-			"featured": true,
 			"trackCount": 12,
 			"tracks": [
 				{
