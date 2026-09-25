@@ -302,9 +302,19 @@ _____________________
         4. git push origin main # (Cloudflare builds and deploys from main)
 
 ————————————————————————————
-9/13/26 Publish another album
-        1.  ./scripts/publish-album.sh ~/Dropbox/Uploads/d9-09-13-26
-        2.  ./scripts/build-catalog.mjs
-        3.  git add src/data/catalog.json src/data/albums.json && git commit
-        4.  opsignin
-        5.  git push origin main
+9/13/26 Publish another album. Run this on fs2 where Wrangler is installed.
+        1.  ./scripts/publish-album.sh ~/Dropbox/Uploads/9-09-13-26
+        2.  Edit ~/Repos/file-service/src/data/albums.json
+        3.  ./scripts/build-catalog.mjs
+        4.  git add src/data/catalog.json src/data/albums.json && git commit
+        5.  opsignin
+        6.  git push origin main
+
+_________________________________
+9/20/26 Switch to ignoring Dropbox and just posting directly to the R2 bucket.
+    Add the actual R2 secrets to the ~/.daily_chorale_tweet.env file.
+        nano ~/.daily_chorale_tweet.env
+            R2_ENDPOINT=https://f7274...
+            R2_ACCESS_KEY_ID=56c...
+            R2_SECRET_ACCESS_KEY=a51d...
+    It works now to read the R2 bucket. Neat.
