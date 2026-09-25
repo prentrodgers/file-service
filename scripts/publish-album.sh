@@ -2,7 +2,7 @@
 # publish-album.sh — put an album's MP3s on R2 and refresh the site catalog.
 #
 # Usage:
-#   ./scripts/publish-album.sh                      # newest c* album in Uploads
+#   ./scripts/publish-album.sh                      # newest album dir in Uploads
 #   ./scripts/publish-album.sh ~/Dropbox/Uploads/c8-08-03-26
 #   ./scripts/publish-album.sh --dry-run <dir>
 #
@@ -23,6 +23,7 @@ UPLOADS="${UPLOADS:-$HOME/Dropbox/Uploads}"
 
 DRY_RUN=0
 ALBUM_DIR=""
+AUTO_SELECTED=0
 for arg in "$@"; do
 	case "$arg" in
 		--dry-run) DRY_RUN=1 ;;
@@ -31,27 +32,31 @@ for arg in "$@"; do
 	esac
 done
 
-# Default to the highest album directory holding chorale MP3s, across both the
-# c and d series, in either naming scheme.
+# Default to the most recently modified directory in Uploads that actually holds
+# chorale MP3s.
 #
-# Version-sorted by NAME, which orders these correctly on both axes: the prefix
-# letter first (c9 < d0, so the d series supersedes the c one) and then the
-# number numerically (c9 < c10, where a plain lexical sort would disagree).
-# This matches find_latest_album_dir() in daily_chorale_tweet.py, which sorts on
-# (prefix letter, number) for the same reason. Neither uses mtime: Dropbox
-# re-syncs directories in arbitrary order, so mtimes differ per node.
+# No name pattern. The series has run c0-c9, d0-d9, dA, Db, Dc, and a filter that
+# keeps pace with that is a filter that will eventually exclude the album you
+# just rendered — `[cd][0-9]*` already did exactly that to Dc-09-25-26, and the
+# failure was silent: it picked an older album instead of saying so.
+#
+# mtime, not name, since there is no longer a name to sort on meaningfully. The
+# earlier version sorted by name and avoided mtime because Dropbox re-syncs
+# directories in arbitrary order, so mtimes differ per node — a real cost: a
+# re-synced OLD album can look newest here. Passing the directory explicitly is
+# the answer when it matters, and is what the guard below protects.
+#
+# The "holds chorale MP3s" test is what keeps this off Dropbox's other folders.
+# (daily_chorale_tweet.py does NOT share this logic — it picks its album from
+# the R2 bucket listing, so the two have always been independent.)
 if [[ -z "$ALBUM_DIR" ]]; then
-	ALBUM_DIR="$(find "$UPLOADS" -mindepth 1 -maxdepth 1 -type d -name '[cd][0-9]*' \
+	ALBUM_DIR="$(find "$UPLOADS" -mindepth 1 -maxdepth 1 -type d \
 		-exec sh -c 'ls "$1"/b[0-9][0-9][0-9]*.mp3 >/dev/null 2>&1 \
-		             || ls "$1"/ball9-t*.mp3 >/dev/null 2>&1' _ {} \; -print \
-		| sort -V | tail -1)"
+		             || ls "$1"/ball9-t*.mp3 >/dev/null 2>&1' _ {} \; \
+		-printf '%T@\t%p\n' \
+		| sort -n | tail -1 | cut -f2-)"
+	AUTO_SELECTED=1
 fi
-# NOTE: -name '[cd][0-9]*' requires a lowercase c or d followed by a DIGIT, so a
-# directory like "Dc-09-25-26" is invisible here and the default would silently
-# pick an older album instead. Pass such a directory explicitly, or rename it
-# into the series (e.g. "e0-09-25-26"). Case also matters to `sort -V`: an
-# uppercase prefix sorts BEFORE every lowercase one, so "Dc-..." would lose to
-# "d9-..." even if it were matched.
 
 # Preflight. Both of these otherwise fail *silently*: the wrangler calls below
 # send stdout to /dev/null, so npx's "Ok to proceed?" install prompt and
@@ -81,6 +86,19 @@ mapfile -t FILES < <(find "$ALBUM_DIR" -maxdepth 1 \
 if [[ ${#FILES[@]} -eq 0 ]]; then
 	echo "No chorale MP3s in $ALBUM_DIR" >&2
 	echo "(expected b<NNN><letter>_*.mp3, or ball9-t*.mp3 for albums before 24 Sep 2026)" >&2
+	exit 1
+fi
+
+# Sanity guard, and only on the auto-selected path — an explicit directory is
+# taken at its word. ~/Dropbox/Uploads also holds bulk collections: Archive/ and
+# Musical Archive/ carry ~190 chorale MP3s each. Either would satisfy the "has
+# chorale MP3s" test above, and if Dropbox ever re-synced one it would become the
+# newest directory and this script would upload the whole lot to R2 as an album.
+# Real albums are 12-13 tracks.
+if [[ $AUTO_SELECTED -eq 1 && ${#FILES[@]} -gt 30 ]]; then
+	echo "Refusing to auto-publish $ALBUM_DIR:" >&2
+	echo "  ${#FILES[@]} MP3s looks like a bulk collection, not an album." >&2
+	echo "  Pass the directory explicitly if that is really what you want." >&2
 	exit 1
 fi
 
