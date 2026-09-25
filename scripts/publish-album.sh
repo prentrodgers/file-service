@@ -31,8 +31,8 @@ for arg in "$@"; do
 	esac
 done
 
-# Default to the highest album directory holding ball9 MP3s, across both the
-# c and d series.
+# Default to the highest album directory holding chorale MP3s, across both the
+# c and d series, in either naming scheme.
 #
 # Version-sorted by NAME, which orders these correctly on both axes: the prefix
 # letter first (c9 < d0, so the d series supersedes the c one) and then the
@@ -42,9 +42,16 @@ done
 # re-syncs directories in arbitrary order, so mtimes differ per node.
 if [[ -z "$ALBUM_DIR" ]]; then
 	ALBUM_DIR="$(find "$UPLOADS" -mindepth 1 -maxdepth 1 -type d -name '[cd][0-9]*' \
-		-exec sh -c 'ls "$1"/ball9-*.mp3 >/dev/null 2>&1' _ {} \; -print \
+		-exec sh -c 'ls "$1"/b[0-9][0-9][0-9]*.mp3 >/dev/null 2>&1 \
+		             || ls "$1"/ball9-t*.mp3 >/dev/null 2>&1' _ {} \; -print \
 		| sort -V | tail -1)"
 fi
+# NOTE: -name '[cd][0-9]*' requires a lowercase c or d followed by a DIGIT, so a
+# directory like "Dc-09-25-26" is invisible here and the default would silently
+# pick an older album instead. Pass such a directory explicitly, or rename it
+# into the series (e.g. "e0-09-25-26"). Case also matters to `sort -V`: an
+# uppercase prefix sorts BEFORE every lowercase one, so "Dc-..." would lose to
+# "d9-..." even if it were matched.
 
 # Preflight. Both of these otherwise fail *silently*: the wrangler calls below
 # send stdout to /dev/null, so npx's "Ok to proceed?" install prompt and
@@ -67,9 +74,13 @@ if [[ -z "$ALBUM_DIR" || ! -d "$ALBUM_DIR" ]]; then
 	exit 1
 fi
 
-mapfile -t FILES < <(find "$ALBUM_DIR" -maxdepth 1 -name 'ball9-*.mp3' | sort)
+# Both naming schemes. Renders since 24 Sep 2026 are b<NNN><letter>_... ; every
+# album before that is ball9-t... and is still live on R2, so both are published.
+mapfile -t FILES < <(find "$ALBUM_DIR" -maxdepth 1 \
+	\( -name 'b[0-9][0-9][0-9]*.mp3' -o -name 'ball9-t*.mp3' \) | sort)
 if [[ ${#FILES[@]} -eq 0 ]]; then
-	echo "No ball9-*.mp3 files in $ALBUM_DIR" >&2
+	echo "No chorale MP3s in $ALBUM_DIR" >&2
+	echo "(expected b<NNN><letter>_*.mp3, or ball9-t*.mp3 for albums before 24 Sep 2026)" >&2
 	exit 1
 fi
 

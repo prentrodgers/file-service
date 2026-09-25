@@ -23,9 +23,18 @@ const argIdx = process.argv.indexOf("--uploads");
 const UPLOADS =
 	argIdx !== -1 ? process.argv[argIdx + 1] : join(homedir(), "Dropbox/Uploads");
 
-// Mirrors FILENAME_RE in src/lib/chorale.ts and daily_chorale_tweet.py.
-const FILENAME_RE =
-	/^ball9-t(\d{2,3})(\w?)_lm(\d+)_r([\d.]+)_(?:sf[\d.]+_)?(md|df)(\d+)_(?:sp\d+_)?t(\d+)_d(\d+)_(\d+)_t(\d+)\.mp3$/;
+// Mirrors CURRENT_RE / LEGACY_RE in src/lib/chorale.ts and FILENAME_RE in
+// daily_chorale_tweet.py. Keep all three in sync.
+//
+// CURRENT (since 24 Sep 2026): b424f_df0_t3_d04_08_t092_ap4_lm19_r1.25.mp3
+// LEGACY (still on R2, still linked from posted tweets):
+//                              ball9-t53c_lm17_r1.12_df2_t1_d07_34_t106.mp3
+// The field ORDER differs, not just the prefix, so these are two patterns with
+// two capture orders. `_ap` is absent on --short_repeats renders.
+const CURRENT_RE =
+	/^b(\d{3})(\w?)_(md|df)(\d+)_t(\d+)_d(\d+)_(\d+)_t(\d+)(?:_ap(\d+))?_lm(\d+)_r([\d.]+)\.mp3$/;
+const LEGACY_RE =
+	/^ball9-t(\d{2,3})(\w?)_lm(\d+)_r([\d.]+)_(?:sf[\d.]+_)?(md|df)(\d+)_(?:sp\d+_)?t(\d+)_d(\d+)_(\d+)_t(\d+)(?:_ap(\d+))?\.mp3$/;
 
 const BWV_TITLES = {
 	253: "Ach bleib bei uns, Herr Jesu Christ",
@@ -40,13 +49,54 @@ const BWV_TITLES = {
 	262: "Alle Menschen müssen sterben",
 	263: "Alles ist an Gottes Segen",
 	264: "Als der gütige Gott",
+	// 267 and 415-438, checked against bach-chorales.com on 19 Sep 2026.
+	267: "An Wasserflüssen Babylon",
+	415: "Valet will ich dir geben",
+	416: "Vater unser im Himmelreich",
+	417: "Von Gott will ich nicht lassen",
+	418: "Von Gott will ich nicht lassen",
+	419: "Von Gott will ich nicht lassen",
+	420: "Warum betrübst du dich, mein Herz",
+	421: "Warum betrübst du dich, mein Herz",
+	422: "Warum sollt ich mich denn grämen",
+	423: "Was betrübst du dich, mein Herze",
+	424: "Was bist du doch, o Seele so betrübet",
+	425: "Was willst du dich, o meine Seele, kränken",
+	426: "Weltlich Ehr und zeitlich Gut",
+	427: "Wenn ich in Angst und Not",
+	428: "Wenn mein Stündlein vorhanden ist",
+	429: "Wenn mein Stündlein vorhanden ist",
+	430: "Wenn mein Stündlein vorhanden ist",
+	431: "Wenn wir in höchsten Nöten sein",
+	432: "Wenn wir in höchsten Nöten sein",
+	433: "Wer Gott vertraut, hat wohl gebaut",
+	434: "Wer nur den lieben Gott lässt walten",
+	435: "Wie bist du, Seele, in mir so gar betrübt",
+	436: "Wie schön leuchtet der Morgenstern",
+	437: "Wir glauben all an einen Gott",
+	438: "Wo Gott zum Haus nicht gibt sein Gunst",
 };
 
+// Three digits carry the BWV number outright. Two-digit tokens predate 19 Sep
+// 2026 and dropped the hundreds: track 53 is BWV 253, but track 27 is BWV *4*27,
+// not 227. The tuned chorales are 253-267 and 415-438, whose last two digits
+// never collide, so the candidate with a title is the right one.
+function bwvFromTrack(track) {
+	if (track.length === 3) return track;
+	return [`2${track}`, `4${track}`].find((c) => c in BWV_TITLES) ?? `2${track}`;
+}
+
 function parse(file) {
-	const m = FILENAME_RE.exec(file);
-	if (!m) return null;
-	const [, track, variant, limit, ratio, dKind, dVal, tol, min, sec, tempo] = m;
-	const bwv = `2${track}`;
+	let track, variant, limit, ratio, dKind, dVal, tol, min, sec, tempo, primes;
+	const cur = CURRENT_RE.exec(file);
+	if (cur) {
+		[, track, variant, dKind, dVal, tol, min, sec, tempo, primes, limit, ratio] = cur;
+	} else {
+		const old = LEGACY_RE.exec(file);
+		if (!old) return null;
+		[, track, variant, limit, ratio, dKind, dVal, tol, min, sec, tempo, primes] = old;
+	}
+	const bwv = bwvFromTrack(track);
 	const minutes = Number(min);
 	const seconds = Number(sec);
 	return {
@@ -61,6 +111,7 @@ function parse(file) {
 		duration: `${minutes}:${String(seconds).padStart(2, "0")}`,
 		durationSeconds: minutes * 60 + seconds,
 		tempo: Number(tempo),
+		...(primes === undefined ? {} : { primes: Number(primes) }),
 	};
 }
 
