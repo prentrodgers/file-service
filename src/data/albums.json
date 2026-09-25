@@ -3,6 +3,15 @@
 	"_order": "Key order in `tunings` drives section order on /listen. Albums are sorted by date, newest first, within each section.",
 	"albums": [
 		{
+			"id": "dc-09-25-26",
+			"dir": "Dc-09-25-26",
+			"title": "Late September 2026 415-426",
+			"date": "2026-09-25",
+			"tuning": "just",
+			"blurb": "New set of 12 chorales"
+		},
+
+		{
 			"id": "d9-09-13-26",
 			"dir": "d9-09-13-26",
 			"title": "Mid September 2026 427-438",

@@ -24,6 +24,232 @@
 	},
 	"albums": [
 		{
+			"id": "dc-09-25-26",
+			"title": "Late September 2026 415-426",
+			"date": "2026-09-25",
+			"tuning": "just",
+			"blurb": "New set of 12 chorales",
+			"trackCount": 12,
+			"tracks": [
+				{
+					"file": "b415f_df0_t2_d05_15_t056_ap3_lm19_r1.50.mp3",
+					"bwv": "415",
+					"title": "Valet will ich dir geben",
+					"variant": "f",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 0
+					},
+					"tolerance": 2,
+					"duration": "5:15",
+					"durationSeconds": 315,
+					"tempo": 56,
+					"primes": 3,
+					"key": "Dc-09-25-26/b415f_df0_t2_d05_15_t056_ap3_lm19_r1.50.mp3"
+				},
+				{
+					"file": "b416f_df3_t2_d06_24_t088_ap4_lm19_r1.62.mp3",
+					"bwv": "416",
+					"title": "Vater unser im Himmelreich",
+					"variant": "f",
+					"limit": 19,
+					"ratio": 1.62,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 2,
+					"duration": "6:24",
+					"durationSeconds": 384,
+					"tempo": 88,
+					"primes": 4,
+					"key": "Dc-09-25-26/b416f_df3_t2_d06_24_t088_ap4_lm19_r1.62.mp3"
+				},
+				{
+					"file": "b417f_df4_t2_d07_12_t106_ap1_lm19_r1.25.mp3",
+					"bwv": "417",
+					"title": "Von Gott will ich nicht lassen",
+					"variant": "f",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 2,
+					"duration": "7:12",
+					"durationSeconds": 432,
+					"tempo": 106,
+					"primes": 1,
+					"key": "Dc-09-25-26/b417f_df4_t2_d07_12_t106_ap1_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b418f_df5_t2_d06_44_t092_ap1_lm19_r1.25.mp3",
+					"bwv": "418",
+					"title": "Von Gott will ich nicht lassen",
+					"variant": "f",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 2,
+					"duration": "6:44",
+					"durationSeconds": 404,
+					"tempo": 92,
+					"primes": 1,
+					"key": "Dc-09-25-26/b418f_df5_t2_d06_44_t092_ap1_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b419f_df2_t2_d05_14_t064_ap3_lm19_r1.25.mp3",
+					"bwv": "419",
+					"title": "Von Gott will ich nicht lassen",
+					"variant": "f",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 2,
+					"duration": "5:14",
+					"durationSeconds": 314,
+					"tempo": 64,
+					"primes": 3,
+					"key": "Dc-09-25-26/b419f_df2_t2_d05_14_t064_ap3_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b420f_df1_t3_d04_53_t122_ap4_lm19_r1.62.mp3",
+					"bwv": "420",
+					"title": "Warum betrübst du dich, mein Herz",
+					"variant": "f",
+					"limit": 19,
+					"ratio": 1.62,
+					"detail": {
+						"kind": "density",
+						"value": 1
+					},
+					"tolerance": 3,
+					"duration": "4:53",
+					"durationSeconds": 293,
+					"tempo": 122,
+					"primes": 4,
+					"key": "Dc-09-25-26/b420f_df1_t3_d04_53_t122_ap4_lm19_r1.62.mp3"
+				},
+				{
+					"file": "b421f_df3_t1_d05_10_t088_ap1_lm19_r1.38.mp3",
+					"bwv": "421",
+					"title": "Warum betrübst du dich, mein Herz",
+					"variant": "f",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 1,
+					"duration": "5:10",
+					"durationSeconds": 310,
+					"tempo": 88,
+					"primes": 1,
+					"key": "Dc-09-25-26/b421f_df3_t1_d05_10_t088_ap1_lm19_r1.38.mp3"
+				},
+				{
+					"file": "b422f_df5_t3_d05_35_t056_ap3_lm17_r1.38.mp3",
+					"bwv": "422",
+					"title": "Warum sollt ich mich denn grämen",
+					"variant": "f",
+					"limit": 17,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 3,
+					"duration": "5:35",
+					"durationSeconds": 335,
+					"tempo": 56,
+					"primes": 3,
+					"key": "Dc-09-25-26/b422f_df5_t3_d05_35_t056_ap3_lm17_r1.38.mp3"
+				},
+				{
+					"file": "b423f_df0_t1_d05_19_t092_ap4_lm17_r1.62.mp3",
+					"bwv": "423",
+					"title": "Was betrübst du dich, mein Herze",
+					"variant": "f",
+					"limit": 17,
+					"ratio": 1.62,
+					"detail": {
+						"kind": "density",
+						"value": 0
+					},
+					"tolerance": 1,
+					"duration": "5:19",
+					"durationSeconds": 319,
+					"tempo": 92,
+					"primes": 4,
+					"key": "Dc-09-25-26/b423f_df0_t1_d05_19_t092_ap4_lm17_r1.62.mp3"
+				},
+				{
+					"file": "b424f_df2_t3_d07_34_t106_ap1_lm19_r1.25.mp3",
+					"bwv": "424",
+					"title": "Was bist du doch, o Seele so betrübet",
+					"variant": "f",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 3,
+					"duration": "7:34",
+					"durationSeconds": 454,
+					"tempo": 106,
+					"primes": 1,
+					"key": "Dc-09-25-26/b424f_df2_t3_d07_34_t106_ap1_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b425f_df4_t2_d10_00_t122_ap3_lm19_r1.50.mp3",
+					"bwv": "425",
+					"title": "Was willst du dich, o meine Seele, kränken",
+					"variant": "f",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 2,
+					"duration": "10:00",
+					"durationSeconds": 600,
+					"tempo": 122,
+					"primes": 3,
+					"key": "Dc-09-25-26/b425f_df4_t2_d10_00_t122_ap3_lm19_r1.50.mp3"
+				},
+				{
+					"file": "b426f_df2_t2_d05_41_t100_ap1_lm17_r1.50.mp3",
+					"bwv": "426",
+					"title": "Weltlich Ehr und zeitlich Gut",
+					"variant": "f",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 2,
+					"duration": "5:41",
+					"durationSeconds": 341,
+					"tempo": 100,
+					"primes": 1,
+					"key": "Dc-09-25-26/b426f_df2_t2_d05_41_t100_ap1_lm17_r1.50.mp3"
+				}
+			]
+		},
+		{
 			"id": "d9-09-13-26",
 			"title": "Mid September 2026 427-438",
 			"date": "2026-09-13",
@@ -34,8 +260,8 @@
 			"tracks": [
 				{
 					"file": "ball9-t27d_lm17_r1.25_df3_t1_d08_01_t106.mp3",
-					"bwv": "227",
-					"title": "Bach Chorale",
+					"bwv": "427",
+					"title": "Wenn ich in Angst und Not",
 					"variant": "d",
 					"limit": 17,
 					"ratio": 1.25,
@@ -51,8 +277,8 @@
 				},
 				{
 					"file": "ball9-t28d_lm19_r1.25_df5_t2_d10_14_t118.mp3",
-					"bwv": "228",
-					"title": "Bach Chorale",
+					"bwv": "428",
+					"title": "Wenn mein Stündlein vorhanden ist",
 					"variant": "d",
 					"limit": 19,
 					"ratio": 1.25,
@@ -68,8 +294,8 @@
 				},
 				{
 					"file": "ball9-t29d_lm19_r1.38_df1_t3_d04_58_t100.mp3",
-					"bwv": "229",
-					"title": "Bach Chorale",
+					"bwv": "429",
+					"title": "Wenn mein Stündlein vorhanden ist",
 					"variant": "d",
 					"limit": 19,
 					"ratio": 1.38,
@@ -85,8 +311,8 @@
 				},
 				{
 					"file": "ball9-t30d_lm19_r1.25_df0_t3_d05_48_t060.mp3",
-					"bwv": "230",
-					"title": "Bach Chorale",
+					"bwv": "430",
+					"title": "Wenn mein Stündlein vorhanden ist",
 					"variant": "d",
 					"limit": 19,
 					"ratio": 1.25,
@@ -102,8 +328,8 @@
 				},
 				{
 					"file": "ball9-t31d_lm17_r1.38_df4_t1_d08_18_t114.mp3",
-					"bwv": "231",
-					"title": "Bach Chorale",
+					"bwv": "431",
+					"title": "Wenn wir in höchsten Nöten sein",
 					"variant": "d",
 					"limit": 17,
 					"ratio": 1.38,
@@ -119,8 +345,8 @@
 				},
 				{
 					"file": "ball9-t32d_lm19_r1.25_df3_t3_d03_30_t118.mp3",
-					"bwv": "232",
-					"title": "Bach Chorale",
+					"bwv": "432",
+					"title": "Wenn wir in höchsten Nöten sein",
 					"variant": "d",
 					"limit": 19,
 					"ratio": 1.25,
@@ -136,8 +362,8 @@
 				},
 				{
 					"file": "ball9-t33d_lm19_r1.25_df2_t3_d05_34_t096.mp3",
-					"bwv": "233",
-					"title": "Bach Chorale",
+					"bwv": "433",
+					"title": "Wer Gott vertraut, hat wohl gebaut",
 					"variant": "d",
 					"limit": 19,
 					"ratio": 1.25,
@@ -153,8 +379,8 @@
 				},
 				{
 					"file": "ball9-t34d_lm19_r1.25_df5_t1_d09_21_t106.mp3",
-					"bwv": "234",
-					"title": "Bach Chorale",
+					"bwv": "434",
+					"title": "Wer nur den lieben Gott lässt walten",
 					"variant": "d",
 					"limit": 19,
 					"ratio": 1.25,
@@ -170,8 +396,8 @@
 				},
 				{
 					"file": "ball9-t35d_lm19_r1.38_df0_t3_d04_23_t056.mp3",
-					"bwv": "235",
-					"title": "Bach Chorale",
+					"bwv": "435",
+					"title": "Wie bist du, Seele, in mir so gar betrübt",
 					"variant": "d",
 					"limit": 19,
 					"ratio": 1.38,
@@ -187,8 +413,8 @@
 				},
 				{
 					"file": "ball9-t36d_lm19_r1.50_df2_t1_d06_13_t100.mp3",
-					"bwv": "236",
-					"title": "Bach Chorale",
+					"bwv": "436",
+					"title": "Wie schön leuchtet der Morgenstern",
 					"variant": "d",
 					"limit": 19,
 					"ratio": 1.5,
@@ -204,8 +430,8 @@
 				},
 				{
 					"file": "ball9-t37d_lm19_r1.38_df1_t2_d12_11_t084.mp3",
-					"bwv": "237",
-					"title": "Bach Chorale",
+					"bwv": "437",
+					"title": "Wir glauben all an einen Gott",
 					"variant": "d",
 					"limit": 19,
 					"ratio": 1.38,
@@ -221,8 +447,8 @@
 				},
 				{
 					"file": "ball9-t38d_lm19_r1.62_df4_t2_d03_40_t114.mp3",
-					"bwv": "238",
-					"title": "Bach Chorale",
+					"bwv": "438",
+					"title": "Wo Gott zum Haus nicht gibt sein Gunst",
 					"variant": "d",
 					"limit": 19,
 					"ratio": 1.62,
