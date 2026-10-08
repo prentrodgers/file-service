@@ -2,7 +2,7 @@
 8/18/26 Claude created a web site to host my music files.
     I found out that X turns all http:// in a post to https:// automatically. All my music now is inaccessible to the posts I've made for the past few months. I asked Claude to build me a free site on Cloudflare. He did it in a couple of hours. I had other stuff going on at the time. 
 
-    Cloudflare buit a template site based on the Bear Blog minimalist style. and posted it to github as https://github.com/prentrodgers/file-service. Claude then took that and asked a ton of questions, and built a site with a Home page, a Listen page, a Watch (for video) page, a Notes page,  and an About page that points to the Substack site. 
+    Cloudflare buit a template site based on the Bear Blog minimalist style. and posted it to github as https://github.com/prentrodgers/file-service. Claude then took that and asked a ton of questions, and built a site with a Home page, a Listen page, a Watch (for video) page, a Notes p,  and an About page that points to the Substack site. 
     Then he created an R2 bucket on Cloudflare, copied all my recent work there, and told me when to push it. Once it was pushed the github actions took over and uploaded it to the site, now live here: https://microtonalnotes.net/
 
     To push it:
@@ -318,3 +318,13 @@ _________________________________
             R2_ACCESS_KEY_ID=56c...
             R2_SECRET_ACCESS_KEY=a51d...
     It works now to read the R2 bucket. Neat.
+
+___________________-
+10/8/26 Post another album of pieces 
+    Dropbox/Uploads/Df-10-06-26
+    1.  ./scripts/publish-album.sh ~/Dropbox/Uploads/Df-10-06-26
+    2.  Edit ~/Repos/file-service/src/data/albums.json
+    3.  ./scripts/build-catalog.mjs
+    4.  git add src/data/catalog.json src/data/albums.json && git commit
+    5.  eval $(op signin)
+    6.  git push origin main
