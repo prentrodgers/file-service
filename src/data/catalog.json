@@ -24,9 +24,235 @@
 	},
 	"albums": [
 		{
+			"id": "Dh-379-390",
+			"title": "A new set of chorales 379-390",
+			"date": "2026-14-26",
+			"tuning": "just",
+			"blurb": "New set of 12 chorales",
+			"trackCount": 12,
+			"tracks": [
+				{
+					"file": "b379h_df0_t3_d03_24_t080_ap3_lm19_r1.25.mp3",
+					"bwv": "379",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 0
+					},
+					"tolerance": 3,
+					"duration": "3:24",
+					"durationSeconds": 204,
+					"tempo": 80,
+					"primes": 3,
+					"key": "Dh-379-390/b379h_df0_t3_d03_24_t080_ap3_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b380h_df1_t3_d04_57_t084_ap3_lm19_r1.62.mp3",
+					"bwv": "380",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.62,
+					"detail": {
+						"kind": "density",
+						"value": 1
+					},
+					"tolerance": 3,
+					"duration": "4:57",
+					"durationSeconds": 297,
+					"tempo": 84,
+					"primes": 3,
+					"key": "Dh-379-390/b380h_df1_t3_d04_57_t084_ap3_lm19_r1.62.mp3"
+				},
+				{
+					"file": "b381h_df4_t1_d05_54_t096_ap3_lm19_r1.50.mp3",
+					"bwv": "381",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 1,
+					"duration": "5:54",
+					"durationSeconds": 354,
+					"tempo": 96,
+					"primes": 3,
+					"key": "Dh-379-390/b381h_df4_t1_d05_54_t096_ap3_lm19_r1.50.mp3"
+				},
+				{
+					"file": "b382h_df0_t1_d05_31_t060_ap4_lm19_r1.62.mp3",
+					"bwv": "382",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.62,
+					"detail": {
+						"kind": "density",
+						"value": 0
+					},
+					"tolerance": 1,
+					"duration": "5:31",
+					"durationSeconds": 331,
+					"tempo": 60,
+					"primes": 4,
+					"key": "Dh-379-390/b382h_df0_t1_d05_31_t060_ap4_lm19_r1.62.mp3"
+				},
+				{
+					"file": "b383h_df2_t1_d09_59_t092_ap4_lm19_r1.38.mp3",
+					"bwv": "383",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 1,
+					"duration": "9:59",
+					"durationSeconds": 599,
+					"tempo": 92,
+					"primes": 4,
+					"key": "Dh-379-390/b383h_df2_t1_d09_59_t092_ap4_lm19_r1.38.mp3"
+				},
+				{
+					"file": "b384h_df5_t3_d03_52_t106_ap1_lm19_r1.25.mp3",
+					"bwv": "384",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 3,
+					"duration": "3:52",
+					"durationSeconds": 232,
+					"tempo": 106,
+					"primes": 1,
+					"key": "Dh-379-390/b384h_df5_t3_d03_52_t106_ap1_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b385h_df3_t3_d06_37_t088_ap4_lm19_r1.25.mp3",
+					"bwv": "385",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 3,
+					"duration": "6:37",
+					"durationSeconds": 397,
+					"tempo": 88,
+					"primes": 4,
+					"key": "Dh-379-390/b385h_df3_t3_d06_37_t088_ap4_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b386h_df4_t3_d04_28_t100_ap3_lm19_r1.25.mp3",
+					"bwv": "386",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "4:28",
+					"durationSeconds": 268,
+					"tempo": 100,
+					"primes": 3,
+					"key": "Dh-379-390/b386h_df4_t3_d04_28_t100_ap3_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b387h_df3_t3_d03_27_t096_ap4_lm19_r1.38.mp3",
+					"bwv": "387",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 3,
+					"duration": "3:27",
+					"durationSeconds": 207,
+					"tempo": 96,
+					"primes": 4,
+					"key": "Dh-379-390/b387h_df3_t3_d03_27_t096_ap4_lm19_r1.38.mp3"
+				},
+				{
+					"file": "b388h_df5_t3_d03_37_t088_ap3_lm19_r1.62.mp3",
+					"bwv": "388",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.62,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 3,
+					"duration": "3:37",
+					"durationSeconds": 217,
+					"tempo": 88,
+					"primes": 3,
+					"key": "Dh-379-390/b388h_df5_t3_d03_37_t088_ap3_lm19_r1.62.mp3"
+				},
+				{
+					"file": "b389h_df2_t2_d11_25_t122_ap1_lm19_r1.38.mp3",
+					"bwv": "389",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 2,
+					"duration": "11:25",
+					"durationSeconds": 685,
+					"tempo": 122,
+					"primes": 1,
+					"key": "Dh-379-390/b389h_df2_t2_d11_25_t122_ap1_lm19_r1.38.mp3"
+				},
+				{
+					"file": "b390h_df1_t3_d12_01_t114_ap1_lm19_r1.25.mp3",
+					"bwv": "390",
+					"title": "Bach Chorale",
+					"variant": "h",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 1
+					},
+					"tolerance": 3,
+					"duration": "12:01",
+					"durationSeconds": 721,
+					"tempo": 114,
+					"primes": 1,
+					"key": "Dh-379-390/b390h_df1_t3_d12_01_t114_ap1_lm19_r1.25.mp3"
+				}
+			]
+		},
+		{
 			"id": "Df-10-06-26",
 			"title": "Allow staccato woodwinds along with the a new set of chorales 391-402",
-			"date": "2026-10-26",
+			"date": "2026-10-06",
 			"tuning": "just",
 			"blurb": "New set of 12 chorales",
 			"trackCount": 12,

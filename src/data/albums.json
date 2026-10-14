@@ -2,11 +2,19 @@
 	"_comment": "Hand-authored album metadata. The tuning system lives in the DIRECTORY name and nowhere in the filenames, so it cannot be derived — it has to be recorded here. `scripts/build-catalog.mjs` merges this with the track lists scanned from ~/Dropbox/Uploads and writes src/data/catalog.json, which IS committed (Cloudflare's build machine has no Dropbox access).",
 	"_order": "Key order in `tunings` drives section order on /listen. Albums are sorted by date, newest first, within each section.",
 	"albums": [
+		{ 
+			"id": "Dh-379-390",
+			"dir": "Dh-379-390",
+			"title": "A new set of chorales 379-390",
+			"date": "2026-14-26",
+			"tuning": "just",
+			"blurb": "New set of 12 chorales"
+		},
 		{
 			"id": "Df-10-06-26",
 			"dir": "Df-10-06-26",
 			"title": "Allow staccato woodwinds along with the a new set of chorales 391-402",
-			"date": "2026-10-26",
+			"date": "2026-10-06",
 			"tuning": "just",
 			"blurb": "New set of 12 chorales"
 		},
