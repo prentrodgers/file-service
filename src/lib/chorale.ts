@@ -81,7 +81,8 @@ export const BWV_TITLES: Record<string, string> = {
  */
 const CURRENT_RE = new RegExp(
 	"^b(\\d{3})(\\w?)_" + //             BWV number (always 3 digits) + variant
-		"(md|df)(\\d+)_" + //             md = max delta (cents) | df = density level
+		"(md|df)(\\d+)" + //              md = max delta (cents) | df = density level
+		"(?:c\\d+)?_" + //                chaconne copies' levels, one digit each (df4c3214)
 		"t(\\d+)_" + //                   tolerance (cents)
 		"d(\\d+)_(\\d+)_" + //            duration mm_ss
 		"t(\\d+)" + //                    tempo (BPM)

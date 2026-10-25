@@ -30,9 +30,11 @@ const UPLOADS =
 // LEGACY (still on R2, still linked from posted tweets):
 //                              ball9-t53c_lm17_r1.12_df2_t1_d07_34_t106.mp3
 // The field ORDER differs, not just the prefix, so these are two patterns with
-// two capture orders. `_ap` is absent on --short_repeats renders.
+// two capture orders. `_ap` is absent on --short_repeats renders. A chaconne
+// render with --chaconne_density appends its copies' levels to the density,
+// c + one digit per copy (b403a_df4c3214_...), not captured.
 const CURRENT_RE =
-	/^b(\d{3})(\w?)_(md|df)(\d+)_t(\d+)_d(\d+)_(\d+)_t(\d+)(?:_ap(\d+))?_lm(\d+)_r([\d.]+)\.mp3$/;
+	/^b(\d{3})(\w?)_(md|df)(\d+)(?:c\d+)?_t(\d+)_d(\d+)_(\d+)_t(\d+)(?:_ap(\d+))?_lm(\d+)_r([\d.]+)\.mp3$/;
 const LEGACY_RE =
 	/^ball9-t(\d{2,3})(\w?)_lm(\d+)_r([\d.]+)_(?:sf[\d.]+_)?(md|df)(\d+)_(?:sp\d+_)?t(\d+)_d(\d+)_(\d+)_t(\d+)(?:_ap(\d+))?\.mp3$/;
 
