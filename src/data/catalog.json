@@ -24,6 +24,232 @@
 	},
 	"albums": [
 		{
+			"id": "Di-367-378-ap-2",
+			"title": "A new set of chorales 367-378 with --ap 2",
+			"date": "2026-11-02",
+			"tuning": "just",
+			"blurb": "New set of 12 chorales",
+			"trackCount": 12,
+			"tracks": [
+				{
+					"file": "b367a_df3_t1_d03_07_t069_ap2_lm19_r1.38.mp3",
+					"bwv": "367",
+					"title": "In allen meinen Taten",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 1,
+					"duration": "3:07",
+					"durationSeconds": 187,
+					"tempo": 69,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b367a_df3_t1_d03_07_t069_ap2_lm19_r1.38.mp3"
+				},
+				{
+					"file": "b368a_df5_t2_d05_39_t064_ap2_lm19_r1.50.mp3",
+					"bwv": "368",
+					"title": "In dulci jubilo",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 2,
+					"duration": "5:39",
+					"durationSeconds": 339,
+					"tempo": 64,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b368a_df5_t2_d05_39_t064_ap2_lm19_r1.50.mp3"
+				},
+				{
+					"file": "b369a_df3_t1_d02_11_t077_ap2_lm19_r1.62.mp3",
+					"bwv": "369",
+					"title": "Keinen hat Gott verlassen",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.62,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 1,
+					"duration": "2:11",
+					"durationSeconds": 131,
+					"tempo": 77,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b369a_df3_t1_d02_11_t077_ap2_lm19_r1.62.mp3"
+				},
+				{
+					"file": "b370a_df0_t1_d01_40_t064_ap2_lm19_r1.25.mp3",
+					"bwv": "370",
+					"title": "Komm, Gott Schöpfer, Heiliger Geist",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 0
+					},
+					"tolerance": 1,
+					"duration": "1:40",
+					"durationSeconds": 100,
+					"tempo": 64,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b370a_df0_t1_d01_40_t064_ap2_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b371a_df3_t2_d05_49_t077_ap2_lm19_r1.25.mp3",
+					"bwv": "371",
+					"title": "Kyrie, Gott Vater in Ewigkeit",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 2,
+					"duration": "5:49",
+					"durationSeconds": 349,
+					"tempo": 77,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b371a_df3_t2_d05_49_t077_ap2_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b372a_df4_t3_d03_23_t060_ap2_lm19_r1.25.mp3",
+					"bwv": "372",
+					"title": "Lass, o Herr, dein Ohr sich neigen",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 3,
+					"duration": "3:23",
+					"durationSeconds": 203,
+					"tempo": 60,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b372a_df4_t3_d03_23_t060_ap2_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b373a_df2_t1_d01_51_t086_ap2_lm19_r1.25.mp3",
+					"bwv": "373",
+					"title": "Liebster Jesu, wir sind hier",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 1,
+					"duration": "1:51",
+					"durationSeconds": 111,
+					"tempo": 86,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b373a_df2_t1_d01_51_t086_ap2_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b374a_df4_t1_d02_44_t086_ap2_lm17_r1.25.mp3",
+					"bwv": "374",
+					"title": "Lobet den Herren, denn er ist sehr freundlich",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 1,
+					"duration": "2:44",
+					"durationSeconds": 164,
+					"tempo": 86,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b374a_df4_t1_d02_44_t086_ap2_lm17_r1.25.mp3"
+				},
+				{
+					"file": "b375a_df2_t3_d02_15_t082_ap2_lm19_r1.38.mp3",
+					"bwv": "375",
+					"title": "Lobt Gott, ihr Christen, allzugleich",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 3,
+					"duration": "2:15",
+					"durationSeconds": 135,
+					"tempo": 82,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b375a_df2_t3_d02_15_t082_ap2_lm19_r1.38.mp3"
+				},
+				{
+					"file": "b376a_df2_t1_d02_04_t077_ap2_lm17_r1.25.mp3",
+					"bwv": "376",
+					"title": "Lobt Gott, ihr Christen, allzugleich",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 1,
+					"duration": "2:04",
+					"durationSeconds": 124,
+					"tempo": 77,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b376a_df2_t1_d02_04_t077_ap2_lm17_r1.25.mp3"
+				},
+				{
+					"file": "b377a_df1_t2_d01_33_t082_ap2_lm19_r1.25.mp3",
+					"bwv": "377",
+					"title": "Machs mit mir, Gott, nach deiner Güt",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 1
+					},
+					"tolerance": 2,
+					"duration": "1:33",
+					"durationSeconds": 93,
+					"tempo": 82,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b377a_df1_t2_d01_33_t082_ap2_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b378a_df4_t1_d02_21_t073_ap2_lm19_r1.38.mp3",
+					"bwv": "378",
+					"title": "Mein Augen schließ ich jetzt",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 1,
+					"duration": "2:21",
+					"durationSeconds": 141,
+					"tempo": 73,
+					"primes": 2,
+					"key": "Di-367-378-ap-2/b378a_df4_t1_d02_21_t073_ap2_lm19_r1.38.mp3"
+				}
+			]
+		},
+		{
 			"id": "Dg-403-414",
 			"title": "A new set of chorales 403-414",
 			"date": "2026-10-18",
@@ -472,232 +698,6 @@
 					"tempo": 114,
 					"primes": 1,
 					"key": "Dh-379-390/b390h_df1_t3_d12_01_t114_ap1_lm19_r1.25.mp3"
-				}
-			]
-		},
-		{
-			"id": "Chaconne_test",
-			"title": "Make a Chaconne out of a new set of chorales 403-414",
-			"date": "2026-10-25",
-			"tuning": "just",
-			"blurb": "12 Chaconnes",
-			"trackCount": 12,
-			"tracks": [
-				{
-					"file": "b403a_df4c3214_t2_d06_02_t100_ap1_lm19_r1.25.mp3",
-					"bwv": "403",
-					"title": "O Mensch, schau Jesum Christum an",
-					"variant": "a",
-					"limit": 19,
-					"ratio": 1.25,
-					"detail": {
-						"kind": "density",
-						"value": 4
-					},
-					"tolerance": 2,
-					"duration": "6:02",
-					"durationSeconds": 362,
-					"tempo": 100,
-					"primes": 1,
-					"key": "Chaconne_test/b403a_df4c3214_t2_d06_02_t100_ap1_lm19_r1.25.mp3"
-				},
-				{
-					"file": "b404a_df3c2135_t1_d04_52_t118_ap1_lm19_r1.62.mp3",
-					"bwv": "404",
-					"title": "O Traurigkeit, o Herzeleid",
-					"variant": "a",
-					"limit": 19,
-					"ratio": 1.62,
-					"detail": {
-						"kind": "density",
-						"value": 3
-					},
-					"tolerance": 1,
-					"duration": "4:52",
-					"durationSeconds": 292,
-					"tempo": 118,
-					"primes": 1,
-					"key": "Chaconne_test/b404a_df3c2135_t1_d04_52_t118_ap1_lm19_r1.62.mp3"
-				},
-				{
-					"file": "b405a_df2c3412_t3_d08_06_t080_ap1_lm19_r1.38.mp3",
-					"bwv": "405",
-					"title": "O wie selig seid ihr doch, ihr Frommen",
-					"variant": "a",
-					"limit": 19,
-					"ratio": 1.38,
-					"detail": {
-						"kind": "density",
-						"value": 2
-					},
-					"tolerance": 3,
-					"duration": "8:06",
-					"durationSeconds": 486,
-					"tempo": 80,
-					"primes": 1,
-					"key": "Chaconne_test/b405a_df2c3412_t3_d08_06_t080_ap1_lm19_r1.38.mp3"
-				},
-				{
-					"file": "b406a_df2c3412_t3_d07_48_t088_ap4_lm19_r1.38.mp3",
-					"bwv": "406",
-					"title": "O wie selig seid ihr doch, ihr Frommen",
-					"variant": "a",
-					"limit": 19,
-					"ratio": 1.38,
-					"detail": {
-						"kind": "density",
-						"value": 2
-					},
-					"tolerance": 3,
-					"duration": "7:48",
-					"durationSeconds": 468,
-					"tempo": 88,
-					"primes": 4,
-					"key": "Chaconne_test/b406a_df2c3412_t3_d07_48_t088_ap4_lm19_r1.38.mp3"
-				},
-				{
-					"file": "b407a_df2c3412_t1_d03_56_t122_ap4_lm19_r1.62.mp3",
-					"bwv": "407",
-					"title": "O wir armen Sünder",
-					"variant": "a",
-					"limit": 19,
-					"ratio": 1.62,
-					"detail": {
-						"kind": "density",
-						"value": 2
-					},
-					"tolerance": 1,
-					"duration": "3:56",
-					"durationSeconds": 236,
-					"tempo": 122,
-					"primes": 4,
-					"key": "Chaconne_test/b407a_df2c3412_t1_d03_56_t122_ap4_lm19_r1.62.mp3"
-				},
-				{
-					"file": "b408a_df5c2135_t1_d05_51_t080_ap3_lm17_r1.25.mp3",
-					"bwv": "408",
-					"title": "Schaut, ihr Sünder",
-					"variant": "a",
-					"limit": 17,
-					"ratio": 1.25,
-					"detail": {
-						"kind": "density",
-						"value": 5
-					},
-					"tolerance": 1,
-					"duration": "5:51",
-					"durationSeconds": 351,
-					"tempo": 80,
-					"primes": 3,
-					"key": "Chaconne_test/b408a_df5c2135_t1_d05_51_t080_ap3_lm17_r1.25.mp3"
-				},
-				{
-					"file": "b409a_df4c3215_t1_d04_59_t104_ap4_lm17_r1.25.mp3",
-					"bwv": "409",
-					"title": "Seelenbräutigam",
-					"variant": "a",
-					"limit": 17,
-					"ratio": 1.25,
-					"detail": {
-						"kind": "density",
-						"value": 4
-					},
-					"tolerance": 1,
-					"duration": "4:59",
-					"durationSeconds": 299,
-					"tempo": 104,
-					"primes": 4,
-					"key": "Chaconne_test/b409a_df4c3215_t1_d04_59_t104_ap4_lm17_r1.25.mp3"
-				},
-				{
-					"file": "b410a_df5c40123_t3_d04_41_t084_ap3_lm19_r1.50.mp3",
-					"bwv": "410",
-					"title": "Sei gegrüßet, Jesu gütig",
-					"variant": "a",
-					"limit": 19,
-					"ratio": 1.5,
-					"detail": {
-						"kind": "density",
-						"value": 5
-					},
-					"tolerance": 3,
-					"duration": "4:41",
-					"durationSeconds": 281,
-					"tempo": 84,
-					"primes": 3,
-					"key": "Chaconne_test/b410a_df5c40123_t3_d04_41_t084_ap3_lm19_r1.50.mp3"
-				},
-				{
-					"file": "b411a_df5c3214_t3_d07_47_t084_ap3_lm19_r1.62.mp3",
-					"bwv": "411",
-					"title": "Singt dem Herrn ein neues Lied",
-					"variant": "a",
-					"limit": 19,
-					"ratio": 1.62,
-					"detail": {
-						"kind": "density",
-						"value": 5
-					},
-					"tolerance": 3,
-					"duration": "7:47",
-					"durationSeconds": 467,
-					"tempo": 84,
-					"primes": 3,
-					"key": "Chaconne_test/b411a_df5c3214_t3_d07_47_t084_ap3_lm19_r1.62.mp3"
-				},
-				{
-					"file": "b412a_df3c4135_t3_d07_11_t088_ap1_lm19_r1.50.mp3",
-					"bwv": "412",
-					"title": "So gibst du nun, mein Jesu, gute Nacht",
-					"variant": "a",
-					"limit": 19,
-					"ratio": 1.5,
-					"detail": {
-						"kind": "density",
-						"value": 3
-					},
-					"tolerance": 3,
-					"duration": "7:11",
-					"durationSeconds": 431,
-					"tempo": 88,
-					"primes": 1,
-					"key": "Chaconne_test/b412a_df3c4135_t3_d07_11_t088_ap1_lm19_r1.50.mp3"
-				},
-				{
-					"file": "b413a_df2c3412_t3_d05_55_t092_ap3_lm19_r1.38.mp3",
-					"bwv": "413",
-					"title": "Sollt ich meinem Gott nicht singen",
-					"variant": "a",
-					"limit": 19,
-					"ratio": 1.38,
-					"detail": {
-						"kind": "density",
-						"value": 2
-					},
-					"tolerance": 3,
-					"duration": "5:55",
-					"durationSeconds": 355,
-					"tempo": 92,
-					"primes": 3,
-					"key": "Chaconne_test/b413a_df2c3412_t3_d05_55_t092_ap3_lm19_r1.38.mp3"
-				},
-				{
-					"file": "b414a_df3c421_t3_d07_49_t104_ap1_lm19_r1.38.mp3",
-					"bwv": "414",
-					"title": "Uns ist ein Kindlein heut geborn",
-					"variant": "a",
-					"limit": 19,
-					"ratio": 1.38,
-					"detail": {
-						"kind": "density",
-						"value": 3
-					},
-					"tolerance": 3,
-					"duration": "7:49",
-					"durationSeconds": 469,
-					"tempo": 104,
-					"primes": 1,
-					"key": "Chaconne_test/b414a_df3c421_t3_d07_49_t104_ap1_lm19_r1.38.mp3"
 				}
 			]
 		},

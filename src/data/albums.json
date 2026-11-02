@@ -3,6 +3,14 @@
 	"_order": "Key order in `tunings` drives section order on /listen. Albums are sorted by date, newest first, within each section.",
 	"albums": [
 		{ 
+			"id": "Di-367-378-ap-2",
+			"dir": "Di-367-378-ap-2",
+			"title": "A new set of chorales 367-378 with --ap 2",
+			"date": "2026-11-02",
+			"tuning": "just",
+			"blurb": "New set of 12 chorales"
+		},
+		{ 
 			"id": "Dg-403-414",
 			"dir": "Dg-403-414",
 			"title": "A new set of chorales 403-414",
