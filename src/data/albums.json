@@ -3,6 +3,14 @@
 	"_order": "Key order in `tunings` drives section order on /listen. Albums are sorted by date, newest first, within each section.",
 	"albums": [
 		{ 
+			"id": "Goldberg-Variations",
+			"dir": "goldberg2",
+			"title": "A piano render of the Goldberg Variations tuned to Victorian Rational Well Temperament",
+			"date": "2026-11-19",
+			"tuning": "just",
+			"blurb": "Goldberg Variations in Victorian Rational Well Temperament, performed on Prent's Microtonal Slide Bösendorfer."
+		},
+		{ 
 			"id": "Di-367-378-ap-2",
 			"dir": "Di-367-378-ap-2",
 			"title": "A new set of chorales 367-378 with --ap 2",
@@ -166,7 +174,7 @@
 		},
 		{
 			"id": "c2-05-23-26-werckmeister-iii",
-			"dir": "c2-05-23-26-Werch-III",
+			"dir": "c2-05-23-26-Werck-III",
 			"title": "Werckmeister III",
 			"date": "2026-05-23",
 			"tuning": "werckmeister",

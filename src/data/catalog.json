@@ -4151,6 +4151,220 @@
 			]
 		},
 		{
+			"id": "c2-05-23-26-werckmeister-iii",
+			"title": "Werckmeister III",
+			"date": "2026-05-23",
+			"tuning": "werckmeister",
+			"blurb": "The same twelve chorales in a well temperament of Bach's own era — a reference point between equal temperament and just intonation.",
+			"trackCount": 12,
+			"tracks": [
+				{
+					"file": "ball9-t53a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_26_t030.mp3",
+					"bwv": "253",
+					"title": "Ach bleib bei uns, Herr Jesu Christ",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:26",
+					"durationSeconds": 86,
+					"tempo": 30,
+					"key": "c2-05-23-26-Werck-III/ball9-t53a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_26_t030.mp3"
+				},
+				{
+					"file": "ball9-t54a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_24_t034.mp3",
+					"bwv": "254",
+					"title": "Ach Gott, erhör mein Seufzen und Wehklagen",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:24",
+					"durationSeconds": 84,
+					"tempo": 34,
+					"key": "c2-05-23-26-Werck-III/ball9-t54a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_24_t034.mp3"
+				},
+				{
+					"file": "ball9-t55a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_02_t034.mp3",
+					"bwv": "255",
+					"title": "Ach Gott und Herr, wie groß und schwer",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:02",
+					"durationSeconds": 62,
+					"tempo": 34,
+					"key": "c2-05-23-26-Werck-III/ball9-t55a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_02_t034.mp3"
+				},
+				{
+					"file": "ball9-t56a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_17_t034.mp3",
+					"bwv": "256",
+					"title": "Ach lieben Christen, seid getrost",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:17",
+					"durationSeconds": 77,
+					"tempo": 34,
+					"key": "c2-05-23-26-Werck-III/ball9-t56a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_17_t034.mp3"
+				},
+				{
+					"file": "ball9-t57a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_09_t038.mp3",
+					"bwv": "257",
+					"title": "Wär Gott nicht mit uns diese Zeit",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:09",
+					"durationSeconds": 69,
+					"tempo": 38,
+					"key": "c2-05-23-26-Werck-III/ball9-t57a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_09_t038.mp3"
+				},
+				{
+					"file": "ball9-t58a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_09_t038.mp3",
+					"bwv": "258",
+					"title": "Wo Gott der Herr nicht bei uns hält",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:09",
+					"durationSeconds": 69,
+					"tempo": 38,
+					"key": "c2-05-23-26-Werck-III/ball9-t58a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_09_t038.mp3"
+				},
+				{
+					"file": "ball9-t59a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_42_t030.mp3",
+					"bwv": "259",
+					"title": "Ach, was soll ich Sünder machen",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:42",
+					"durationSeconds": 102,
+					"tempo": 30,
+					"key": "c2-05-23-26-Werck-III/ball9-t59a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_42_t030.mp3"
+				},
+				{
+					"file": "ball9-t60a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_17_t034.mp3",
+					"bwv": "260",
+					"title": "Allein Gott in der Höh sei Ehr",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:17",
+					"durationSeconds": 77,
+					"tempo": 34,
+					"key": "c2-05-23-26-Werck-III/ball9-t60a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_17_t034.mp3"
+				},
+				{
+					"file": "ball9-t61a_lm17_r1.50_sf0.00_df5_sp07_t1_d02_26_t030.mp3",
+					"bwv": "261",
+					"title": "Allein zu dir, Herr Jesu Christ",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "2:26",
+					"durationSeconds": 146,
+					"tempo": 30,
+					"key": "c2-05-23-26-Werck-III/ball9-t61a_lm17_r1.50_sf0.00_df5_sp07_t1_d02_26_t030.mp3"
+				},
+				{
+					"file": "ball9-t62a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_42_t030.mp3",
+					"bwv": "262",
+					"title": "Alle Menschen müssen sterben",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:42",
+					"durationSeconds": 102,
+					"tempo": 30,
+					"key": "c2-05-23-26-Werck-III/ball9-t62a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_42_t030.mp3"
+				},
+				{
+					"file": "ball9-t63a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_42_t030.mp3",
+					"bwv": "263",
+					"title": "Alles ist an Gottes Segen",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:42",
+					"durationSeconds": 102,
+					"tempo": 30,
+					"key": "c2-05-23-26-Werck-III/ball9-t63a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_42_t030.mp3"
+				},
+				{
+					"file": "ball9-t64a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_20_t030.mp3",
+					"bwv": "264",
+					"title": "Als der gütige Gott",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "1:20",
+					"durationSeconds": 80,
+					"tempo": 30,
+					"key": "c2-05-23-26-Werck-III/ball9-t64a_lm17_r1.50_sf0.00_df5_sp07_t1_d01_20_t030.mp3"
+				}
+			]
+		},
+		{
 			"id": "c1-05-23-26-12-tet",
 			"title": "12-Tone Equal Temperament",
 			"date": "2026-05-23",

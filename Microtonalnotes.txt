@@ -332,11 +332,12 @@ ___________________-
 ————————————————————————————
 9/13/26 Publish another album
         0. npm install # this should probably belong in the bootc image. 
-        0. auth is automatic: 
+        0. npx wrangler login
+        0. auth is automatic: Or should be...
         CLOUDFLARE_API_TOKEN set in ~/.bashrc.d/cloudflare 
         The token is in 1Password as "fs7 r2 album uploads"
 
-        1.  ./scripts/publish-album.sh ~/Dropbox/Uploads/Di-367-378-ap-2
+        1.  ./scripts/publish-album.sh ~/Dropbox/Uploads/goldberg
         2.  Edit src/data/albums.json
         3.  ./scripts/build-catalog.mjs
         4.  git add src/data/catalog.json src/data/albums.json Microtonalnotes.txt && git commit
