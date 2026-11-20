@@ -24,6 +24,400 @@
 	},
 	"albums": [
 		{
+			"id": "Goldberg-Variations",
+			"title": "A piano render of the Goldberg Variations tuned to Victorian Rational Well Temperament",
+			"date": "2026-11-19",
+			"tuning": "just",
+			"blurb": "Goldberg Variations in Victorian Rational Well Temperament, performed on Prent's Microtonal Slide Bösendorfer.",
+			"trackCount": 32,
+			"tracks": [
+				{
+					"file": "b988-aa_vrwt_d01_48_t056.mp3",
+					"bwv": "988",
+					"title": "Aria",
+					"variant": "aa",
+					"duration": "1:48",
+					"durationSeconds": 108,
+					"tempo": 56,
+					"temperament": "vrwt",
+					"order": 0,
+					"key": "goldberg/b988-aa_vrwt_d01_48_t056.mp3"
+				},
+				{
+					"file": "b988-01a_vrwt_d01_03_t100.mp3",
+					"bwv": "988",
+					"title": "Variatio 1",
+					"variant": "01a",
+					"duration": "1:03",
+					"durationSeconds": 63,
+					"tempo": 100,
+					"temperament": "vrwt",
+					"order": 1,
+					"key": "goldberg/b988-01a_vrwt_d01_03_t100.mp3"
+				},
+				{
+					"file": "b988-02a_vrwt_d00_54_t080.mp3",
+					"bwv": "988",
+					"title": "Variatio 2",
+					"variant": "02a",
+					"duration": "0:54",
+					"durationSeconds": 54,
+					"tempo": 80,
+					"temperament": "vrwt",
+					"order": 2,
+					"key": "goldberg/b988-02a_vrwt_d00_54_t080.mp3"
+				},
+				{
+					"file": "b988-03a_vrwt_d01_18_t080.mp3",
+					"bwv": "988",
+					"title": "Variatio 3. Canone all'Unisono",
+					"variant": "03a",
+					"duration": "1:18",
+					"durationSeconds": 78,
+					"tempo": 80,
+					"temperament": "vrwt",
+					"order": 3,
+					"key": "goldberg/b988-03a_vrwt_d01_18_t080.mp3"
+				},
+				{
+					"file": "b988-04a_vrwt_d00_29_t120.mp3",
+					"bwv": "988",
+					"title": "Variatio 4",
+					"variant": "04a",
+					"duration": "0:29",
+					"durationSeconds": 29,
+					"tempo": 120,
+					"temperament": "vrwt",
+					"order": 4,
+					"key": "goldberg/b988-04a_vrwt_d00_29_t120.mp3"
+				},
+				{
+					"file": "b988-05a_vrwt_d00_51_t126.mp3",
+					"bwv": "988",
+					"title": "Variatio 5",
+					"variant": "05a",
+					"duration": "0:51",
+					"durationSeconds": 51,
+					"tempo": 126,
+					"temperament": "vrwt",
+					"order": 5,
+					"key": "goldberg/b988-05a_vrwt_d00_51_t126.mp3"
+				},
+				{
+					"file": "b988-06a_vrwt_d00_36_t096.mp3",
+					"bwv": "988",
+					"title": "Variatio 6. Canone alla Seconda",
+					"variant": "06a",
+					"duration": "0:36",
+					"durationSeconds": 36,
+					"tempo": 96,
+					"temperament": "vrwt",
+					"order": 6,
+					"key": "goldberg/b988-06a_vrwt_d00_36_t096.mp3"
+				},
+				{
+					"file": "b988-07a_vrwt_d01_10_t090.mp3",
+					"bwv": "988",
+					"title": "Variatio 7",
+					"variant": "07a",
+					"duration": "1:10",
+					"durationSeconds": 70,
+					"tempo": 90,
+					"temperament": "vrwt",
+					"order": 7,
+					"key": "goldberg/b988-07a_vrwt_d01_10_t090.mp3"
+				},
+				{
+					"file": "b988-08a_vrwt_d00_55_t116.mp3",
+					"bwv": "988",
+					"title": "Variatio 8",
+					"variant": "08a",
+					"duration": "0:55",
+					"durationSeconds": 55,
+					"tempo": 116,
+					"temperament": "vrwt",
+					"order": 8,
+					"key": "goldberg/b988-08a_vrwt_d00_55_t116.mp3"
+				},
+				{
+					"file": "b988-09a_vrwt_d00_59_t072.mp3",
+					"bwv": "988",
+					"title": "Variatio 9. Canone alla Terza",
+					"variant": "09a",
+					"duration": "0:59",
+					"durationSeconds": 59,
+					"tempo": 72,
+					"temperament": "vrwt",
+					"order": 9,
+					"key": "goldberg/b988-09a_vrwt_d00_59_t072.mp3"
+				},
+				{
+					"file": "b988-10a_vrwt_d00_59_t144.mp3",
+					"bwv": "988",
+					"title": "Variatio 10",
+					"variant": "10a",
+					"duration": "0:59",
+					"durationSeconds": 59,
+					"tempo": 144,
+					"temperament": "vrwt",
+					"order": 10,
+					"key": "goldberg/b988-10a_vrwt_d00_59_t144.mp3"
+				},
+				{
+					"file": "b988-11a_vrwt_d00_59_t108.mp3",
+					"bwv": "988",
+					"title": "Variatio 11",
+					"variant": "11a",
+					"duration": "0:59",
+					"durationSeconds": 59,
+					"tempo": 108,
+					"temperament": "vrwt",
+					"order": 11,
+					"key": "goldberg/b988-11a_vrwt_d00_59_t108.mp3"
+				},
+				{
+					"file": "b988-12a_vrwt_d01_14_t084.mp3",
+					"bwv": "988",
+					"title": "Variatio 12. Canone alla Quarta",
+					"variant": "12a",
+					"duration": "1:14",
+					"durationSeconds": 74,
+					"tempo": 84,
+					"temperament": "vrwt",
+					"order": 12,
+					"key": "goldberg/b988-12a_vrwt_d01_14_t084.mp3"
+				},
+				{
+					"file": "b988-13a_vrwt_d01_42_t060.mp3",
+					"bwv": "988",
+					"title": "Variatio 13",
+					"variant": "13a",
+					"duration": "1:42",
+					"durationSeconds": 102,
+					"tempo": 60,
+					"temperament": "vrwt",
+					"order": 13,
+					"key": "goldberg/b988-13a_vrwt_d01_42_t060.mp3"
+				},
+				{
+					"file": "b988-14a_vrwt_d01_01_t104.mp3",
+					"bwv": "988",
+					"title": "Variatio 14",
+					"variant": "14a",
+					"duration": "1:01",
+					"durationSeconds": 61,
+					"tempo": 104,
+					"temperament": "vrwt",
+					"order": 14,
+					"key": "goldberg/b988-14a_vrwt_d01_01_t104.mp3"
+				},
+				{
+					"file": "b988-15a_vrwt_d01_42_t040.mp3",
+					"bwv": "988",
+					"title": "Variatio 15. Canone alla Quinta",
+					"variant": "15a",
+					"duration": "1:42",
+					"durationSeconds": 102,
+					"tempo": 40,
+					"temperament": "vrwt",
+					"order": 15,
+					"key": "goldberg/b988-15a_vrwt_d01_42_t040.mp3"
+				},
+				{
+					"file": "b988-16a_vrwt_d01_10_t060.mp3",
+					"bwv": "988",
+					"title": "Variatio 16. Ouverture",
+					"variant": "16a",
+					"duration": "1:10",
+					"durationSeconds": 70,
+					"tempo": 60,
+					"temperament": "vrwt",
+					"order": 16,
+					"key": "goldberg/b988-16a_vrwt_d01_10_t060.mp3"
+				},
+				{
+					"file": "b988-16b_vrwt_d00_31_t120.mp3",
+					"bwv": "988",
+					"title": "Variatio 16. Ouverture (second part)",
+					"variant": "16b",
+					"duration": "0:31",
+					"durationSeconds": 31,
+					"tempo": 120,
+					"temperament": "vrwt",
+					"order": 16.1,
+					"key": "goldberg/b988-16b_vrwt_d00_31_t120.mp3"
+				},
+				{
+					"file": "b988-17a_vrwt_d00_59_t108.mp3",
+					"bwv": "988",
+					"title": "Variatio 17",
+					"variant": "17a",
+					"duration": "0:59",
+					"durationSeconds": 59,
+					"tempo": 108,
+					"temperament": "vrwt",
+					"order": 17,
+					"key": "goldberg/b988-17a_vrwt_d00_59_t108.mp3"
+				},
+				{
+					"file": "b988-18a_vrwt_d01_10_t120.mp3",
+					"bwv": "988",
+					"title": "Variatio 18. Canone alla Sesta",
+					"variant": "18a",
+					"duration": "1:10",
+					"durationSeconds": 70,
+					"tempo": 120,
+					"temperament": "vrwt",
+					"order": 18,
+					"key": "goldberg/b988-18a_vrwt_d01_10_t120.mp3"
+				},
+				{
+					"file": "b988-19a_vrwt_d00_38_t090.mp3",
+					"bwv": "988",
+					"title": "Variatio 19",
+					"variant": "19a",
+					"duration": "0:38",
+					"durationSeconds": 38,
+					"tempo": 90,
+					"temperament": "vrwt",
+					"order": 19,
+					"key": "goldberg/b988-19a_vrwt_d00_38_t090.mp3"
+				},
+				{
+					"file": "b988-20a_vrwt_d00_59_t108.mp3",
+					"bwv": "988",
+					"title": "Variatio 20",
+					"variant": "20a",
+					"duration": "0:59",
+					"durationSeconds": 59,
+					"tempo": 108,
+					"temperament": "vrwt",
+					"order": 20,
+					"key": "goldberg/b988-20a_vrwt_d00_59_t108.mp3"
+				},
+				{
+					"file": "b988-21a_vrwt_d00_46_t096.mp3",
+					"bwv": "988",
+					"title": "Variatio 21. Canone alla Settima",
+					"variant": "21a",
+					"duration": "0:46",
+					"durationSeconds": 46,
+					"tempo": 96,
+					"temperament": "vrwt",
+					"order": 21,
+					"key": "goldberg/b988-21a_vrwt_d00_46_t096.mp3"
+				},
+				{
+					"file": "b988-22a_vrwt_d01_14_t112.mp3",
+					"bwv": "988",
+					"title": "Variatio 22",
+					"variant": "22a",
+					"duration": "1:14",
+					"durationSeconds": 74,
+					"tempo": 112,
+					"temperament": "vrwt",
+					"order": 22,
+					"key": "goldberg/b988-22a_vrwt_d01_14_t112.mp3"
+				},
+				{
+					"file": "b988-23a_vrwt_d01_03_t100.mp3",
+					"bwv": "988",
+					"title": "Variatio 23",
+					"variant": "23a",
+					"duration": "1:03",
+					"durationSeconds": 63,
+					"tempo": 100,
+					"temperament": "vrwt",
+					"order": 23,
+					"key": "goldberg/b988-23a_vrwt_d01_03_t100.mp3"
+				},
+				{
+					"file": "b988-24a_vrwt_d01_36_t096.mp3",
+					"bwv": "988",
+					"title": "Variatio 24. Canone all'Ottava",
+					"variant": "24a",
+					"duration": "1:36",
+					"durationSeconds": 96,
+					"tempo": 96,
+					"temperament": "vrwt",
+					"order": 24,
+					"key": "goldberg/b988-24a_vrwt_d01_36_t096.mp3"
+				},
+				{
+					"file": "b988-25a_vrwt_d01_45_t058.mp3",
+					"bwv": "988",
+					"title": "Variatio 25",
+					"variant": "25a",
+					"duration": "1:45",
+					"durationSeconds": 105,
+					"tempo": 58,
+					"temperament": "vrwt",
+					"order": 25,
+					"key": "goldberg/b988-25a_vrwt_d01_45_t058.mp3"
+				},
+				{
+					"file": "b988-26a_vrwt_d01_14_t084.mp3",
+					"bwv": "988",
+					"title": "Variatio 26",
+					"variant": "26a",
+					"duration": "1:14",
+					"durationSeconds": 74,
+					"tempo": 84,
+					"temperament": "vrwt",
+					"order": 26,
+					"key": "goldberg/b988-26a_vrwt_d01_14_t084.mp3"
+				},
+				{
+					"file": "b988-27a_vrwt_d01_14_t084.mp3",
+					"bwv": "988",
+					"title": "Variatio 27. Canone alla Nona",
+					"variant": "27a",
+					"duration": "1:14",
+					"durationSeconds": 74,
+					"tempo": 84,
+					"temperament": "vrwt",
+					"order": 27,
+					"key": "goldberg/b988-27a_vrwt_d01_14_t084.mp3"
+				},
+				{
+					"file": "b988-28a_vrwt_d01_08_t092.mp3",
+					"bwv": "988",
+					"title": "Variatio 28",
+					"variant": "28a",
+					"duration": "1:08",
+					"durationSeconds": 68,
+					"tempo": 92,
+					"temperament": "vrwt",
+					"order": 28,
+					"key": "goldberg/b988-28a_vrwt_d01_08_t092.mp3"
+				},
+				{
+					"file": "b988-29a_vrwt_d01_03_t100.mp3",
+					"bwv": "988",
+					"title": "Variatio 29",
+					"variant": "29a",
+					"duration": "1:03",
+					"durationSeconds": 63,
+					"tempo": 100,
+					"temperament": "vrwt",
+					"order": 29,
+					"key": "goldberg/b988-29a_vrwt_d01_03_t100.mp3"
+				},
+				{
+					"file": "b988qa_vrwt_d00_46_t096.mp3",
+					"bwv": "988",
+					"title": "Variatio 30. Quodlibet",
+					"variant": "qa",
+					"duration": "0:46",
+					"durationSeconds": 46,
+					"tempo": 96,
+					"temperament": "vrwt",
+					"order": 30,
+					"key": "goldberg/b988qa_vrwt_d00_46_t096.mp3"
+				}
+			]
+		},
+		{
 			"id": "Di-367-378-ap-2",
 			"title": "A new set of chorales 367-378 with --ap 2",
 			"date": "2026-11-02",
@@ -698,6 +1092,232 @@
 					"tempo": 114,
 					"primes": 1,
 					"key": "Dh-379-390/b390h_df1_t3_d12_01_t114_ap1_lm19_r1.25.mp3"
+				}
+			]
+		},
+		{
+			"id": "Chaconne_test",
+			"title": "Make a Chaconne out of a new set of chorales 403-414",
+			"date": "2026-10-25",
+			"tuning": "just",
+			"blurb": "12 Chaconnes",
+			"trackCount": 12,
+			"tracks": [
+				{
+					"file": "b403a_df4c3214_t2_d06_02_t100_ap1_lm19_r1.25.mp3",
+					"bwv": "403",
+					"title": "O Mensch, schau Jesum Christum an",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 2,
+					"duration": "6:02",
+					"durationSeconds": 362,
+					"tempo": 100,
+					"primes": 1,
+					"key": "Chaconne_Test/b403a_df4c3214_t2_d06_02_t100_ap1_lm19_r1.25.mp3"
+				},
+				{
+					"file": "b404a_df3c2135_t1_d04_52_t118_ap1_lm19_r1.62.mp3",
+					"bwv": "404",
+					"title": "O Traurigkeit, o Herzeleid",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.62,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 1,
+					"duration": "4:52",
+					"durationSeconds": 292,
+					"tempo": 118,
+					"primes": 1,
+					"key": "Chaconne_Test/b404a_df3c2135_t1_d04_52_t118_ap1_lm19_r1.62.mp3"
+				},
+				{
+					"file": "b405a_df2c3412_t3_d08_06_t080_ap1_lm19_r1.38.mp3",
+					"bwv": "405",
+					"title": "O wie selig seid ihr doch, ihr Frommen",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 3,
+					"duration": "8:06",
+					"durationSeconds": 486,
+					"tempo": 80,
+					"primes": 1,
+					"key": "Chaconne_Test/b405a_df2c3412_t3_d08_06_t080_ap1_lm19_r1.38.mp3"
+				},
+				{
+					"file": "b406a_df2c3412_t3_d07_48_t088_ap4_lm19_r1.38.mp3",
+					"bwv": "406",
+					"title": "O wie selig seid ihr doch, ihr Frommen",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 3,
+					"duration": "7:48",
+					"durationSeconds": 468,
+					"tempo": 88,
+					"primes": 4,
+					"key": "Chaconne_Test/b406a_df2c3412_t3_d07_48_t088_ap4_lm19_r1.38.mp3"
+				},
+				{
+					"file": "b407a_df2c3412_t1_d03_56_t122_ap4_lm19_r1.62.mp3",
+					"bwv": "407",
+					"title": "O wir armen Sünder",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.62,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 1,
+					"duration": "3:56",
+					"durationSeconds": 236,
+					"tempo": 122,
+					"primes": 4,
+					"key": "Chaconne_Test/b407a_df2c3412_t1_d03_56_t122_ap4_lm19_r1.62.mp3"
+				},
+				{
+					"file": "b408a_df5c2135_t1_d05_51_t080_ap3_lm17_r1.25.mp3",
+					"bwv": "408",
+					"title": "Schaut, ihr Sünder",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 1,
+					"duration": "5:51",
+					"durationSeconds": 351,
+					"tempo": 80,
+					"primes": 3,
+					"key": "Chaconne_Test/b408a_df5c2135_t1_d05_51_t080_ap3_lm17_r1.25.mp3"
+				},
+				{
+					"file": "b409a_df4c3215_t1_d04_59_t104_ap4_lm17_r1.25.mp3",
+					"bwv": "409",
+					"title": "Seelenbräutigam",
+					"variant": "a",
+					"limit": 17,
+					"ratio": 1.25,
+					"detail": {
+						"kind": "density",
+						"value": 4
+					},
+					"tolerance": 1,
+					"duration": "4:59",
+					"durationSeconds": 299,
+					"tempo": 104,
+					"primes": 4,
+					"key": "Chaconne_Test/b409a_df4c3215_t1_d04_59_t104_ap4_lm17_r1.25.mp3"
+				},
+				{
+					"file": "b410a_df5c40123_t3_d04_41_t084_ap3_lm19_r1.50.mp3",
+					"bwv": "410",
+					"title": "Sei gegrüßet, Jesu gütig",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 3,
+					"duration": "4:41",
+					"durationSeconds": 281,
+					"tempo": 84,
+					"primes": 3,
+					"key": "Chaconne_Test/b410a_df5c40123_t3_d04_41_t084_ap3_lm19_r1.50.mp3"
+				},
+				{
+					"file": "b411a_df5c3214_t3_d07_47_t084_ap3_lm19_r1.62.mp3",
+					"bwv": "411",
+					"title": "Singt dem Herrn ein neues Lied",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.62,
+					"detail": {
+						"kind": "density",
+						"value": 5
+					},
+					"tolerance": 3,
+					"duration": "7:47",
+					"durationSeconds": 467,
+					"tempo": 84,
+					"primes": 3,
+					"key": "Chaconne_Test/b411a_df5c3214_t3_d07_47_t084_ap3_lm19_r1.62.mp3"
+				},
+				{
+					"file": "b412a_df3c4135_t3_d07_11_t088_ap1_lm19_r1.50.mp3",
+					"bwv": "412",
+					"title": "So gibst du nun, mein Jesu, gute Nacht",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.5,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 3,
+					"duration": "7:11",
+					"durationSeconds": 431,
+					"tempo": 88,
+					"primes": 1,
+					"key": "Chaconne_Test/b412a_df3c4135_t3_d07_11_t088_ap1_lm19_r1.50.mp3"
+				},
+				{
+					"file": "b413a_df2c3412_t3_d05_55_t092_ap3_lm19_r1.38.mp3",
+					"bwv": "413",
+					"title": "Sollt ich meinem Gott nicht singen",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 2
+					},
+					"tolerance": 3,
+					"duration": "5:55",
+					"durationSeconds": 355,
+					"tempo": 92,
+					"primes": 3,
+					"key": "Chaconne_Test/b413a_df2c3412_t3_d05_55_t092_ap3_lm19_r1.38.mp3"
+				},
+				{
+					"file": "b414a_df3c421_t3_d07_49_t104_ap1_lm19_r1.38.mp3",
+					"bwv": "414",
+					"title": "Uns ist ein Kindlein heut geborn",
+					"variant": "a",
+					"limit": 19,
+					"ratio": 1.38,
+					"detail": {
+						"kind": "density",
+						"value": 3
+					},
+					"tolerance": 3,
+					"duration": "7:49",
+					"durationSeconds": 469,
+					"tempo": 104,
+					"primes": 1,
+					"key": "Chaconne_Test/b414a_df3c421_t3_d07_49_t104_ap1_lm19_r1.38.mp3"
 				}
 			]
 		},

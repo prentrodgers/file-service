@@ -157,6 +157,69 @@ const LEGACY_RE = new RegExp(
 );
 
 /**
+ * Keyboard works rendered whole rather than chorale by chorale. A third
+ * grammar, because these renders carry none of the tuning-search knobs:
+ *   b988-01a_vrwt_d01_03_t100.mp3   → BWV 988, Variation 1, VRWT, 1:03, 100 BPM
+ *   b988-aa_vrwt_d01_48_t056.mp3    → the Aria
+ *   b988qa_vrwt_d00_46_t096.mp3     → the Quodlibet (the dash is optional)
+ * The temperament token (`vrwt`) is recorded but the album's `tuning` in
+ * albums.json is still what places it on /listen.
+ */
+const WORK_RE = new RegExp(
+	"^b(\\d{3})-?" + //                  BWV number
+		"([0-9a-z]+?)_" + //              movement token: 01a, 16b, aa, qa
+		"([a-z]+)_" + //                  temperament tag, e.g. vrwt
+		"d(\\d+)_(\\d+)_" + //            duration mm_ss
+		"t(\\d+)" + //                   tempo (BPM)
+		"\\.mp3$",
+);
+
+/** BWV number → name of a multi-movement work. */
+export const WORK_TITLES: Record<string, string> = {
+	"988": "Goldberg Variations",
+};
+
+// Goldberg canons, by variation number.
+const GOLDBERG_CANONS: Record<number, string> = {
+	3: "Canone all'Unisono",
+	6: "Canone alla Seconda",
+	9: "Canone alla Terza",
+	12: "Canone alla Quarta",
+	15: "Canone alla Quinta",
+	18: "Canone alla Sesta",
+	21: "Canone alla Settima",
+	24: "Canone all'Ottava",
+	27: "Canone alla Nona",
+};
+
+/**
+ * Title and running order for a movement token. `aa` is the Aria, `qa` the
+ * Quodlibet (Variation 30), `NN` + letter a variation; Variation 16, the
+ * Ouverture, is rendered as two files, 16a and 16b.
+ */
+function movementOf(bwv: string, token: string): { title: string; order: number } {
+	const m = /^(\d+)([a-z]?)$/.exec(token);
+	if (bwv === "988") {
+		if (token === "aa") return { title: "Aria", order: 0 };
+		if (token === "qa") return { title: "Variatio 30. Quodlibet", order: 30 };
+		if (m) {
+			const n = Number(m[1]);
+			const name =
+				n === 16
+					? m[2] === "b"
+						? "Ouverture (second part)"
+						: "Ouverture"
+					: GOLDBERG_CANONS[n];
+			return {
+				title: `Variatio ${n}${name ? `. ${name}` : ""}`,
+				order: n + (m[2] ? (m[2].charCodeAt(0) - 97) / 10 : 0),
+			};
+		}
+	}
+	return { title: `${WORK_TITLES[bwv] ?? "Bach"} ${token}`, order: m ? Number(m[1]) : 999 };
+}
+
+/**
  * The BWV number a track token refers to.
  *
  * Three digits carry it outright. Two-digit tokens predate 19 Sep 2026 and
@@ -191,17 +254,25 @@ export interface ChoraleTrack {
 	title: string;
 	/** Render variant letter, e.g. "c". Empty string if absent. */
 	variant: string;
-	/** Odd limit of the tonality diamond: 17, 19, 23. */
-	limit: number;
+	/**
+	 * Odd limit of the tonality diamond: 17, 19, 23. This and the three fields
+	 * after it are chorale tuning-search settings, absent on whole-work renders
+	 * (Goldberg Variations) whose filenames carry none of them.
+	 */
+	limit?: number;
 	/** Ratio factor — weighting applied to interval ratios. */
-	ratio: number;
+	ratio?: number;
 	/**
 	 * `density` (df): higher is denser, 0–5.
 	 * `maxDelta` (md): legacy, max cents a repeated pitch class may shift.
 	 */
-	detail: { kind: DetailKind; value: number };
+	detail?: { kind: DetailKind; value: number };
 	/** Tolerance in cents from the ideal just-intonation ratio. */
-	tolerance: number;
+	tolerance?: number;
+	/** Whole-work renders only: temperament tag from the filename, e.g. "vrwt". */
+	temperament?: string;
+	/** Whole-work renders only: position in the work, for sorting (Aria = 0). */
+	order?: number;
 	/** Duration as "7:34". */
 	duration: string;
 	/** Duration in seconds, for sorting and schema.org metadata. */
@@ -251,6 +322,25 @@ export function parseChoraleFilename(file: string): ChoraleTrack | null {
 			limit,
 			ratio,
 		] = cur;
+	} else if (!LEGACY_RE.test(file)) {
+		const work = WORK_RE.exec(file);
+		if (!work) return null;
+		const [, bwv, token, temperament, min, sec, bpm] = work;
+		const { title, order } = movementOf(bwv, token);
+		const minutes = Number(min);
+		const seconds = Number(sec);
+		return {
+			file,
+			key: file,
+			bwv,
+			title,
+			variant: token,
+			duration: `${minutes}:${String(seconds).padStart(2, "0")}`,
+			durationSeconds: minutes * 60 + seconds,
+			tempo: Number(bpm),
+			temperament,
+			order,
+		};
 	} else {
 		const old = LEGACY_RE.exec(file);
 		if (!old) return null;
@@ -296,7 +386,9 @@ export function parseChoraleFilename(file: string): ChoraleTrack | null {
 }
 
 /** Human-readable label for the density/max-delta token. */
-export function detailLabel(detail: ChoraleTrack["detail"]): string {
+export function detailLabel(
+	detail: NonNullable<ChoraleTrack["detail"]>,
+): string {
 	return detail.kind === "density"
 		? `Density ${detail.value}`
 		: `Max shift ${detail.value}¢`;
@@ -310,6 +402,19 @@ export function detailLabel(detail: ChoraleTrack["detail"]): string {
 export function tuningParameters(
 	track: ChoraleTrack,
 ): Array<{ label: string; value: string; note: string }> {
+	const tempo = {
+		label: "Tempo",
+		value: `${track.tempo} BPM`,
+		note: "Playback tempo of this render.",
+	};
+	// Whole-work renders carry no tuning-search settings.
+	if (
+		track.limit === undefined ||
+		track.ratio === undefined ||
+		track.detail === undefined ||
+		track.tolerance === undefined
+	)
+		return [tempo];
 	return [
 		{
 			label: "Limit",
@@ -337,10 +442,17 @@ export function tuningParameters(
 			value: `±${track.tolerance}¢`,
 			note: "How far a pitch may sit from its ideal just-intonation ratio.",
 		},
-		{
-			label: "Tempo",
-			value: `${track.tempo} BPM`,
-			note: "Playback tempo of this render.",
-		},
+		tempo,
 	];
+}
+
+/** The one-line summary under a track's title: only the fields it has. */
+export function trackMeta(track: ChoraleTrack): string[] {
+	return [
+		track.limit !== undefined ? `${track.limit}-limit` : null,
+		track.duration,
+		`${track.tempo} BPM`,
+		track.detail ? detailLabel(track.detail) : null,
+		track.tolerance !== undefined ? `±${track.tolerance}¢` : null,
+	].filter((x): x is string => x !== null);
 }

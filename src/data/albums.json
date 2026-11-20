@@ -4,7 +4,7 @@
 	"albums": [
 		{ 
 			"id": "Goldberg-Variations",
-			"dir": "goldberg2",
+			"dir": "goldberg",
 			"title": "A piano render of the Goldberg Variations tuned to Victorian Rational Well Temperament",
 			"date": "2026-11-19",
 			"tuning": "just",
@@ -36,7 +36,7 @@
 		},
 		{
 			"id": "Chaconne_test",
-			"dir": "Chaconne_test",
+			"dir": "Chaconne_Test",
 			"title": "Make a Chaconne out of a new set of chorales 403-414",
 			"date": "2026-10-25",
 			"tuning": "just",

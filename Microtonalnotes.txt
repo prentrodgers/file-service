@@ -343,9 +343,21 @@ ___________________-
         4.  git add src/data/catalog.json src/data/albums.json Microtonalnotes.txt && git commit
         5.  eval $(op signin)
         6.  git push origin main
+        7.  ssh fs7 
+            cd Repos/One-footed-bride-tuning/
+            mamba activate csound
+            python daily_chorale_tweet.py --dry-run
 
 
 _________________________________
 11/2/26 First time trying to do this on the bootc image on fs7 failed. 
     Claude talked me through the resolution. Create a token on cloudflare, then save it in 1Password as: fs7 r2 album uploads: 
         cfut_...
+    0.  npm install 
+        npx wrangler login
+    1.  ./scripts/publish-album.sh ~/Dropbox/Uploads/goldberg
+    2.  Edit src/data/albums.json
+    3.  ./scripts/build-catalog.mjs
+    4.  git add src/data/catalog.json src/data/albums.json Microtonalnotes.txt && git commit
+    5.  eval $(op signin)
+    6.  git push origin main

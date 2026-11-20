@@ -38,6 +38,49 @@ const CURRENT_RE =
 const LEGACY_RE =
 	/^ball9-t(\d{2,3})(\w?)_lm(\d+)_r([\d.]+)_(?:sf[\d.]+_)?(md|df)(\d+)_(?:sp\d+_)?t(\d+)_d(\d+)_(\d+)_t(\d+)(?:_ap(\d+))?\.mp3$/;
 
+// Whole-work renders (Goldberg Variations): b988-01a_vrwt_d01_03_t100.mp3,
+// b988-aa_... (Aria), b988qa_... (Quodlibet; the dash is optional). No tuning-
+// search tokens at all, so this is a third grammar. Mirrors WORK_RE in
+// src/lib/chorale.ts.
+const WORK_RE = /^b(\d{3})-?([0-9a-z]+?)_([a-z]+)_d(\d+)_(\d+)_t(\d+)\.mp3$/;
+
+const WORK_TITLES = { 988: "Goldberg Variations" };
+const GOLDBERG_CANONS = {
+	3: "Canone all'Unisono",
+	6: "Canone alla Seconda",
+	9: "Canone alla Terza",
+	12: "Canone alla Quarta",
+	15: "Canone alla Quinta",
+	18: "Canone alla Sesta",
+	21: "Canone alla Settima",
+	24: "Canone all'Ottava",
+	27: "Canone alla Nona",
+};
+
+// Title and running order for a movement token. Mirrors movementOf() in
+// src/lib/chorale.ts.
+function movementOf(bwv, token) {
+	const m = /^(\d+)([a-z]?)$/.exec(token);
+	if (bwv === "988") {
+		if (token === "aa") return { title: "Aria", order: 0 };
+		if (token === "qa") return { title: "Variatio 30. Quodlibet", order: 30 };
+		if (m) {
+			const n = Number(m[1]);
+			const name =
+				n === 16
+					? m[2] === "b"
+						? "Ouverture (second part)"
+						: "Ouverture"
+					: GOLDBERG_CANONS[n];
+			return {
+				title: `Variatio ${n}${name ? `. ${name}` : ""}`,
+				order: n + (m[2] ? (m[2].charCodeAt(0) - 97) / 10 : 0),
+			};
+		}
+	}
+	return { title: `${WORK_TITLES[bwv] ?? "Bach"} ${token}`, order: m ? Number(m[1]) : 999 };
+}
+
 const BWV_TITLES = {
 	253: "Ach bleib bei uns, Herr Jesu Christ",
 	254: "Ach Gott, erhör mein Seufzen und Wehklagen",
@@ -143,6 +186,24 @@ function parse(file) {
 	const cur = CURRENT_RE.exec(file);
 	if (cur) {
 		[, track, variant, dKind, dVal, tol, min, sec, tempo, primes, limit, ratio] = cur;
+	} else if (!LEGACY_RE.test(file)) {
+		const work = WORK_RE.exec(file);
+		if (!work) return null;
+		const [, bwv, token, temperament, min, sec, bpm] = work;
+		const { title, order } = movementOf(bwv, token);
+		const minutes = Number(min);
+		const seconds = Number(sec);
+		return {
+			file,
+			bwv,
+			title,
+			variant: token,
+			duration: `${minutes}:${String(seconds).padStart(2, "0")}`,
+			durationSeconds: minutes * 60 + seconds,
+			tempo: Number(bpm),
+			temperament,
+			order,
+		};
 	} else {
 		const old = LEGACY_RE.exec(file);
 		if (!old) return null;
@@ -194,7 +255,11 @@ for (const album of meta.albums) {
 		if (t) tracks.push({ ...t, key: `${album.dir}/${f}` });
 		else console.warn(`  ? unparsed filename in ${album.dir}: ${f}`);
 	}
-	tracks.sort((a, b) => a.bwv.localeCompare(b.bwv));
+	// Within one BWV number, whole-work movements go in performance order;
+	// chorales have no `order` and keep their filename order.
+	tracks.sort(
+		(a, b) => a.bwv.localeCompare(b.bwv) || (a.order ?? 0) - (b.order ?? 0),
+	);
 
 	const { needsReview, dir: _dir, ...rest } = album;
 	albums.push({ ...rest, trackCount: tracks.length, tracks });
