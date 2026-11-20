@@ -354,10 +354,15 @@ _________________________________
     Claude talked me through the resolution. Create a token on cloudflare, then save it in 1Password as: fs7 r2 album uploads: 
         cfut_...
     0.  npm install 
-        npx wrangler login
-    1.  ./scripts/publish-album.sh ~/Dropbox/Uploads/goldberg
-    2.  Edit src/data/albums.json
-    3.  ./scripts/build-catalog.mjs
-    4.  git add src/data/catalog.json src/data/albums.json Microtonalnotes.txt && git commit
-    5.  eval $(op signin)
-    6.  git push origin main
+    npx wrangler whoami  # confirm you're logged in
+
+    ./scripts/publish-album.sh ~/Dropbox/Uploads/goldberg
+    
+    git add scripts/build-catalog.mjs src/lib/chorale.ts src/components/TrackList.astro \
+    "src/pages/listen/[album].astro" src/data/catalog.json src/data/albums.json Microtonalnotes.txt
+    
+    git commit -m "Parse Goldberg Variations filenames"
+    
+    eval $(op signin)
+    
+    git push origin main

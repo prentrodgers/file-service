@@ -44,6 +44,11 @@ const LEGACY_RE =
 // src/lib/chorale.ts.
 const WORK_RE = /^b(\d{3})-?([0-9a-z]+?)_([a-z]+)_d(\d+)_(\d+)_t(\d+)\.mp3$/;
 
+// Spring-tuned renders (goldberg_diamond.sh): score name then tuning tag, no
+// separator. b988-00d7h32_... Aria, b988v16ad7h32_... Var. 16 first part,
+// b988v32d7h32_... Aria da capo. Mirrors SPRING_RE in src/lib/chorale.ts.
+const SPRING_RE = /^b(\d{3})(?:-|v)(\d{2}[a-z]?)(d\d+h\d+)_d(\d+)_(\d+)_t(\d+)\.mp3$/;
+
 const WORK_TITLES = { 988: "Goldberg Variations" };
 const GOLDBERG_CANONS = {
 	3: "Canone all'Unisono",
@@ -66,6 +71,10 @@ function movementOf(bwv, token) {
 		if (token === "qa") return { title: "Variatio 30. Quodlibet", order: 30 };
 		if (m) {
 			const n = Number(m[1]);
+			// Spring renders number the Aria 00 and its da capo 32.
+			if (n === 0) return { title: "Aria", order: 0 };
+			if (n === 32) return { title: "Aria da capo", order: 32 };
+			if (n === 30) return { title: "Variatio 30. Quodlibet", order: 30 };
 			const name =
 				n === 16
 					? m[2] === "b"
@@ -187,7 +196,7 @@ function parse(file) {
 	if (cur) {
 		[, track, variant, dKind, dVal, tol, min, sec, tempo, primes, limit, ratio] = cur;
 	} else if (!LEGACY_RE.test(file)) {
-		const work = WORK_RE.exec(file);
+		const work = WORK_RE.exec(file) ?? SPRING_RE.exec(file);
 		if (!work) return null;
 		const [, bwv, token, temperament, min, sec, bpm] = work;
 		const { title, order } = movementOf(bwv, token);

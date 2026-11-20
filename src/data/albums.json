@@ -2,7 +2,15 @@
 	"_comment": "Hand-authored album metadata. The tuning system lives in the DIRECTORY name and nowhere in the filenames, so it cannot be derived — it has to be recorded here. `scripts/build-catalog.mjs` merges this with the track lists scanned from ~/Dropbox/Uploads and writes src/data/catalog.json, which IS committed (Cloudflare's build machine has no Dropbox access).",
 	"_order": "Key order in `tunings` drives section order on /listen. Albums are sorted by date, newest first, within each section.",
 	"albums": [
-		{ 
+		{
+			"id": "Goldberg-VRWT-spring-adjusted",
+			"dir": "goldberg-vrwt-spring-adjusted",
+			"title": "The Goldberg Variations in VRWT, spring-tuned toward the 7-limit diamond",
+			"date": "2026-11-20",
+			"tuning": "just",
+			"blurb": "Victorian Rational Well Temperament as the starting point, with each note pulled toward the 7-limit tonality diamond as far as the lines allow (spring_tuning.py --diamond 7 --harmony 32)."
+		},
+		{
 			"id": "Goldberg-Variations",
 			"dir": "goldberg",
 			"title": "A piano render of the Goldberg Variations tuned to Victorian Rational Well Temperament",

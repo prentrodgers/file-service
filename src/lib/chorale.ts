@@ -174,6 +174,23 @@ const WORK_RE = new RegExp(
 		"\\.mp3$",
 );
 
+/**
+ * Spring-tuned renders (goldberg_diamond.sh, 20 Nov 2026). The movement comes
+ * straight from the score name, then the tuning tag with no separator:
+ *   b988-00d7h32_d01_48_t056.mp3    Aria (score bwv988-00)
+ *   b988v16ad7h32_d01_10_t060.mp3   Variation 16, first part
+ *   b988v32d7h32_d01_48_t056.mp3    Aria da capo
+ * d7h32 = VRWT pulled toward the 7-limit tonality diamond at harmony 32.
+ */
+const SPRING_RE = new RegExp(
+	"^b(\\d{3})" + //                    BWV number
+		"(?:-|v)(\\d{2}[a-z]?)" + //        movement: -00, v01, v16a, -26
+		"(d\\d+h\\d+)_" + //               spring tag: diamond, harmony
+		"d(\\d+)_(\\d+)_" + //            duration mm_ss
+		"t(\\d+)" + //                   tempo (BPM)
+		"\\.mp3$",
+);
+
 /** BWV number → name of a multi-movement work. */
 export const WORK_TITLES: Record<string, string> = {
 	"988": "Goldberg Variations",
@@ -204,6 +221,10 @@ function movementOf(bwv: string, token: string): { title: string; order: number 
 		if (token === "qa") return { title: "Variatio 30. Quodlibet", order: 30 };
 		if (m) {
 			const n = Number(m[1]);
+			// Spring renders number the Aria 00 and its da capo 32.
+			if (n === 0) return { title: "Aria", order: 0 };
+			if (n === 32) return { title: "Aria da capo", order: 32 };
+			if (n === 30) return { title: "Variatio 30. Quodlibet", order: 30 };
 			const name =
 				n === 16
 					? m[2] === "b"
@@ -323,7 +344,7 @@ export function parseChoraleFilename(file: string): ChoraleTrack | null {
 			ratio,
 		] = cur;
 	} else if (!LEGACY_RE.test(file)) {
-		const work = WORK_RE.exec(file);
+		const work = WORK_RE.exec(file) ?? SPRING_RE.exec(file);
 		if (!work) return null;
 		const [, bwv, token, temperament, min, sec, bpm] = work;
 		const { title, order } = movementOf(bwv, token);
